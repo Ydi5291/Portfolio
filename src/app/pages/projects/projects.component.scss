@@ -1,0 +1,66 @@
+
+.projects {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.project {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-xl);
+	padding: 1rem;
+	transition: transform var(--transition), border-color var(--transition);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+	.project:hover {
+		transform: scale(1.01);
+		border-color: rgba(17, 24, 39, 0.18);
+	}
+}
+
+@media (max-width: 480px) {
+	.project {
+		padding: 0.875rem;
+	}
+}
+
+@media (min-width: 720px) {
+	.projects {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1024px) {
+	.projects {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+.project h2 {
+	margin: 0 0 0.5rem;
+	font-size: 1.25rem;
+}
+
+.highlights {
+	margin: 0.75rem 0 0;
+	padding-left: 1.25rem;
+}
+
+.project-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 0.75rem;
+}
+
+.project-links a {
+	text-decoration: none;
+	border-bottom: 1px solid var(--color-border);
+}
+
+.project-links a:hover {
+	border-bottom-color: var(--color-text);
+}

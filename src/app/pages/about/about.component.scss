@@ -1,0 +1,36 @@
+
+p {
+	max-width: 70ch;
+}
+
+.lead {
+	font-size: 1.05rem;
+}
+
+.cta-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin: 0.75rem 0 1rem;
+}
+
+.timeline {
+	margin-top: 0.25rem;
+}
+
+.details {
+	margin-top: 1rem;
+	padding: 1rem;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-xl);
+}
+
+summary {
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.details-body {
+	margin-top: 0.75rem;
+}

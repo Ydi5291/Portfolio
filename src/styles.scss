@@ -1,1 +1,223 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles (minimal) */
+
+:root {
+	--color-text: #111827;
+	--color-muted: #6b7280;
+	--color-surface: #ffffff;
+	--color-bg: #f3f4f6;
+	--color-border: #e5e7eb;
+
+	--radius-md: 0.5rem;
+	--radius-lg: 0.75rem;
+	--radius-xl: 1rem;
+	--focus-ring: 0 0 0 3px rgba(17, 24, 39, 0.15);
+	--transition: 140ms ease;
+	--hover-scale: 1.03;
+	--text-hover-scale: 1.03;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	line-height: 1.5;
+	color: var(--color-text);
+	background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface) 100%);
+	text-rendering: optimizeLegibility;
+}
+
+img,
+svg,
+video {
+	max-width: 100%;
+	height: auto;
+	transition: transform var(--transition);
+	transform-origin: center;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+	img:hover,
+	svg:hover,
+	video:hover {
+		transform: scale(var(--hover-scale));
+	}
+}
+
+a {
+	color: inherit;
+	cursor: pointer;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+	transition: color var(--transition), background-color var(--transition), border-color var(--transition),
+		opacity var(--transition), transform var(--transition);
+}
+
+button,
+[role='button'] {
+	cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled='true'] {
+	cursor: not-allowed;
+}
+
+/* Readability: slight zoom on text hover (desktop hover only) */
+h1,
+h2,
+p,
+li {
+	cursor: pointer;
+	transform-origin: left center;
+}
+
+@media (hover: hover) {
+	h1:hover,
+	h2:hover {
+		font-weight: 800;
+	}
+
+	p:hover,
+	li:hover {
+		font-weight: 600;
+	}
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+	outline: none;
+	box-shadow: var(--focus-ring);
+	border-radius: 0.5rem;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+	a:hover,
+	button:hover {
+		transform: scale(1.02);
+	}
+
+	a:focus-visible,
+	button:focus-visible {
+		transform: scale(1.02);
+	}
+}
+
+h1 {
+	margin: 0 0 0.75rem;
+	font-size: 2rem;
+	line-height: 1.2;
+	letter-spacing: -0.01em;
+}
+
+h2 {
+	margin: 1.25rem 0 0.5rem;
+	font-size: 1.25rem;
+	line-height: 1.25;
+}
+
+p {
+	margin: 0 0 1rem;
+}
+
+ul {
+	margin: 0;
+	padding-left: 1.25rem;
+}
+
+li {
+	margin: 0.25rem 0;
+}
+
+code {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+		monospace;
+	font-size: 0.95em;
+}
+
+.muted {
+	color: var(--color-muted);
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.55rem 0.85rem;
+	border-radius: 0.75rem;
+	border: 1px solid var(--color-border);
+	background: var(--color-surface);
+	color: var(--color-text);
+	text-decoration: none;
+	font-weight: 650;
+	line-height: 1.2;
+	transition: transform var(--transition), background-color var(--transition), border-color var(--transition),
+		opacity var(--transition);
+}
+
+.btn:hover {
+	text-decoration: none;
+	background: var(--color-bg);
+	transform: translateY(-1px);
+}
+
+.btn-primary {
+	background: var(--color-text);
+	border-color: var(--color-text);
+	color: var(--color-surface);
+}
+
+.btn-primary:hover {
+	background: var(--color-text);
+	opacity: 0.92;
+}
+
+::selection {
+	background: rgba(17, 24, 39, 0.12);
+}
+
+.btn-secondary {
+	background: var(--color-surface);
+}
+
+.badges {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0.75rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.25rem 0.55rem;
+	border: 1px solid var(--color-border);
+	border-radius: 999px;
+	background: var(--color-surface);
+	color: var(--color-text);
+	font-size: 0.95rem;
+}
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 1.6rem;
+	}
+
+	h2 {
+		font-size: 1.15rem;
+	}
+}

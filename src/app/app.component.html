@@ -1,2 +1,36 @@
+<header class="site-header">
+	<div class="container header-inner">
+		<a class="brand" routerLink="/home">
+			<img class="brand-logo" src="assets/images/Youssouf.jpg" alt="Youssouf Diallo" width="40" height="40" decoding="async">
+			<span class="brand-text">Portfolio</span>
+		</a>
 
-<router-outlet></router-outlet>
+		<nav class="nav">
+			<a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Startseite</a>
+			<a routerLink="/about" routerLinkActive="active">Über mich</a>
+			<a routerLink="/projects" routerLinkActive="active">Projekte</a>
+			<a routerLink="/contact" routerLinkActive="active">Kontakt</a>
+		</nav>
+
+		<div class="header-actions">
+			<a class="ext-link" href="https://github.com/Ydi5291" target="_blank" rel="noopener">GitHub</a>
+			<a class="ext-link" href="mailto:lamaid0502&#64;gmail.com">E-Mail</a>
+			<a class="ext-link" href="tel:+491626291461">Telefon</a>
+		</div>
+	</div>
+</header>
+
+<main class="container page">
+	<router-outlet></router-outlet>
+</main>
+
+<footer class="site-footer">
+	<div class="container footer-inner">
+		<span>© {{ currentYear }} Portfolio</span>
+		<div class="footer-links">
+			<a class="ext-link" href="mailto:lamaid0502&#64;gmail.com">lamaid0502&#64;gmail.com</a>
+			<a class="ext-link" href="tel:+491626291461">+49 162 6291461</a>
+			<a class="ext-link" href="https://github.com/Ydi5291" target="_blank" rel="noopener">GitHub</a>
+		</div>
+	</div>
+</footer>
