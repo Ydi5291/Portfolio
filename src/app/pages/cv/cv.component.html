@@ -1,0 +1,22 @@
+<section class="cv-card">
+	<header class="cv-header">
+		<h1>Lebenslauf</h1>
+		<p class="muted">
+			Hier können Sie meinen Lebenslauf als PDF herunterladen.
+		</p>
+	</header>
+
+	<div class="cv-actions">
+		<a class="btn btn-primary" [href]="cvUrl" download>
+			CV herunterladen
+		</a>
+		<a class="btn btn-secondary" routerLink="/contact">
+			Mich kontaktieren
+		</a>
+	</div>
+
+	<p class="cv-hint muted">
+		Hinweis: Wenn der Download nicht startet, stellen Sie sicher, dass die Datei <code>CV-SE.pdf</code>
+		in <code>src/assets/</code> liegt.
+	</p>
+</section>
