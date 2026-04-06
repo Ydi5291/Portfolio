@@ -383,7 +383,7 @@
 	margin: 1.5rem auto -0.5rem;
 	max-width: 980px;
 	padding: 0 1rem;
-	color: var(--color-muted);
+	color: color-mix(in srgb, var(--color-surface) 72%, transparent);
 	text-align: center;
 }
 

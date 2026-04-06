@@ -30,7 +30,19 @@ body {
 	font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 	line-height: 1.5;
 	color: var(--color-text);
-	background: linear-gradient(180deg, var(--color-bg) 0%, #ffffff 100%);
+	background-color: #05070d;
+	background:
+		radial-gradient(
+			900px 520px at 18% 0%,
+			rgba(37, 99, 235, 0.22) 0%,
+			transparent 60%
+		),
+		linear-gradient(
+			180deg,
+			#05070d 0%,
+			#060816 45%,
+			#05070d 100%
+		);
 	text-rendering: optimizeLegibility;
 }
 
