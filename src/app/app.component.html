@@ -21,7 +21,13 @@
 			<a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Startseite</a>
 			<a routerLink="/about" routerLinkActive="active">Über mich</a>
 			<a routerLink="/projects" routerLinkActive="active">Projekte</a>
-			<a class="cta-link" routerLink="/contact" routerLinkActive="active">Kontakt</a>
+			<a
+				class="cta-link"
+				[routerLink]="['/home']"
+				fragment="contact"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+			>Kontakt</a>
 		</nav>
 
 		<div class="header-actions">
@@ -56,7 +62,14 @@
 				</a>
 				<a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">Über mich</a>
 				<a routerLink="/projects" routerLinkActive="active" (click)="closeMobileMenu()">Projekte</a>
-				<a class="cta-link" routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Kontakt</a>
+				<a
+					class="cta-link"
+					[routerLink]="['/home']"
+					fragment="contact"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+					(click)="closeMobileMenu()"
+				>Kontakt</a>
 			</nav>
 		</div>
 	}
@@ -78,7 +91,12 @@
 				<a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Startseite</a>
 				<a routerLink="/about" routerLinkActive="active">Über mich</a>
 				<a routerLink="/projects" routerLinkActive="active">Projekte</a>
-				<a routerLink="/contact" routerLinkActive="active">Kontakt</a>
+				<a
+					[routerLink]="['/home']"
+					fragment="contact"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+				>Kontakt</a>
 			</nav>
 
 			<div class="footer-links" aria-label="Kontakt Links">

@@ -1,5 +1,5 @@
 
-section {
+.home-section {
 	margin-top: 1rem;
 	padding: 1rem;
 	background: var(--color-surface);
@@ -8,7 +8,7 @@ section {
 	transition: transform var(--transition), border-color var(--transition);
 }
 
-section h2 {
+.home-section h2 {
 	margin-top: 0;
 }
 
@@ -105,14 +105,14 @@ section h2 {
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
 	.hero:hover,
-	section:hover {
+	.home-section:hover {
 		transform: scale(1.01);
 		border-color: rgba(17, 24, 39, 0.18);
 	}
 }
 
 @media (max-width: 480px) {
-	section {
+	.home-section {
 		padding: 0.875rem;
 	}
 }

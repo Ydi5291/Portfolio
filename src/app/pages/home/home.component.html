@@ -31,7 +31,7 @@
 		<div class="hero-actions">
 			<div class="cta-row">
 				<a class="btn btn-primary" routerLink="/projects">Projekte ansehen</a>
-				<a class="btn btn-secondary" routerLink="/contact">Mich kontaktieren</a>
+				<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">Mich kontaktieren</a>
 				<a class="btn btn-secondary" routerLink="/cv">CV herunterladen</a>
 			</div>
 		</div>
@@ -39,7 +39,7 @@
 
 </header>
 
-<section>
+<section class="home-section">
 	<h2>Was Sie hier finden</h2>
 	<ul>
 		<li>Ausgewählte Projekte mit Highlights &amp; Tech-Stack</li>
@@ -47,3 +47,5 @@
 		<li>Kontaktmöglichkeiten</li>
 	</ul>
 </section>
+
+<app-contact-section></app-contact-section>
