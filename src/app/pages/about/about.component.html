@@ -1,28 +1,32 @@
-<h1>Über mich</h1>
+@if (embedded()) {
+	<h2>Über mich</h2>
+} @else {
+	<h1>Über mich</h1>
+}
 
 <p class="lead">
-	Ich bin <strong>Youssouf Diallo</strong> und entwickle moderne Web‑Anwendungen mit Fokus auf
-	Benutzerfreundlichkeit, saubere Komponenten‑Architektur und wartbaren Code.
+	Ich bin <strong>Youssouf Diallo</strong> und entwickle moderne Webanwendungen mit einem starken Fokus auf
+	Benutzerfreundlichkeit, klare Interfaces und sauberen Code.
 </p>
 
 <div class="cta-row">
-	<a class="btn btn-primary" routerLink="/projects">Projekt ansehen</a>
+	<a class="btn btn-primary" [routerLink]="['/home']" fragment="projects">Projekte ansehen</a>
 	<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">Mich kontaktieren</a>
 </div>
 
 <h2>Kurzprofil</h2>
 <ul>
-	<li>Schwerpunkt: Frontend‑Development &amp; intuitive Interfaces</li>
-	<li>Stack: Angular/TypeScript, SCSS, Firebase, REST APIs</li>
-	<li>Deployment &amp; Workflow: Git/GitHub, Netlify</li>
+	<li>Schwerpunkt: Frontend-Development und intuitive Interfaces</li>
+	<li>Stack: Angular, TypeScript, SCSS, Firebase und REST APIs</li>
+	<li>Workflow: Git, GitHub, Netlify und ein produktnaher Blick auf reale Nutzung</li>
 </ul>
 
-<h2>Werdegang (kurz)</h2>
+<h2>Werdegang</h2>
 <ul class="timeline">
-	<li><strong>Guinea:</strong> Abitur, anschließend Studium Wirtschaftsinformatik (3 Semester)</li>
-	<li><strong>Deutschland:</strong> Ausbildung zur Fachkraft für Lagerlogistik + Berufserfahrung</li>
-	<li><strong>Ende 2024:</strong> Neustart in Richtung Software‑Entwicklung</li>
-	<li><strong>Seitdem:</strong> Vertiefung Frontend‑Development (Remote‑Akademie München)</li>
+	<li><strong>Guinea:</strong> Abitur, danach Studium der Wirtschaftsinformatik über drei Semester</li>
+	<li><strong>Deutschland:</strong> Ausbildung in der Logistik mit anschließender mehrjähriger Berufserfahrung</li>
+	<li><strong>Ende 2024:</strong> klare Neuausrichtung in Richtung Software-Entwicklung</li>
+	<li><strong>Heute:</strong> Vertiefung im Frontend-Bereich über eine Remote-Akademie aus München</li>
 </ul>
 
 <h2>Stack</h2>
@@ -42,47 +46,42 @@
 
 <h2>Schwerpunkte</h2>
 <ul>
-	<li>Komponenten-Architektur &amp; Routing</li>
-	<li>Responsive UI &amp; saubere Styles</li>
-	<li>Build, Deploy, und Wartbarkeit</li>
+	<li>Komponenten-Architektur, Routing und klare Struktur</li>
+	<li>Responsive Interfaces, saubere Styles und gute Wartbarkeit</li>
+	<li>Build, Deployment und saubere Umsetzung von Anfang bis Ende</li>
 </ul>
 
 <h2>Ziel</h2>
 <p>
-	Klare, wartbare Interfaces bauen, die leicht erweiterbar sind und zuverlässig im Einsatz funktionieren.
+	Klare, stabile Interfaces entwickeln, die nützlich sind und sich ohne unnötige Komplexität weiterentwickeln lassen.
 </p>
 
 <details class="details">
 	<summary>Mehr über mich</summary>
 	<div class="details-body">
 		<p>
-			Mein Name ist Youssouf Diallo und ich entwickle moderne Web‑Anwendungen mit einem klaren Fokus auf
-			Benutzerfreundlichkeit, saubere Komponenten‑Architektur und wartbaren Code. Meine Leidenschaft gilt dem
-			Frontend‑Development, wo ich intuitive Interfaces schaffen möchte, die sowohl funktional als auch angenehm
-			zu benutzen sind.
+			Mein Name ist Youssouf Diallo und ich entwickle moderne Webanwendungen mit einem klaren Blick auf
+			Benutzerfreundlichkeit, Komponenten-Struktur und wartbaren Code. Am Frontend fasziniert mich besonders,
+			dass gute Interfaces gleichzeitig klar, effizient und angenehm in der Nutzung sein können.
 		</p>
 		<p>
-			Nach meinem Abitur in Guinea habe ich mich zunächst für ein Studium der Wirtschaftsinformatik entschieden,
-			das ich nach drei Semestern beendet habe. Nach meinem Umzug nach Deutschland wollte ich meine Leidenschaft
-			für IT wieder aufnehmen. Da der direkte Einstieg in die IT damals nicht möglich war, habe ich eine
-			Ausbildung zur Fachkraft für Lagerlogistik abgeschlossen und danach mehrere Jahre Berufserfahrung gesammelt.
+			Nach meinem Abitur in Guinea habe ich zunächst ein Studium der Wirtschaftsinformatik begonnen, dieses aber
+			nach drei Semestern beendet. Nach meinem Umzug nach Deutschland wollte ich zurück in die IT, bin zunächst
+			jedoch einen beruflichen Weg in der Logistik gegangen, inklusive Ausbildung und mehrjähriger Praxiserfahrung.
 		</p>
 		<p>
-			Ende 2024 habe ich mich entschieden, meinen beruflichen Weg neu auszurichten und meiner Leidenschaft für
-			Software‑Entwicklung konsequent zu folgen. Ich habe mich bei einer Akademie in München (Remote)
-			eingeschrieben, um meine Kenntnisse im Frontend‑Development mit Angular zu vertiefen und praxisnahe
-			Fähigkeiten zu erwerben.
+			Ende 2024 habe ich mich bewusst dafür entschieden, meinen beruflichen Weg neu auszurichten und mich konsequent
+			auf Software-Entwicklung zu konzentrieren. Über eine Remote-Akademie in München vertiefe ich seitdem meine
+			Frontend-Kenntnisse, insbesondere mit Angular, anhand praxisnaher Aufgaben und realitätsnaher Projekte.
 		</p>
 		<p>
-			Meine technische Expertise umfasst u. a. Angular, React &amp; TypeScript, HTML &amp; SCSS für saubere, responsive
-			Benutzeroberflächen, Git &amp; GitHub sowie Netlify für Deployment und Hosting. Zudem arbeite ich mit Firebase
-			und der Anbindung an REST APIs. In meinem Portfolio finden Sie Beispiele meiner Arbeit – darunter meine
-			Marketplace‑Plattform AfroMarket (www.afroconnect.shop), die ich vollständig selbst entwickelt habe,
-			einschließlich Stripe Connect für Online‑Zahlungen.
+			Zu meinem technischen Fundament gehören heute Angular, React, TypeScript, HTML, SCSS, Git, GitHub, Netlify,
+			Firebase und REST APIs. In diesem Portfolio zeige ich unter anderem AfroMarket, eine Marketplace-Plattform,
+			die ich eigenständig konzipiert und umgesetzt habe, inklusive Integrationen wie Stripe Connect.
 		</p>
 		<p>
-			Ich freue mich über neue Herausforderungen und bin offen für spannende Projekte und berufliche
-			Möglichkeiten.
+			Ich bin offen für ernsthafte Chancen, konkrete Projekte und Teams, in denen Eigenverantwortung, Sorgfalt
+			und technische Weiterentwicklung geschätzt werden.
 		</p>
 	</div>
 </details>

@@ -1,10 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { AboutComponent } from '../about/about.component';
+import { ProjectsComponent } from '../projects/projects.component';
 import { ContactSectionComponent } from '../../components/contact-section/contact-section.component';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, ContactSectionComponent],
+  imports: [RouterLink, AboutComponent, ProjectsComponent, ContactSectionComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

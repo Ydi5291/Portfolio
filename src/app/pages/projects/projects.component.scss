@@ -13,6 +13,11 @@
 .project {
 	background: var(--color-surface);
 	background:
+		radial-gradient(
+			160% 100% at 0% 0%,
+			rgba(37, 99, 235, 0.08) 0%,
+			transparent 45%
+		),
 		linear-gradient(
 			180deg,
 			color-mix(in srgb, var(--color-surface) 92%, var(--color-bg)) 0%,
@@ -23,6 +28,37 @@
 	border-radius: var(--radius-xl);
 	padding: 1rem;
 	transition: transform var(--transition), border-color var(--transition);
+}
+
+.project-eyebrow {
+	margin: 0 0 0.35rem;
+	font-size: 0.8rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: color-mix(in srgb, #2563eb 72%, var(--color-text));
+}
+
+.project-summary {
+	max-width: 62ch;
+}
+
+.project-proof {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 1rem 0;
+}
+
+.proof-pill {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.35rem 0.65rem;
+	border-radius: 999px;
+	border: 1px solid color-mix(in srgb, var(--color-border) 78%, #2563eb);
+	background: color-mix(in srgb, var(--color-surface) 84%, #eff6ff);
+	font-size: 0.92rem;
+	font-weight: 600;
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
@@ -69,6 +105,13 @@
 
 .project-header .btn {
 	flex-shrink: 0;
+}
+
+.project-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1rem;
 }
 
 .project-section {

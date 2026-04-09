@@ -1,14 +1,23 @@
-<h1>Projekte</h1>
+@if (embedded()) {
+	<h2>Projekte</h2>
+} @else {
+	<h1>Projekte</h1>
+}
 
 <p class="intro muted">
-	Eine Auswahl an Projekten (mit kurzen Highlights). Ersetzen Sie die Platzhalter später durch echte Links.
+	Eine gezielte Auswahl an Projekten, die zeigt, wie ich ein Webprodukt konzipiere, entwickle und sauber ausliefere.
 </p>
 
 <div class="projects">
 	<article class="project">
 		<header class="project-header">
 			<div>
+				<p class="project-eyebrow">Hauptprojekt</p>
 				<h2>AfroMarket</h2>
+				<p class="project-summary muted">
+					Marketplace-Plattform, die den B2B- und B2C-Austausch zwischen Afro-Commerce-Shops und ihren Kunden
+					vereinfachen soll.
+				</p>
 				<p class="muted">
 					Live-Projekt erreichbar unter
 					<a href="https://www.afroconnect.shop" target="_blank" rel="noopener">www.afroconnect.shop</a>.
@@ -16,25 +25,41 @@
 			</div>
 			<a class="btn btn-primary" href="https://www.afroconnect.shop" target="_blank" rel="noopener">Live</a>
 		</header>
+
+		<div class="project-proof" aria-label="Projekt-Nachweise">
+			<span class="proof-pill">Konzeption und Umsetzung in Eigenregie</span>
+			<span class="proof-pill">Produktiv live geschaltet</span>
+			<span class="proof-pill">Zahlungen und Transaktionsmails integriert</span>
+		</div>
+
 		<p>
-			Ich habe dieses Projekt komplett allein umgesetzt – von UI/UX bis Deployment.
-			Ziel ist es, den B2B- und B2C-Austausch zwischen Afro-Commerce (Shops) und ihren Kunden zu vereinfachen.
+			Dieses Projekt zeigt, dass ich mehr umsetzen kann als nur ein Frontend-Mockup: Nutzerführung, Aufbau der
+			Oberfläche, technische Integrationen, Go-live und ein insgesamt stimmiger Nutzerfluss gehören für mich zusammen.
 		</p>
 
-		<section class="project-section" aria-label="Highlights">
-			<h3>Highlights</h3>
+		<section class="project-section" aria-label="Mehrwert">
+			<h3>Mehrwert</h3>
 			<ul class="highlights">
-				<li>Klare Navigation &amp; schnelle Produkt-/Service-Übersicht</li>
-				<li>Responsive Layout für Mobile &amp; Desktop</li>
-				<li>PWA: Installierbar (Startbildschirm), schnelle Ladezeiten &amp; App-Feeling</li>
+				<li>Klare Navigation für schnellen Zugang zu Produkten, Services und Anbietern</li>
+				<li>Responsive Interface für eine einfache Nutzung auf Mobile und Desktop</li>
+				<li>Installierbare PWA mit App-Feeling und optimierten Ladezeiten</li>
+			</ul>
+		</section>
+
+		<section class="project-section" aria-label="Was das Projekt zeigt">
+			<h3>Was das Projekt zeigt</h3>
+			<ul class="highlights">
+				<li>Fähigkeit, ein vollständiges Produkt mit echter Nutzerlogik zu strukturieren</li>
+				<li>Sicherer Umgang mit Komponenten, UI-Zuständen und Frontend-Integrationen</li>
+				<li>Sorgfalt bei visueller Qualität, Konsistenz und produktiver Bereitstellung</li>
 			</ul>
 		</section>
 
 		<section class="project-section" aria-label="Integrationen">
 			<h3>Integrationen</h3>
 			<ul class="highlights">
-				<li>Payments: Stripe Connect (Online-Zahlungen)</li>
-				<li>E-Mail: SendGrid (Transaktions-/Benachrichtigungs-Mails)</li>
+				<li>Payments: Stripe Connect für Online-Zahlungen</li>
+				<li>E-Mail: SendGrid für Benachrichtigungen und Transaktionsmails</li>
 			</ul>
 		</section>
 
@@ -50,11 +75,16 @@
 		</section>
 
 		<section class="project-section" aria-label="Workflow und Deployment">
-			<h3>Workflow/Deployment</h3>
+			<h3>Workflow und Deployment</h3>
 			<ul class="badges">
 				<li class="badge">GitHub</li>
 				<li class="badge">Netlify</li>
 			</ul>
 		</section>
+
+		<div class="project-links">
+			<a class="btn btn-primary" href="https://www.afroconnect.shop" target="_blank" rel="noopener">Plattform ansehen</a>
+			<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">Über ein ähnliches Projekt sprechen</a>
+		</div>
 	</article>
 </div>

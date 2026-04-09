@@ -7,20 +7,39 @@
 
 		<button
 			class="burger-btn"
+			[class.is-open]="mobileMenuOpen"
 			type="button"
 			(click)="toggleMobileMenu()"
 			aria-label="Menü"
 			[attr.aria-expanded]="mobileMenuOpen"
 			aria-controls="mobile-menu"
 		>
-			<span class="burger-lines" aria-hidden="true"></span>
+			<span class="burger-icon" aria-hidden="true">
+				<span class="burger-line burger-line-top"></span>
+				<span class="burger-line burger-line-middle"></span>
+				<span class="burger-line burger-line-bottom"></span>
+			</span>
 			<span class="sr-only">Menü</span>
 		</button>
 
 		<nav class="nav desktop-nav">
-			<a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Startseite</a>
-			<a routerLink="/about" routerLinkActive="active">Über mich</a>
-			<a routerLink="/projects" routerLinkActive="active">Projekte</a>
+			<a
+				routerLink="/home"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+			>Startseite</a>
+			<a
+				[routerLink]="['/home']"
+				fragment="about"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+			>Über mich</a>
+			<a
+				[routerLink]="['/home']"
+				fragment="projects"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+			>Projekte</a>
 			<a
 				class="cta-link"
 				[routerLink]="['/home']"
@@ -57,11 +76,28 @@
 	@if (mobileMenuOpen) {
 		<div class="container mobile-nav-wrap">
 			<nav id="mobile-menu" class="mobile-nav" aria-label="Navigation">
-				<a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMobileMenu()">
+				<a
+					routerLink="/home"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+					(click)="closeMobileMenu()"
+				>
 					Startseite
 				</a>
-				<a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">Über mich</a>
-				<a routerLink="/projects" routerLinkActive="active" (click)="closeMobileMenu()">Projekte</a>
+				<a
+					[routerLink]="['/home']"
+					fragment="about"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+					(click)="closeMobileMenu()"
+				>Über mich</a>
+				<a
+					[routerLink]="['/home']"
+					fragment="projects"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+					(click)="closeMobileMenu()"
+				>Projekte</a>
 				<a
 					class="cta-link"
 					[routerLink]="['/home']"
@@ -75,22 +111,36 @@
 	}
 </header>
 
-<main class="container page">
+<main class="container page" [class.page-home]="isHomeLayout()">
 	<router-outlet></router-outlet>
 </main>
 
 <!-- ===== FOOTER ===== -->
 <p class="footer-cta">
-  Offen für neue Möglichkeiten als Frontend Developer.
+	Offen für neue Möglichkeiten im Frontend oder eine spannende Zusammenarbeit.
 </p>
 <footer class="site-footer">
 	<div class="container footer-inner">
 		<div class="footer-top">
 			<span class="footer-copy">© {{ currentYear }} Portfolio</span>
 			<nav class="footer-nav" aria-label="Footer Navigation">
-				<a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Startseite</a>
-				<a routerLink="/about" routerLinkActive="active">Über mich</a>
-				<a routerLink="/projects" routerLinkActive="active">Projekte</a>
+				<a
+					routerLink="/home"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+				>Startseite</a>
+				<a
+					[routerLink]="['/home']"
+					fragment="about"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+				>Über mich</a>
+				<a
+					[routerLink]="['/home']"
+					fragment="projects"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+				>Projekte</a>
 				<a
 					[routerLink]="['/home']"
 					fragment="contact"

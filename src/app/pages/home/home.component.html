@@ -1,51 +1,87 @@
-<header class="hero">
-	<div class="hero-layout">
-		<div class="hero-text">
-			<h1>Youssouf Diallo</h1>
-			<p class="tagline muted">Frontend / Full-Stack Entwickler • Werl (DE)</p>
+<div class="home-page-shell">
+	<header class="hero">
+		<div class="hero-layout">
+			<div class="hero-text">
+				<p class="hero-eyebrow">Portfolio Frontend • Angular, TypeScript, nutzerorientierte Interfaces</p>
+				<h1>Ich entwickle klare, verlässliche Web-Interfaces, die für den realen Einsatz gedacht sind.</h1>
+				<p class="tagline muted">Youssouf Diallo • Frontend- / Full-Stack-Entwickler (Junior) • Standort Werl, remote verfügbar</p>
 
-			<p>
-				Frontend‑Entwickler mit praxisnaher Erfahrung in der Entwicklung moderner Webanwendungen und einem starken
-				Hintergrund in der Logistik. Ich verbinde technisches Know‑how (JavaScript, React, Angular) mit einem tiefen
-				Verständnis für Geschäftsprozesse und Benutzeranforderungen.
-			</p>
-			<p>
-				Erfahrung in der Umsetzung responsiver UI/UX, der Integration von Firebase sowie der Arbeit mit REST APIs.
-				Strukturiertes, lösungsorientiertes Arbeiten und Teamfähigkeit zeichnen mich aus – sowohl im Remote‑Umfeld
-				als auch im operativen Betrieb.
-			</p>
-		</div>
+				<div class="hero-copy">
+					<p>
+						Ich entwickle moderne Webanwendungen mit einem klaren Fokus auf Verständlichkeit, flüssige Nutzung und
+						wartbaren Code. Mein Ziel ist es, aus einer fachlichen Anforderung ein nützliches, schnelles und
+						vertrauenswürdiges Interface zu machen.
+					</p>
+					<p>
+						Ich verbinde eine solide technische Basis in Angular, TypeScript, SCSS, Firebase und REST APIs mit einem
+						praxisnahen Blick auf reale Abläufe. So entstehen Produkte, die nicht nur gut aussehen, sondern auch im
+						produktiven Einsatz bestehen.
+					</p>
+				</div>
 
-		<div class="hero-media" aria-hidden="true">
-			<img
-				class="profile-photo"
-				src="assets/images/Youssouf.jpg"
-				alt=""
-				width="220"
-				height="220"
-				decoding="async"
-				fetchpriority="high"
-			>
-		</div>
+				<ul class="hero-points" aria-label="Kernpunkte">
+					<li>Responsive Interfaces für Desktop und Mobile</li>
+					<li>Saubere, erweiterbare Komponenten-Architektur</li>
+					<li>Deployment, Integrationen und Finishing aus einer Hand</li>
+				</ul>
+			</div>
 
-		<div class="hero-actions">
-			<div class="cta-row">
-				<a class="btn btn-primary" routerLink="/projects">Projekte ansehen</a>
-				<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">Mich kontaktieren</a>
-				<a class="btn btn-secondary" routerLink="/cv">CV herunterladen</a>
+			<div class="hero-media" aria-hidden="true">
+				<img
+					class="profile-photo"
+					src="assets/images/Youssouf.jpg"
+					alt=""
+					width="220"
+					height="220"
+					decoding="async"
+					fetchpriority="high"
+				>
+			</div>
+
+			<div class="hero-actions">
+				<div class="hero-stats" aria-label="Schnelle Eckdaten">
+					<div class="stat-card">
+						<strong class="stat-value">1</strong>
+						<span class="stat-label">live geschaltete Plattform</span>
+					</div>
+					<div class="stat-card">
+						<strong class="stat-value">100%</strong>
+						<span class="stat-label">eigenständig umgesetzt bei AfroMarket</span>
+					</div>
+					<div class="stat-card">
+						<strong class="stat-value">Angular</strong>
+						<span class="stat-label">Kern-Stack mit TypeScript und Firebase</span>
+					</div>
+				</div>
+
+				<div class="cta-row">
+					<a class="btn btn-primary" [routerLink]="['/home']" fragment="projects">Projekte ansehen</a>
+					<a class="btn btn-secondary" [routerLink]="['/home']" fragment="about">Mein Profil entdecken</a>
+					<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">Mich kontaktieren</a>
+					<a class="btn btn-secondary" routerLink="/cv">CV herunterladen</a>
+				</div>
 			</div>
 		</div>
+	</header>
+
+	<div class="landing-stack">
+		<section class="home-section">
+		<h2>Was Sie hier finden</h2>
+		<ul>
+			<li>Einen schnellen Überblick über mein Profil, meinen Weg und meine Arbeitsweise</li>
+			<li>Ein konkretes, bereits live geschaltetes Projekt mit technischem und fachlichem Mehrwert</li>
+			<li>Einfache Kontaktmöglichkeiten für ein Gespräch über Chancen, Projekte oder Zusammenarbeit</li>
+		</ul>
+		</section>
+
+		<section id="about" class="home-section section-shell">
+			<app-about [embedded]="true"></app-about>
+		</section>
+
+		<section id="projects" class="home-section section-shell">
+			<app-projects [embedded]="true"></app-projects>
+		</section>
+
+		<app-contact-section></app-contact-section>
 	</div>
-
-</header>
-
-<section class="home-section">
-	<h2>Was Sie hier finden</h2>
-	<ul>
-		<li>Ausgewählte Projekte mit Highlights &amp; Tech-Stack</li>
-		<li>Kurzer Überblick über Skills &amp; Arbeitsweise</li>
-		<li>Kontaktmöglichkeiten</li>
-	</ul>
-</section>
-
-<app-contact-section></app-contact-section>
+</div>

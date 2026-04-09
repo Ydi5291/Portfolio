@@ -27,4 +27,8 @@ export class AppComponent {
   closeMobileMenu(): void {
     this.mobileMenuOpen = false;
   }
+
+	isHomeLayout(): boolean {
+		return this.router.url === '/' || this.router.url.startsWith('/home') || this.router.url.startsWith('/contact');
+	}
 }
