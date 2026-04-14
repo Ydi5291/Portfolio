@@ -1,6 +1,8 @@
 /* Global styles (minimal) */
 
 :root {
+	--header-offset: 88px;
+	--accent-chrome: #89bcd9;
 	--color-text: #111827;
 	--color-muted: #6b7280;
 	--color-surface: #ffffff;
@@ -27,6 +29,7 @@ body {
 
 html {
 	scroll-behavior: smooth;
+	scroll-padding-top: var(--header-offset);
 }
 
 body {
@@ -220,19 +223,20 @@ code {
 .badge {
 	display: inline-flex;
 	align-items: center;
-	padding: 0.25rem 0.55rem;
-	border: 1px solid color-mix(in srgb, var(--color-border) 70%, var(--color-text));
+	padding: 0.4rem 0.8rem;
+	border: 1px solid color-mix(in srgb, var(--accent-chrome) 68%, var(--color-text));
 	border-radius: 999px;
-	background-color: var(--color-surface);
+	background-color: var(--accent-chrome);
 	background:
 		linear-gradient(
 			180deg,
-			color-mix(in srgb, var(--color-surface) 92%, var(--color-bg)) 0%,
-			var(--color-surface) 52%,
-			color-mix(in srgb, var(--color-bg) 65%, var(--color-surface)) 100%
+			color-mix(in srgb, white 34%, var(--accent-chrome)) 0%,
+			var(--accent-chrome) 55%,
+			color-mix(in srgb, #5f97b5 34%, var(--accent-chrome)) 100%
 		);
-	color: var(--color-text);
-	font-size: 0.95rem;
+	color: #0f172a;
+	font-size: 1rem;
+	font-weight: 650;
 	position: relative;
 	overflow: hidden;
 	transition: transform var(--transition), background-color var(--transition), border-color var(--transition),
@@ -255,7 +259,18 @@ code {
 
 .badge:hover {
 	transform: translateY(-1px);
-	border-color: color-mix(in srgb, var(--color-border) 55%, var(--color-text));
+	border-color: color-mix(in srgb, var(--accent-chrome) 48%, var(--color-text));
+}
+
+@media (min-width: 1024px) {
+	.badges {
+		gap: 0.7rem;
+	}
+
+	.badge {
+		padding: 0.5rem 1rem;
+		font-size: 1.08rem;
+	}
 }
 
 @media (max-width: 480px) {

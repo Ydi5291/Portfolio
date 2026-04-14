@@ -9,6 +9,7 @@ a {
 
 .home-section {
 	padding: 1rem;
+	text-align: center;
 	background: var(--color-surface);
 	border: 1px solid var(--color-border);
 	border-radius: var(--radius-md);
@@ -19,8 +20,12 @@ a {
 	scroll-margin-top: 6rem;
 }
 
-.home-section h2 {
+.home-section h1 {
 	margin-top: 0;
+	margin-bottom: 0.85rem;
+	font-size: clamp(2rem, 1.45rem + 1.6vw, 3.2rem);
+	line-height: 1.08;
+	letter-spacing: -0.035em;
 }
 
 .sr-only {
@@ -39,6 +44,7 @@ a {
 	margin-top: 0;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	gap: 0.5rem;
 }
 
@@ -52,6 +58,7 @@ a {
 .contact-link {
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 	gap: 0.4rem;
 	padding: 0.4rem 0.6rem;
 	border-radius: 999px;
@@ -78,6 +85,8 @@ a {
 
 .contact-form {
 	order: 10;
+	width: min(100%, 920px);
+	margin-inline: auto;
 }
 
 .form {
@@ -95,6 +104,7 @@ a {
 .field {
 	display: grid;
 	gap: 0.35rem;
+	text-align: left;
 }
 
 .label {
@@ -129,7 +139,7 @@ a {
 
 .form-actions {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 }
 
 .contact-card {
@@ -145,6 +155,7 @@ a {
 	border: 1px solid var(--color-border);
 	border-radius: var(--radius-xl);
 	transition: transform var(--transition), border-color var(--transition);
+	text-align: center;
 }
 
 .contact-card.contact-form {

@@ -1,8 +1,8 @@
-<header class="site-header">
+<header class="site-header" [class.hide-header]="!isHeaderVisible" [class.scrolled]="isScrolled" [class.home-mobile-menu-open]="mobileMenuOpen && isHomeLayout()">
 	<div class="container header-inner">
 		<a class="brand" routerLink="/home">
 			<img class="brand-logo" src="assets/images/Youssouf.jpg" alt="Youssouf Diallo" width="40" height="40" decoding="async">
-			<span class="brand-text">Portfolio</span>
+			<span class="brand-text">Y. Diallo</span>
 		</a>
 
 		<button
@@ -28,6 +28,12 @@
 				routerLinkActive="active"
 				[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
 			>Startseite</a>
+			<a
+				[routerLink]="['/home']"
+				fragment="why"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+			>Warum ich</a>
 			<a
 				[routerLink]="['/home']"
 				fragment="about"
@@ -86,6 +92,13 @@
 				</a>
 				<a
 					[routerLink]="['/home']"
+					fragment="why"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
+					(click)="closeMobileMenu()"
+				>Warum ich</a>
+				<a
+					[routerLink]="['/home']"
 					fragment="about"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
@@ -111,18 +124,18 @@
 	}
 </header>
 
-<main class="container page" [class.page-home]="isHomeLayout()">
+<main class="container page" [class.page-home]="isHomeLayout()" [class.mobile-menu-open]="mobileMenuOpen">
 	<router-outlet></router-outlet>
 </main>
 
 <!-- ===== FOOTER ===== -->
-<p class="footer-cta">
-	Offen für neue Möglichkeiten im Frontend oder eine spannende Zusammenarbeit.
+<p class="footer-cta scroll-animate slide-bottom">
+	Verfügbar für Frontend-Projekte und spannende Herausforderungen.
 </p>
 <footer class="site-footer">
 	<div class="container footer-inner">
-		<div class="footer-top">
-			<span class="footer-copy">© {{ currentYear }} Portfolio</span>
+		<div class="footer-top scroll-animate slide-bottom">
+			<span class="footer-copy">© {{ currentYear }} Y. Diallo</span>
 			<nav class="footer-nav" aria-label="Footer Navigation">
 				<a
 					routerLink="/home"
@@ -172,3 +185,9 @@
 		</div>
 	</div>
 </footer>
+
+@if (isScrolled) {
+	<button class="scroll-top-btn" type="button" (click)="scrollToTop()" aria-label="Nach oben scrollen">
+		<img src="assets/images/arrow-up.png" alt="" width="20" height="20" decoding="async">
+	</button>
+}
