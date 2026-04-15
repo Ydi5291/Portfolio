@@ -24,7 +24,11 @@ export class HomeComponent implements OnInit {
     },
     {
       icon: 'assets/images/remote.png',
-      text: 'Remote oder vor Ort verfugbar'
+      text: 'Ich bin für Remote verfügbar'
+    },
+    {
+      icon: 'assets/images/location.png',
+      text: 'Ich bin bereit für die Arbeit vor Ort'
     }
   ];
 
