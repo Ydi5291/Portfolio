@@ -43,8 +43,17 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   toggleMobileMenu(): void {
-    this.mobileMenuOpen = !this.mobileMenuOpen;
-		this.queueHomeMobileMenuGeometrySync();
+    if (this.mobileMenuOpen) {
+      this.closeMobileMenu();
+      return;
+    }
+
+    if (this.shouldReturnToHeroBeforeOpeningMenu()) {
+      this.scrollHeroIntoView();
+    }
+
+    this.mobileMenuOpen = true;
+    this.queueHomeMobileMenuGeometrySync();
   }
 
   closeMobileMenu(): void {
@@ -63,6 +72,20 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 	isHomeLayout(): boolean {
 		return this.router.url === '/' || this.router.url.startsWith('/home') || this.router.url.startsWith('/contact');
 	}
+
+  private shouldReturnToHeroBeforeOpeningMenu(): boolean {
+    return isPlatformBrowser(this.platformId) && this.isHomeLayout() && window.innerWidth <= 768;
+  }
+
+  private scrollHeroIntoView(): void {
+    const hero = this.document.getElementById('hero');
+    if (!hero) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    hero.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
 
   @HostListener('window:scroll')
   onWindowScroll(): void {

@@ -92,12 +92,29 @@
 	overflow: hidden;
 	isolation: isolate;
 	backdrop-filter: blur(14px);
-	background: color-mix(in srgb, var(--shell-chrome) 84%, white 16%);
+	background: var(--shell-chrome);
 	border-bottom: 1px solid rgba(17, 24, 39, 0.12);
 	box-shadow: 0 12px 34px rgba(15, 23, 42, 0.12);
 	animation: fadeInDown 0.6s ease;
 	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
 	will-change: transform;
+}
+
+.site-header.home-layout {
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	border: 1px solid rgba(120, 168, 255, 0.2);
+	border-radius: 0;
+	background: var(--shell-chrome);
+	box-shadow: 0 18px 42px rgba(2, 6, 23, 0.3);
+	backdrop-filter: blur(18px);
+}
+
+.site-header.home-layout .header-inner {
+	padding-inline: 1.25rem;
 }
 
 .site-header::after {
@@ -115,14 +132,20 @@
 }
 
 .site-header.scrolled {
-	background: color-mix(in srgb, var(--shell-chrome) 92%, white 8%);
+	background: var(--shell-chrome);
 	border-bottom-color: rgba(15, 23, 42, 0.16);
 	box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08), 0 18px 44px rgba(2, 6, 23, 0.18);
 }
 
+.site-header.home-layout.scrolled {
+	background: var(--shell-chrome);
+	border-color: rgba(120, 168, 255, 0.28);
+	box-shadow: 0 16px 38px rgba(2, 6, 23, 0.34);
+}
+
 @media (hover: hover) {
 	.site-header:hover {
-		background: color-mix(in srgb, var(--shell-chrome) 88%, white 12%);
+		background: var(--shell-chrome);
 		border-bottom-color: rgba(15, 23, 42, 0.18);
 	}
 }
@@ -181,6 +204,13 @@
 	&:hover &-logo {
 		transform: scale(1.08) rotate(2deg);
 	}
+}
+
+.brand-text {
+	font-family: var(--font-display);
+	font-size: 1.05rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
 }
 
 /* =====================
@@ -667,6 +697,16 @@
 ===================== */
 
 @media (max-width: 768px) {
+	.site-header.home-layout {
+		width: 100%;
+		top: 0;
+		margin-top: 0;
+	}
+
+	.site-header.home-layout .header-inner {
+		padding-inline: 1rem;
+	}
+
 	.mobile-nav-wrap {
 		position: absolute;
 		top: calc(100% + 1rem);

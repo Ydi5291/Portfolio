@@ -1,6 +1,6 @@
-<header class="site-header" [class.hide-header]="!isHeaderVisible" [class.scrolled]="isScrolled" [class.home-mobile-menu-open]="mobileMenuOpen && isHomeLayout()">
+<header class="site-header" [class.hide-header]="!isHeaderVisible" [class.scrolled]="isScrolled" [class.home-layout]="isHomeLayout()" [class.home-mobile-menu-open]="mobileMenuOpen && isHomeLayout()">
 	<div class="container header-inner">
-		<a class="brand" routerLink="/home">
+		<a class="brand" [routerLink]="['/home']" fragment="hero" (click)="closeMobileMenu()">
 			<img class="brand-logo" src="assets/images/Youssouf.jpg" alt="Youssouf Diallo" width="40" height="40" decoding="async">
 			<span class="brand-text">Y. Diallo</span>
 		</a>
@@ -24,7 +24,8 @@
 
 		<nav class="nav desktop-nav">
 			<a
-				routerLink="/home"
+				[routerLink]="['/home']"
+				fragment="hero"
 				routerLinkActive="active"
 				[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
 			>Startseite</a>
@@ -83,7 +84,8 @@
 		<div class="container mobile-nav-wrap">
 			<nav id="mobile-menu" class="mobile-nav" aria-label="Navigation">
 				<a
-					routerLink="/home"
+					[routerLink]="['/home']"
+					fragment="hero"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
 					(click)="closeMobileMenu()"
@@ -138,7 +140,8 @@
 			<span class="footer-copy">© {{ currentYear }} Y. Diallo</span>
 			<nav class="footer-nav" aria-label="Footer Navigation">
 				<a
-					routerLink="/home"
+					[routerLink]="['/home']"
+					fragment="hero"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
 				>Startseite</a>
