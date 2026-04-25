@@ -5,7 +5,8 @@
 				<div class="hero-text">
 					<h1 class="hero-name">Youssouf Diallo</h1>
 					<p class="tagline muted">
-						Frontend- / Full-Stack-Entwickler (Junior)<br>
+						{{ copy().heroRole }}<br>
+						<span>{{ copy().heroIntro }}</span><br>
 						<span class="hero-meta" aria-live="polite">
 							<img [src]="currentHeroMeta.icon" alt="" width="20" height="20" decoding="async">
 							<span>{{ currentHeroMeta.text }}</span>
@@ -27,13 +28,13 @@
 
 				<div class="hero-actions">
 					<div class="cta-row">
-						<a class="btn btn-primary" [routerLink]="['/home']" fragment="projects">Projekte ansehen</a>
-						<a class="btn btn-secondary" [routerLink]="['/home']" fragment="about">Mein Profil entdecken</a>
-						<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">Mich kontaktieren</a>
-						<a class="btn btn-secondary" routerLink="/cv">CV herunterladen</a>
+						<a class="btn btn-primary" [routerLink]="['/home']" fragment="projects">{{ copy().projectsCta }}</a>
+						<a class="btn btn-secondary" [routerLink]="['/home']" fragment="about">{{ copy().aboutCta }}</a>
+						<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">{{ copy().contactCta }}</a>
+						<a class="btn btn-secondary" routerLink="/cv">{{ copy().cvCta }}</a>
 					</div>
 
-					<a class="hero-scroll-link" [routerLink]="['/home']" fragment="why" aria-label="Zur Warum-ich-Sektion scrollen">
+					<a class="hero-scroll-link" [routerLink]="['/home']" fragment="why" [attr.aria-label]="copy().scrollLabel">
 						<img src="assets/images/arrow-down.png" alt="" width="28" height="28" decoding="async">
 					</a>
 				</div>
@@ -42,19 +43,10 @@
 
 		<div class="landing-stack">
 			<section id="why" class="home-section section-shell">
-				<h1>Warum ich?</h1>
-				<p>
-					Nach meinem Einstieg in die Wirtschaftsinformatik entdeckte ich früh mein Interesse an Technologie und
-					Softwareentwicklung.
-				</p>
-				<p>
-					Nach meiner Ausbildung im Bereich Lagerlogistik habe ich mich bewusst entschieden, meiner Leidenschaft zu
-					folgen und mich vollständig auf die Entwicklung moderner Webanwendungen zu konzentrieren.
-				</p>
-				<p>
-					Heute entwickle ich Anwendungen mit Angular und React, mit Fokus auf saubere Architektur, Performance und
-					Benutzerfreundlichkeit.
-				</p>
+				<h1>{{ copy().whyTitle }}</h1>
+				@for (paragraph of copy().whyParagraphs; track paragraph) {
+					<p>{{ paragraph }}</p>
+				}
 			</section>
 
 			<section id="about" class="home-section section-shell">

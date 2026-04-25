@@ -10,7 +10,7 @@
 			[class.is-open]="mobileMenuOpen"
 			type="button"
 			(click)="toggleMobileMenu()"
-			aria-label="Menü"
+			[attr.aria-label]="copy().menu"
 			[attr.aria-expanded]="mobileMenuOpen"
 			aria-controls="mobile-menu"
 		>
@@ -19,7 +19,7 @@
 				<span class="burger-line burger-line-middle"></span>
 				<span class="burger-line burger-line-bottom"></span>
 			</span>
-			<span class="sr-only">Menü</span>
+			<span class="sr-only">{{ copy().menu }}</span>
 		</button>
 
 		<nav class="nav desktop-nav">
@@ -28,55 +28,58 @@
 				fragment="hero"
 				routerLinkActive="active"
 				[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-			>Startseite</a>
+			>{{ copy().home }}</a>
 			<a
 				[routerLink]="['/home']"
 				fragment="why"
 				routerLinkActive="active"
 				[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-			>Warum ich</a>
+			>{{ copy().why }}</a>
 			<a
 				[routerLink]="['/home']"
 				fragment="about"
 				routerLinkActive="active"
 				[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-			>Über mich</a>
+			>{{ copy().about }}</a>
 			<a
 				[routerLink]="['/home']"
 				fragment="projects"
 				routerLinkActive="active"
 				[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-			>Projekte</a>
+			>{{ copy().projects }}</a>
 			<a
 				class="cta-link"
 				[routerLink]="['/home']"
 				fragment="contact"
 				routerLinkActive="active"
 				[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-			>Kontakt</a>
+			>{{ copy().contact }}</a>
 		</nav>
 
 		<div class="header-actions">
-			<a class="ext-link icon-link" href="https://github.com/Ydi5291" target="_blank" rel="noopener" aria-label="GitHub">
-				<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-					<path
-						d="M12 .5C5.73.5.5 5.85.5 12.47c0 5.29 3.44 9.78 8.2 11.36.6.12.82-.27.82-.59v-2.2c-3.34.75-4.04-1.66-4.04-1.66-.55-1.45-1.34-1.84-1.34-1.84-1.1-.78.08-.77.08-.77 1.22.09 1.86 1.29 1.86 1.29 1.08 1.92 2.83 1.36 3.52 1.04.11-.81.42-1.36.76-1.67-2.67-.31-5.47-1.38-5.47-6.16 0-1.36.46-2.47 1.24-3.34-.13-.31-.54-1.58.12-3.29 0 0 1.01-.33 3.3 1.27.96-.27 1.98-.4 3-.41 1.02 0 2.04.14 3 .41 2.29-1.6 3.3-1.27 3.3-1.27.66 1.71.25 2.98.12 3.29.77.87 1.24 1.98 1.24 3.34 0 4.79-2.81 5.85-5.49 6.16.43.39.82 1.14.82 2.31v3.42c0 .33.22.71.83.59 4.76-1.58 8.2-6.07 8.2-11.36C23.5 5.85 18.27.5 12 .5z"
-					/>
-				</svg>
-				<span class="sr-only">GitHub</span>
-			</a>
-			<a class="ext-link icon-link" href="mailto:lamaid0502&#64;gmail.com" aria-label="E-Mail">
-				<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-					<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.5-.5a.5.5 0 0 0-.5.5v.29l6 4.15 6-4.15V6.5a.5.5 0 0 0-.5-.5h-11Zm11.5 3.16-5.43 3.76a1 1 0 0 1-1.14 0L6 9.16v8.34a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V9.16Z"/>
-				</svg>
-				<span class="sr-only">E-Mail</span>
-			</a>
-			<a class="ext-link icon-link" href="tel:+491626291461" aria-label="Telefon">
-				<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-					<path d="M6.62 10.79a15.23 15.23 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.4 21 3 13.6 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.27.2 2.47.57 3.58a1 1 0 0 1-.24 1.01l-2.21 2.2Z"/>
-				</svg>
-				<span class="sr-only">Telefon</span>
-			</a>
+			<app-language-switcher class="header-language-switcher"></app-language-switcher>
+			<div class="header-links">
+				<a class="ext-link icon-link" href="https://github.com/Ydi5291" target="_blank" rel="noopener" aria-label="GitHub">
+					<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+						<path
+							d="M12 .5C5.73.5.5 5.85.5 12.47c0 5.29 3.44 9.78 8.2 11.36.6.12.82-.27.82-.59v-2.2c-3.34.75-4.04-1.66-4.04-1.66-.55-1.45-1.34-1.84-1.34-1.84-1.1-.78.08-.77.08-.77 1.22.09 1.86 1.29 1.86 1.29 1.08 1.92 2.83 1.36 3.52 1.04.11-.81.42-1.36.76-1.67-2.67-.31-5.47-1.38-5.47-6.16 0-1.36.46-2.47 1.24-3.34-.13-.31-.54-1.58.12-3.29 0 0 1.01-.33 3.3 1.27.96-.27 1.98-.4 3-.41 1.02 0 2.04.14 3 .41 2.29-1.6 3.3-1.27 3.3-1.27.66 1.71.25 2.98.12 3.29.77.87 1.24 1.98 1.24 3.34 0 4.79-2.81 5.85-5.49 6.16.43.39.82 1.14.82 2.31v3.42c0 .33.22.71.83.59 4.76-1.58 8.2-6.07 8.2-11.36C23.5 5.85 18.27.5 12 .5z"
+						/>
+					</svg>
+					<span class="sr-only">GitHub</span>
+				</a>
+				<a class="ext-link icon-link" href="mailto:lamaid0502&#64;gmail.com" aria-label="E-Mail">
+					<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+						<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.5-.5a.5.5 0 0 0-.5.5v.29l6 4.15 6-4.15V6.5a.5.5 0 0 0-.5-.5h-11Zm11.5 3.16-5.43 3.76a1 1 0 0 1-1.14 0L6 9.16v8.34a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V9.16Z"/>
+					</svg>
+					<span class="sr-only">E-Mail</span>
+				</a>
+				<a class="ext-link icon-link" href="tel:+491626291461" aria-label="Telefon">
+					<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+						<path d="M6.62 10.79a15.23 15.23 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.4 21 3 13.6 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.27.2 2.47.57 3.58a1 1 0 0 1-.24 1.01l-2.21 2.2Z"/>
+					</svg>
+					<span class="sr-only">Telefon</span>
+				</a>
+			</div>
 		</div>
 	</div>
 
@@ -90,7 +93,7 @@
 					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
 					(click)="closeMobileMenu()"
 				>
-					Startseite
+					{{ copy().home }}
 				</a>
 				<a
 					[routerLink]="['/home']"
@@ -98,21 +101,21 @@
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
 					(click)="closeMobileMenu()"
-				>Warum ich</a>
+				>{{ copy().why }}</a>
 				<a
 					[routerLink]="['/home']"
 					fragment="about"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
 					(click)="closeMobileMenu()"
-				>Über mich</a>
+				>{{ copy().about }}</a>
 				<a
 					[routerLink]="['/home']"
 					fragment="projects"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
 					(click)="closeMobileMenu()"
-				>Projekte</a>
+				>{{ copy().projects }}</a>
 				<a
 					class="cta-link"
 					[routerLink]="['/home']"
@@ -120,7 +123,7 @@
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
 					(click)="closeMobileMenu()"
-				>Kontakt</a>
+				>{{ copy().contact }}</a>
 			</nav>
 		</div>
 	}
@@ -132,37 +135,40 @@
 
 <!-- ===== FOOTER ===== -->
 <p class="footer-cta scroll-animate slide-bottom">
-	Verfügbar für Frontend-Projekte und spannende Herausforderungen.
+	{{ copy().footerCta }}
 </p>
 <footer class="site-footer">
 	<div class="container footer-inner">
 		<div class="footer-top scroll-animate slide-bottom">
-			<span class="footer-copy">© {{ currentYear }} Y. Diallo</span>
+			<div class="footer-intro">
+				<span class="footer-copy">© {{ currentYear }} Y. Diallo – {{ copy().footerRole }}</span>
+				<p class="footer-description">{{ copy().footerDescription }}</p>
+			</div>
 			<nav class="footer-nav" aria-label="Footer Navigation">
 				<a
 					[routerLink]="['/home']"
 					fragment="hero"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-				>Startseite</a>
+				>{{ copy().home }}</a>
 				<a
 					[routerLink]="['/home']"
 					fragment="about"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-				>Über mich</a>
+				>{{ copy().about }}</a>
 				<a
 					[routerLink]="['/home']"
 					fragment="projects"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-				>Projekte</a>
+				>{{ copy().projects }}</a>
 				<a
 					[routerLink]="['/home']"
 					fragment="contact"
 					routerLinkActive="active"
 					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-				>Kontakt</a>
+				>{{ copy().contact }}</a>
 			</nav>
 
 			<div class="footer-links" aria-label="Kontakt Links">
@@ -190,7 +196,7 @@
 </footer>
 
 @if (isScrolled) {
-	<button class="scroll-top-btn" type="button" (click)="scrollToTop()" aria-label="Nach oben scrollen">
+	<button class="scroll-top-btn" type="button" (click)="scrollToTop()" [attr.aria-label]="copy().scrollTop">
 		<img src="assets/images/arrow-up.png" alt="" width="20" height="20" decoding="async">
 	</button>
 }

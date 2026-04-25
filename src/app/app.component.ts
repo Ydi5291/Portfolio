@@ -1,11 +1,41 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, HostListener, Inject, NgZone, OnDestroy, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, Component, HostListener, Inject, NgZone, OnDestroy, PLATFORM_ID, computed } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
+import { LanguageSwitcherComponent } from './components/language-switcher/language-switcher.component';
+import { LanguageService } from './core/language.service';
+
+const APP_COPY = {
+  de: {
+    menu: 'Menü',
+    home: 'Startseite',
+    why: 'Warum ich',
+    about: 'Über mich',
+    projects: 'Projekte',
+    contact: 'Kontakt',
+    footerCta: 'Verfügbar für Frontend-Entwicklung mit Angular / React und produktnahe Webanwendungen.',
+    footerRole: 'Frontend Developer',
+    footerDescription: 'Entwicklung moderner Webanwendungen mit Fokus auf Angular, React und skalierbare Architekturen.',
+    scrollTop: 'Nach oben scrollen'
+  },
+  en: {
+    menu: 'Menu',
+    home: 'Home',
+    why: 'Why me',
+    about: 'About me',
+    projects: 'Projects',
+    contact: 'Contact',
+    footerCta: 'Available for frontend development with Angular / React and product-oriented web applications.',
+    footerRole: 'Frontend Developer',
+    footerDescription: 'Building modern web applications focused on Angular, React, and scalable architectures.',
+    scrollTop: 'Scroll to top'
+  }
+} as const;
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, LanguageSwitcherComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -17,12 +47,14 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   isHeaderVisible = true;
   lastScrollTop = 0;
   private scrollObserver?: IntersectionObserver;
+  readonly copy = computed(() => APP_COPY[this.languageService.language()]);
 
   constructor(
 		private readonly router: Router,
 		private readonly ngZone: NgZone,
 		@Inject(DOCUMENT) private readonly document: Document,
-		@Inject(PLATFORM_ID) private readonly platformId: object
+		@Inject(PLATFORM_ID) private readonly platformId: object,
+		private readonly languageService: LanguageService
 	) {
     this.router.events.pipe(takeUntilDestroyed()).subscribe((event) => {
       if (event instanceof NavigationEnd) {

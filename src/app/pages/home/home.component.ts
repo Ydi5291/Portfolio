@@ -1,9 +1,53 @@
-import { Component, OnDestroy, OnInit, PLATFORM_ID, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, PLATFORM_ID, computed, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { ContactSectionComponent } from '../../components/contact-section/contact-section.component';
+import { LanguageService } from '../../core/language.service';
+
+const HOME_COPY = {
+  de: {
+    heroRole: 'Frontend- / Full-Stack-Entwickler',
+    heroIntro: 'Ich entwickle skalierbare Webanwendungen mit Angular, Firebase und modernen Technologien.',
+    heroMetaItems: [
+      { icon: 'assets/images/location.png', text: 'Ich wohne in Werl' },
+      { icon: 'assets/images/remote.png', text: 'Ich bin für Remote verfügbar' },
+      { icon: 'assets/images/location.png', text: 'Ich bin bereit für die Arbeit vor Ort' }
+    ],
+    projectsCta: 'Projekte ansehen',
+    aboutCta: 'Mein Profil entdecken',
+    contactCta: 'Mich kontaktieren',
+    cvCta: 'CV herunterladen',
+    scrollLabel: 'Zur Warum-ich-Sektion scrollen',
+    whyTitle: 'Warum ich?',
+    whyParagraphs: [
+      'Ich habe mich bewusst für den Weg in die Softwareentwicklung entschieden und entwickle heute moderne Webanwendungen mit Angular und React.',
+      'Mit meiner eigenen E-Commerce-Plattform „AfroMarket“ habe ich ein reales Produkt von Grund auf konzipiert und umgesetzt – inklusive Authentifizierung, Zahlungsintegration (Stripe) und rollenbasierten Dashboards.',
+      'Ich arbeite strukturiert, lösungsorientiert und mit Fokus auf saubere Architektur, Performance und Benutzerfreundlichkeit.'
+    ]
+  },
+  en: {
+    heroRole: 'Frontend / Full-Stack Developer',
+    heroIntro: 'I build scalable web applications with Angular, Firebase, and modern technologies.',
+    heroMetaItems: [
+      { icon: 'assets/images/location.png', text: 'Based in Werl' },
+      { icon: 'assets/images/remote.png', text: 'Available for remote work' },
+      { icon: 'assets/images/location.png', text: 'Open to on-site work' }
+    ],
+    projectsCta: 'View projects',
+    aboutCta: 'Explore my profile',
+    contactCta: 'Contact me',
+    cvCta: 'Download CV',
+    scrollLabel: 'Scroll to the Why me section',
+    whyTitle: 'Why me?',
+    whyParagraphs: [
+      'I deliberately chose the path into software development and now build modern web applications with Angular and React.',
+      'With my own e-commerce platform “AfroMarket”, I designed and delivered a real product from scratch, including authentication, payment integration with Stripe, and role-based dashboards.',
+      'I work in a structured and solution-oriented way, with a strong focus on clean architecture, performance, and usability.'
+    ]
+  }
+} as const;
 
 @Component({
   selector: 'app-home',
@@ -15,22 +59,9 @@ export class HomeComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly platformId = inject(PLATFORM_ID);
+  private readonly languageService = inject(LanguageService);
   private rotationTimerId: number | null = null;
-
-  readonly heroMetaItems = [
-    {
-      icon: 'assets/images/location.png',
-      text: 'Ich wohne in Werl'
-    },
-    {
-      icon: 'assets/images/remote.png',
-      text: 'Ich bin für Remote verfügbar'
-    },
-    {
-      icon: 'assets/images/location.png',
-      text: 'Ich bin bereit für die Arbeit vor Ort'
-    }
-  ];
+  readonly copy = computed(() => HOME_COPY[this.languageService.language()]);
 
   activeHeroMetaIndex = 0;
 
@@ -44,7 +75,7 @@ export class HomeComponent implements OnInit {
 
     if (isPlatformBrowser(this.platformId)) {
       this.rotationTimerId = window.setInterval(() => {
-        this.activeHeroMetaIndex = (this.activeHeroMetaIndex + 1) % this.heroMetaItems.length;
+        this.activeHeroMetaIndex = (this.activeHeroMetaIndex + 1) % this.copy().heroMetaItems.length;
       }, 3000);
     }
   }
@@ -56,7 +87,7 @@ export class HomeComponent implements OnInit {
   }
 
   get currentHeroMeta() {
-    return this.heroMetaItems[this.activeHeroMetaIndex];
+    return this.copy().heroMetaItems[this.activeHeroMetaIndex];
   }
 
 }

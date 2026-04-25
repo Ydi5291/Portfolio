@@ -1,25 +1,27 @@
-<h1>Projekte</h1>
+<h1>{{ copy().title }}</h1>
 
 <p class="intro muted">
-	Eine gezielte Auswahl an Projekten, die zeigt, wie ich ein Webprodukt konzipiere, entwickle und sauber ausliefere.
+	{{ copy().intro }}
 </p>
 
 <div class="projects">
 	<article class="project">
 		<header class="project-header">
 			<div>
-				<p class="project-eyebrow">Hauptprojekt</p>
+				<p class="project-eyebrow">{{ copy().eyebrow }}</p>
 				<h2>AfroMarket</h2>
 				<p class="project-summary muted">
-					Marketplace-Plattform, die den B2B- und B2C-Austausch zwischen Afro-Commerce-Shops und ihren Kunden
-					vereinfachen soll.
+					{{ copy().summaryPrimary }}
+				</p>
+				<p class="project-summary muted">
+					{{ copy().summarySecondary }}
 				</p>
 				<a
 					class="project-logo-link"
 					href="https://www.afroconnect.shop"
 					target="_blank"
 					rel="noopener"
-					aria-label="AfroMarket live ansehen"
+					[attr.aria-label]="copy().logoLabel"
 				>
 					<img
 						class="project-logo"
@@ -29,68 +31,71 @@
 					>
 				</a>
 			</div>
-			<a class="btn btn-primary" href="https://www.afroconnect.shop" target="_blank" rel="noopener">Live</a>
+			<a class="btn btn-primary" href="https://www.afroconnect.shop" target="_blank" rel="noopener">{{ copy().liveLabel }}</a>
 		</header>
 
-		<div class="project-proof" aria-label="Projekt-Nachweise">
-			<span class="proof-pill">Konzeption und Umsetzung in Eigenregie</span>
-			<span class="proof-pill">Produktiv live geschaltet</span>
-			<span class="proof-pill">Zahlungen und Transaktionsmails integriert</span>
+		<div class="project-proof" [attr.aria-label]="copy().proofTitle">
+			@for (item of copy().proofs; track item) {
+				<span class="proof-pill">{{ item }}</span>
+			}
 		</div>
 
 		<p>
-			Dieses Projekt zeigt, dass ich mehr umsetzen kann als nur ein Frontend-Mockup: Nutzerführung, Aufbau der
-			Oberfläche, technische Integrationen, Go-live und ein insgesamt stimmiger Nutzerfluss gehören für mich zusammen.
+			{{ copy().valueLead }}
+		</p>
+		<p>
+			{{ copy().valueSupport }}
 		</p>
 
 		<section class="project-section" aria-label="Mehrwert">
-			<h3>Mehrwert</h3>
+			<h3>{{ copy().valueTitle }}</h3>
 			<ul class="highlights">
-				<li>Klare Navigation für schnellen Zugang zu Produkten, Services und Anbietern</li>
-				<li>Responsive Interface für eine einfache Nutzung auf Mobile und Desktop</li>
-				<li>Installierbare PWA mit App-Feeling und optimierten Ladezeiten</li>
+				@for (item of copy().valueItems; track item) {
+					<li>{{ item }}</li>
+				}
 			</ul>
 		</section>
 
 		<section class="project-section" aria-label="Was das Projekt zeigt">
-			<h3>Was das Projekt zeigt</h3>
+			<h3>{{ copy().showcaseTitle }}</h3>
 			<ul class="highlights">
-				<li>Fähigkeit, ein vollständiges Produkt mit echter Nutzerlogik zu strukturieren</li>
-				<li>Sicherer Umgang mit Komponenten, UI-Zuständen und Frontend-Integrationen</li>
-				<li>Sorgfalt bei visueller Qualität, Konsistenz und produktiver Bereitstellung</li>
+				@for (item of copy().showcaseItems; track item) {
+					<li>{{ item }}</li>
+				}
 			</ul>
 		</section>
 
 		<section class="project-section" aria-label="Integrationen">
-			<h3>Integrationen</h3>
+			<h3>{{ copy().integrationsTitle }}</h3>
 			<ul class="highlights">
-				<li>Payments: Stripe Connect für Online-Zahlungen</li>
-				<li>E-Mail: SendGrid für Benachrichtigungen und Transaktionsmails</li>
+				@for (item of copy().integrationsItems; track item) {
+					<li>{{ item }}</li>
+				}
 			</ul>
 		</section>
 
 		<section class="project-section" aria-label="Stack">
-			<h3>Stack</h3>
+			<h3>{{ copy().stackTitle }}</h3>
 			<ul class="badges">
-				<li class="badge">Angular</li>
-				<li class="badge">TypeScript</li>
-				<li class="badge">SCSS</li>
-				<li class="badge">Firebase</li>
-				<li class="badge">SendGrid</li>
+				@for (item of copy().stackItems; track item) {
+					<li class="badge">{{ item }}</li>
+				}
 			</ul>
 		</section>
 
 		<section class="project-section" aria-label="Workflow und Deployment">
-			<h3>Workflow und Deployment</h3>
+			<h3>{{ copy().workflowTitle }}</h3>
 			<ul class="badges">
-				<li class="badge">GitHub</li>
-				<li class="badge">Netlify</li>
+				@for (item of copy().workflowItems; track item) {
+					<li class="badge">{{ item }}</li>
+				}
 			</ul>
 		</section>
 
 		<div class="project-links">
-			<a class="btn btn-primary" href="https://www.afroconnect.shop" target="_blank" rel="noopener">Plattform ansehen</a>
-			<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">Über ein ähnliches Projekt sprechen</a>
+			<a class="btn btn-primary" href="https://www.afroconnect.shop" target="_blank" rel="noopener">{{ copy().platformCta }}</a>
+			<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">{{ copy().contactCta }}</a>
 		</div>
 	</article>
 </div>
+ 

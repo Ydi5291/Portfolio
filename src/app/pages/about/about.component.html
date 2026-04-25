@@ -1,83 +1,56 @@
-<h1>Über mich</h1>
+<h1>{{ copy().title }}</h1>
 
 <p class="lead">
-	Ich bin <strong>Youssouf Diallo</strong> und entwickle moderne Webanwendungen mit einem starken Fokus auf
-	Benutzerfreundlichkeit, klare Interfaces und sauberen Code.
+	{{ copy().lead }}
+</p>
+
+<p>
+	{{ copy().intro }}
 </p>
 
 <div class="cta-row">
-	<a class="btn btn-primary" [routerLink]="['/home']" fragment="projects">Projekte ansehen</a>
-	<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">Mich kontaktieren</a>
+	<a class="btn btn-primary" [routerLink]="['/home']" fragment="projects">{{ copy().projectsCta }}</a>
+	<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">{{ copy().contactCta }}</a>
 </div>
 
-<h2>Kurzprofil</h2>
+<h2>{{ copy().profileTitle }}</h2>
 <ul>
-	<li>Schwerpunkt: Frontend-Development und intuitive Interfaces</li>
-	<li>Stack: Angular, TypeScript, SCSS, Firebase und REST APIs</li>
-	<li>Workflow: Git, GitHub, Netlify und ein produktnaher Blick auf reale Nutzung</li>
+	@for (item of copy().profileItems; track item) {
+		<li>{{ item }}</li>
+	}
 </ul>
 
-<h2>Werdegang</h2>
+<h2>{{ copy().journeyTitle }}</h2>
 <ul class="timeline">
-	<li><strong>Guinea:</strong> Abitur, danach Studium der Wirtschaftsinformatik über drei Semester</li>
-	<li><strong>Deutschland:</strong> Ausbildung in der Logistik mit anschließender mehrjähriger Berufserfahrung</li>
-	<li><strong>Ende 2024:</strong> klare Neuausrichtung in Richtung Software-Entwicklung</li>
-	<li><strong>Heute:</strong> Vertiefung im Frontend-Bereich über eine Remote-Akademie aus München</li>
+	@for (item of copy().journeyItems; track item.label) {
+		<li><strong>{{ item.label }}:</strong> {{ item.text }}</li>
+	}
 </ul>
 
-<h2>Stack</h2>
+<h2>{{ copy().stackTitle }}</h2>
 <ul class="badges">
-	<li class="badge">Angular</li>
-	<li class="badge">React</li>
-	<li class="badge">TypeScript</li>
-	<li class="badge">HTML</li>
-	<li class="badge">SCSS</li>
-	<li class="badge">Firebase</li>
-	<li class="badge">REST APIs</li>
-	<li class="badge">Git / GitHub</li>
-	<li class="badge">Netlify</li>
-	<li class="badge">Stripe Connect</li>
-	<li class="badge">SendGrid</li>
+	@for (item of copy().stackItems; track item) {
+		<li class="badge">{{ item }}</li>
+	}
 </ul>
 
-<h2>Schwerpunkte</h2>
+<h2>{{ copy().focusTitle }}</h2>
 <ul>
-	<li>Komponenten-Architektur, Routing und klare Struktur</li>
-	<li>Responsive Interfaces, saubere Styles und gute Wartbarkeit</li>
-	<li>Build, Deployment und saubere Umsetzung von Anfang bis Ende</li>
+	@for (item of copy().focusItems; track item) {
+		<li>{{ item }}</li>
+	}
 </ul>
 
-<h2>Ziel</h2>
+<h2>{{ copy().goalTitle }}</h2>
 <p>
-	Klare, stabile Interfaces entwickeln, die nützlich sind und sich ohne unnötige Komplexität weiterentwickeln lassen.
+	{{ copy().goalText }}
 </p>
 
 <details class="details">
-	<summary>Mehr über mich</summary>
+	<summary>{{ copy().detailsTitle }}</summary>
 	<div class="details-body">
-		<p>
-			Mein Name ist Youssouf Diallo und ich entwickle moderne Webanwendungen mit einem klaren Blick auf
-			Benutzerfreundlichkeit, Komponenten-Struktur und wartbaren Code. Am Frontend fasziniert mich besonders,
-			dass gute Interfaces gleichzeitig klar, effizient und angenehm in der Nutzung sein können.
-		</p>
-		<p>
-			Nach meinem Abitur in Guinea habe ich zunächst ein Studium der Wirtschaftsinformatik begonnen, dieses aber
-			nach drei Semestern beendet. Nach meinem Umzug nach Deutschland wollte ich zurück in die IT, bin zunächst
-			jedoch einen beruflichen Weg in der Logistik gegangen, inklusive Ausbildung und mehrjähriger Praxiserfahrung.
-		</p>
-		<p>
-			Ende 2024 habe ich mich bewusst dafür entschieden, meinen beruflichen Weg neu auszurichten und mich konsequent
-			auf Software-Entwicklung zu konzentrieren. Über eine Remote-Akademie in München vertiefe ich seitdem meine
-			Frontend-Kenntnisse, insbesondere mit Angular, anhand praxisnaher Aufgaben und realitätsnaher Projekte.
-		</p>
-		<p>
-			Zu meinem technischen Fundament gehören heute Angular, React, TypeScript, HTML, SCSS, Git, GitHub, Netlify,
-			Firebase und REST APIs. In diesem Portfolio zeige ich unter anderem AfroMarket, eine Marketplace-Plattform,
-			die ich eigenständig konzipiert und umgesetzt habe, inklusive Integrationen wie Stripe Connect.
-		</p>
-		<p>
-			Ich bin offen für ernsthafte Chancen, konkrete Projekte und Teams, in denen Eigenverantwortung, Sorgfalt
-			und technische Weiterentwicklung geschätzt werden.
-		</p>
+		@for (paragraph of copy().detailsParagraphs; track paragraph) {
+			<p>{{ paragraph }}</p>
+		}
 	</div>
 </details>

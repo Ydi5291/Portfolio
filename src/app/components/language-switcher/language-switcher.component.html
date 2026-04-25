@@ -1,0 +1,20 @@
+<div class="language-switcher" role="group" aria-label="Language selector">
+	<button
+		type="button"
+		class="language-button"
+		[class.is-active]="language() === 'de'"
+		[attr.aria-pressed]="language() === 'de'"
+		(click)="setLanguage('de')"
+	>
+		DE
+	</button>
+	<button
+		type="button"
+		class="language-button"
+		[class.is-active]="language() === 'en'"
+		[attr.aria-pressed]="language() === 'en'"
+		(click)="setLanguage('en')"
+	>
+		EN
+	</button>
+</div>
