@@ -8,5 +8,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './cv.component.scss'
 })
 export class CvComponent {
-  readonly cvUrl = 'assets/CV-SE.pdf';
+  readonly cvUrl = 'assets/CV-Softwareentwickler.pdf';
 }
