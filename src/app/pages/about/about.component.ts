@@ -7,7 +7,7 @@ import { LanguageService } from '../../core/language.service';
 const ABOUT_COPY = {
   de: {
     title: 'Über mich',
-    lead: 'Ich bin Youssouf Diallo und entwickle moderne Webanwendungen mit Fokus auf klare Architektur, Benutzerfreundlichkeit und wartbaren Code.',
+    lead: 'Ich bin Youssouf Diallo, Webentwickler und Founder von AfroMarket, der digitalen Plattform für afroeuropäische Geschäfte.',
     intro: 'Mein Schwerpunkt liegt im Frontend-Development mit Angular und React, ergänzt durch praktische Erfahrung in der Entwicklung kompletter Webplattformen.',
     projectsCta: 'Projekte ansehen',
     contactCta: 'Mich kontaktieren',
@@ -45,7 +45,7 @@ const ABOUT_COPY = {
   },
   en: {
     title: 'About me',
-    lead: 'I am Youssouf Diallo and I build modern web applications focused on clear architecture, usability, and maintainable code.',
+    lead: 'I am Youssouf Diallo, web developer and founder of AfroMarket, the digital platform for Afro-European businesses.',
     intro: 'My main focus is frontend development with Angular and React, complemented by hands-on experience building complete web platforms.',
     projectsCta: 'View projects',
     contactCta: 'Contact me',
