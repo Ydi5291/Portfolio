@@ -1,56 +1,74 @@
-<h1>{{ copy().title }}</h1>
+<section class="about-intro">
+	<p class="section-kicker">{{ copy().title }}</p>
+	<h1>{{ copy().lead }}</h1>
+	<p class="lead">
+		{{ copy().intro }}
+	</p>
 
-<p class="lead">
-	{{ copy().lead }}
-</p>
-
-<p>
-	{{ copy().intro }}
-</p>
-
-<div class="cta-row">
-	<a class="btn btn-primary" [routerLink]="['/home']" fragment="projects">{{ copy().projectsCta }}</a>
-	<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">{{ copy().contactCta }}</a>
-</div>
-
-<h2>{{ copy().profileTitle }}</h2>
-<ul>
-	@for (item of copy().profileItems; track item) {
-		<li>{{ item }}</li>
-	}
-</ul>
-
-<h2>{{ copy().journeyTitle }}</h2>
-<ul class="timeline">
-	@for (item of copy().journeyItems; track item.label) {
-		<li><strong>{{ item.label }}:</strong> {{ item.text }}</li>
-	}
-</ul>
-
-<h2>{{ copy().stackTitle }}</h2>
-<ul class="badges">
-	@for (item of copy().stackItems; track item) {
-		<li class="badge">{{ item }}</li>
-	}
-</ul>
-
-<h2>{{ copy().focusTitle }}</h2>
-<ul>
-	@for (item of copy().focusItems; track item) {
-		<li>{{ item }}</li>
-	}
-</ul>
-
-<h2>{{ copy().goalTitle }}</h2>
-<p>
-	{{ copy().goalText }}
-</p>
-
-<details class="details">
-	<summary>{{ copy().detailsTitle }}</summary>
-	<div class="details-body">
-		@for (paragraph of copy().detailsParagraphs; track paragraph) {
-			<p>{{ paragraph }}</p>
-		}
+	<div class="cta-row">
+		<a class="btn btn-primary" [routerLink]="['/home']" fragment="projects">{{ copy().projectsCta }}</a>
+		<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">{{ copy().contactCta }}</a>
 	</div>
-</details>
+</section>
+
+<section class="about-grid" aria-label="About overview">
+	<article class="info-card info-card-primary">
+		<h2>{{ copy().profileTitle }}</h2>
+		<ul class="feature-list">
+			@for (item of copy().profileItems; track item) {
+				<li>{{ item }}</li>
+			}
+		</ul>
+	</article>
+
+	<article class="info-card info-card-secondary">
+		<h2>{{ copy().goalTitle }}</h2>
+		<p class="goal-copy">{{ copy().goalText }}</p>
+		<details class="details">
+			<summary>{{ copy().detailsTitle }}</summary>
+			<div class="details-body">
+				@for (paragraph of copy().detailsParagraphs; track paragraph) {
+					<p>{{ paragraph }}</p>
+				}
+			</div>
+		</details>
+	</article>
+</section>
+
+<section class="story-grid" aria-label="Background and focus">
+	<article class="story-card">
+		<div class="section-heading">
+			<p class="section-kicker">{{ copy().journeyEyebrow }}</p>
+			<h2>{{ copy().journeyTitle }}</h2>
+		</div>
+		<ul class="timeline">
+			@for (item of copy().journeyItems; track item.label) {
+				<li>
+					<span class="timeline-label">{{ item.label }}</span>
+					<p>{{ item.text }}</p>
+				</li>
+			}
+		</ul>
+	</article>
+
+	<article class="story-card">
+		<div class="section-heading">
+			<p class="section-kicker">{{ copy().focusEyebrow }}</p>
+			<h2>{{ copy().focusTitle }}</h2>
+		</div>
+		<ul class="focus-grid">
+			@for (item of copy().focusItems; track item) {
+				<li>{{ item }}</li>
+			}
+		</ul>
+
+		<div class="stack-panel">
+			<h2>{{ copy().stackTitle }}</h2>
+			<ul class="badges">
+				@for (item of copy().stackItems; track item) {
+					<li class="badge">{{ item }}</li>
+				}
+			</ul>
+		</div>
+	</article>
+</section>

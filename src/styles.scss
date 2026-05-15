@@ -44,6 +44,12 @@
 	--font-display: 'Anta', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
+@media (max-width: 768px) {
+	:root {
+		--header-offset: 112px;
+	}
+}
+
 * {
 	box-sizing: border-box;
 }

@@ -14,7 +14,7 @@ const APP_COPY = {
     about: 'Über mich',
     projects: 'Projekte',
     contact: 'Kontakt',
-    footerCta: 'Verfügbar für Frontend-Entwicklung mit Angular / React und produktnahe Webanwendungen.',
+    footerCta: 'Verfügbar für Frontend-Projekte mit Angular / React sowie für produktnahe Webanwendungen.',
     footerRole: 'Frontend Developer',
     footerDescription: 'Entwicklung moderner Webanwendungen mit Fokus auf Angular, React und skalierbare Architekturen.',
     scrollTop: 'Nach oben scrollen'
@@ -26,7 +26,7 @@ const APP_COPY = {
     about: 'About me',
     projects: 'Projects',
     contact: 'Contact',
-    footerCta: 'Available for frontend development with Angular / React and product-oriented web applications.',
+    footerCta: 'Available for Angular / React frontend projects and product-oriented web applications.',
     footerRole: 'Frontend Developer',
     footerDescription: 'Building modern web applications focused on Angular, React, and scalable architectures.',
     scrollTop: 'Scroll to top'

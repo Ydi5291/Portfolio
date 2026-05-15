@@ -1,17 +1,57 @@
-<section class="cv-card">
-	<header class="cv-header">
-		<h1>Lebenslauf</h1>
-		<p class="muted">
-			Hier können Sie meinen Lebenslauf als PDF herunterladen.
-		</p>
-	</header>
+<section class="cv-page">
+	<div class="cv-hero">
+		<div class="cv-copy">
+			<p class="section-kicker">{{ copy().eyebrow }}</p>
+			<h1>{{ copy().title }}</h1>
+			<p class="cv-intro muted">
+				{{ copy().intro }}
+			</p>
 
-	<div class="cv-actions">
-		<a class="btn btn-primary" [href]="cvUrl" download>
-			CV herunterladen
-		</a>
-		<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">
-			Mich kontaktieren
-		</a>
+			<ul class="cv-highlights" aria-label="CV highlights">
+				@for (item of copy().highlights; track item) {
+					<li>{{ item }}</li>
+				}
+			</ul>
+
+			<div class="cv-actions cv-actions-hero">
+				<a class="btn btn-primary" [href]="cvUrl" download>
+					{{ copy().downloadCta }}
+				</a>
+				<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">
+					{{ copy().contactCta }}
+				</a>
+			</div>
+		</div>
+
+		<div class="cv-preview" aria-hidden="true">
+			<div class="document-frame">
+				<div class="document-topbar">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="document-sheet">
+					<p class="document-badge">{{ copy().metaLabel }}</p>
+					<div class="document-title-block">
+						<div class="document-avatar"></div>
+						<div>
+							<strong>Youssouf Diallo</strong>
+							<span>Frontend Developer</span>
+						</div>
+					</div>
+					<div class="document-lines">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="document-grid">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>

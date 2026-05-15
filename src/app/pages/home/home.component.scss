@@ -32,8 +32,8 @@
 }
 
 .home-section {
-	margin-top: 1rem;
-	padding: 1rem;
+	margin-top: 1.25rem;
+	padding: 1.35rem;
 	text-align: center;
 	background:
 		linear-gradient(180deg, rgba(10, 15, 27, 0.86) 0%, rgba(7, 12, 23, 0.78) 100%);
@@ -48,12 +48,31 @@
 
 .landing-stack {
 	display: grid;
-	gap: 1rem;
-	margin-top: 1.25rem;
+	gap: 1.4rem;
+	margin-top: 1.6rem;
 }
 
 .section-shell {
 	scroll-margin-top: 6rem;
+}
+
+.landing-stack > .section-shell,
+.landing-stack > app-contact-section {
+	position: relative;
+}
+
+.landing-stack > .section-shell::before,
+.landing-stack > app-contact-section::before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: -0.8rem;
+	width: min(10rem, 28vw);
+	height: 1px;
+	transform: translateX(-50%);
+	background: linear-gradient(90deg, transparent 0%, rgba(147, 197, 253, 0.58) 50%, transparent 100%);
+	opacity: 0.9;
+	pointer-events: none;
 }
 
 .home-section h1 {
@@ -255,7 +274,11 @@
 
 @media (max-width: 480px) {
 	.home-section {
-		padding: 0.875rem;
+		padding: 1rem;
+	}
+
+	.landing-stack {
+		gap: 1.1rem;
 	}
 }
 

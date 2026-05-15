@@ -1,6 +1,14 @@
 <section id="contact" class="home-section contact-section">
-	<h1>{{ copy().title }}</h1>
-	<p class="muted">{{ copy().intro }}</p>
+	<div class="contact-intro">
+		<p class="section-kicker">{{ copy().title }}</p>
+		<h1>{{ copy().availabilityTitle }}</h1>
+		<p class="muted">{{ copy().intro }}</p>
+		<p class="availability-copy">{{ copy().availabilityText }}</p>
+		<div class="contact-cta-row">
+			<a class="btn btn-primary" href="mailto:lamaid0502&#64;gmail.com">{{ copy().primaryCta }}</a>
+			<a class="btn btn-secondary" href="tel:+491626291461">{{ copy().phone }}</a>
+		</div>
+	</div>
 
 	<div class="contact-grid">
 		<section class="contact-card">

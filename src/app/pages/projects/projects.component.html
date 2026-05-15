@@ -1,100 +1,109 @@
-<h1>{{ copy().title }}</h1>
-
-<p class="intro muted">
-	{{ copy().intro }}
-</p>
+<section class="projects-intro">
+	<p class="section-kicker">{{ copy().title }}</p>
+	<h1>{{ copy().eyebrow }}</h1>
+	<p class="intro muted">
+		{{ copy().intro }}
+	</p>
+</section>
 
 <div class="projects">
 	<article class="project">
-		<header class="project-header">
-			<div>
-				<p class="project-eyebrow">{{ copy().eyebrow }}</p>
-				<h2>AfroMarket</h2>
-				<p class="project-summary muted">
-					{{ copy().summaryPrimary }}
-				</p>
+		<div class="project-hero">
+			<div class="project-copy">
+				<p class="project-eyebrow">AfroMarket</p>
+				<h2>{{ copy().summaryPrimary }}</h2>
 				<p class="project-summary muted">
 					{{ copy().summarySecondary }}
 				</p>
-				<a
-					class="project-logo-link"
-					href="https://www.afroconnect.shop"
-					target="_blank"
-					rel="noopener"
-					[attr.aria-label]="copy().logoLabel"
-				>
+
+				<div class="project-proof" [attr.aria-label]="copy().proofTitle">
+					@for (item of copy().proofs; track item) {
+						<span class="proof-pill">{{ item }}</span>
+					}
+				</div>
+
+				<div class="project-links project-links-primary">
+					<a class="btn btn-primary" href="https://www.afroconnect.shop" target="_blank" rel="noopener">{{ copy().platformCta }}</a>
+					<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">{{ copy().contactCta }}</a>
+				</div>
+			</div>
+
+			<a
+				class="project-preview"
+				href="https://www.afroconnect.shop"
+				target="_blank"
+				rel="noopener"
+				[attr.aria-label]="copy().logoLabel"
+			>
+				<span class="browser-bar" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+				<div class="preview-stage">
 					<img
 						class="project-logo"
 						src="assets/images/AfroMarket-logo.jpeg"
 						alt="AfroMarket Logo"
 						decoding="async"
 					>
-				</a>
-			</div>
-			<a class="btn btn-primary" href="https://www.afroconnect.shop" target="_blank" rel="noopener">{{ copy().liveLabel }}</a>
-		</header>
-
-		<div class="project-proof" [attr.aria-label]="copy().proofTitle">
-			@for (item of copy().proofs; track item) {
-				<span class="proof-pill">{{ item }}</span>
-			}
+					<span class="preview-badge">{{ copy().liveLabel }}</span>
+				</div>
+			</a>
 		</div>
 
-		<p>
-			{{ copy().valueLead }}
-		</p>
-		<p>
-			{{ copy().valueSupport }}
-		</p>
+		<div class="project-narrative">
+			<p class="value-lead">{{ copy().valueLead }}</p>
+			<p class="value-support">{{ copy().valueSupport }}</p>
+		</div>
 
-		<section class="project-section" aria-label="Mehrwert">
-			<h3>{{ copy().valueTitle }}</h3>
-			<ul class="highlights">
-				@for (item of copy().valueItems; track item) {
-					<li>{{ item }}</li>
-				}
-			</ul>
-		</section>
+		<div class="project-sections">
+			<section class="project-section" aria-label="Mehrwert">
+				<h3>{{ copy().valueTitle }}</h3>
+				<ul class="highlights">
+					@for (item of copy().valueItems; track item) {
+						<li>{{ item }}</li>
+					}
+				</ul>
+			</section>
 
-		<section class="project-section" aria-label="Was das Projekt zeigt">
-			<h3>{{ copy().showcaseTitle }}</h3>
-			<ul class="highlights">
-				@for (item of copy().showcaseItems; track item) {
-					<li>{{ item }}</li>
-				}
-			</ul>
-		</section>
+			<section class="project-section" aria-label="Was das Projekt zeigt">
+				<h3>{{ copy().showcaseTitle }}</h3>
+				<ul class="highlights">
+					@for (item of copy().showcaseItems; track item) {
+						<li>{{ item }}</li>
+					}
+				</ul>
+			</section>
 
-		<section class="project-section" aria-label="Integrationen">
-			<h3>{{ copy().integrationsTitle }}</h3>
-			<ul class="highlights">
-				@for (item of copy().integrationsItems; track item) {
-					<li>{{ item }}</li>
-				}
-			</ul>
-		</section>
+			<section class="project-section" aria-label="Integrationen">
+				<h3>{{ copy().integrationsTitle }}</h3>
+				<ul class="highlights">
+					@for (item of copy().integrationsItems; track item) {
+						<li>{{ item }}</li>
+					}
+				</ul>
+			</section>
+		</div>
 
-		<section class="project-section" aria-label="Stack">
-			<h3>{{ copy().stackTitle }}</h3>
-			<ul class="badges">
-				@for (item of copy().stackItems; track item) {
-					<li class="badge">{{ item }}</li>
-				}
-			</ul>
-		</section>
+		<div class="project-footer-panels">
+			<section class="project-panel" aria-label="Stack">
+				<h3>{{ copy().stackTitle }}</h3>
+				<ul class="badges">
+					@for (item of copy().stackItems; track item) {
+						<li class="badge">{{ item }}</li>
+					}
+				</ul>
+			</section>
 
-		<section class="project-section" aria-label="Workflow und Deployment">
-			<h3>{{ copy().workflowTitle }}</h3>
-			<ul class="badges">
-				@for (item of copy().workflowItems; track item) {
-					<li class="badge">{{ item }}</li>
-				}
-			</ul>
-		</section>
-
-		<div class="project-links">
-			<a class="btn btn-primary" href="https://www.afroconnect.shop" target="_blank" rel="noopener">{{ copy().platformCta }}</a>
-			<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">{{ copy().contactCta }}</a>
+			<section class="project-panel" aria-label="Workflow und Deployment">
+				<h3>{{ copy().workflowTitle }}</h3>
+				<ul class="badges">
+					@for (item of copy().workflowItems; track item) {
+						<li class="badge">{{ item }}</li>
+					}
+				</ul>
+			</section>
 		</div>
 	</article>
 </div>

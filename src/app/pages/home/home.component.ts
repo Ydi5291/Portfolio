@@ -8,7 +8,7 @@ import { LanguageService } from '../../core/language.service';
 
 const HOME_COPY = {
   de: {
-    heroRole: 'Frontend- / Full-Stack-Entwickler',
+    heroRole: 'Frontend Developer mit Full-Stack-Erfahrung',
     heroIntro: 'Ich entwickle skalierbare Webanwendungen mit Angular, Firebase und modernen Technologien.',
     heroMetaItems: [
       { icon: 'assets/images/location.png', text: 'Ich wohne in Werl' },
@@ -28,7 +28,7 @@ const HOME_COPY = {
     ]
   },
   en: {
-    heroRole: 'Frontend / Full-Stack Developer',
+    heroRole: 'Frontend Developer with Full-Stack experience',
     heroIntro: 'I build scalable web applications with Angular, Firebase, and modern technologies.',
     heroMetaItems: [
       { icon: 'assets/images/location.png', text: 'Based in Werl' },

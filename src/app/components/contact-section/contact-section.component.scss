@@ -1,6 +1,6 @@
 :host {
 	display: block;
-	margin-top: 1rem;
+	margin-top: 1.25rem;
 }
 
 a {
@@ -8,11 +8,13 @@ a {
 }
 
 .home-section {
-	padding: 1rem;
+	padding: 1.3rem;
 	text-align: center;
-	background: var(--color-surface);
-	border: 1px solid var(--color-border);
-	border-radius: var(--radius-md);
+	background:
+		linear-gradient(180deg, rgba(10, 15, 27, 0.86) 0%, rgba(7, 12, 23, 0.78) 100%);
+	border: 1px solid rgba(120, 168, 255, 0.18);
+	border-radius: var(--radius-xl);
+	box-shadow: 0 22px 46px rgba(2, 6, 23, 0.24);
 	transition: transform var(--transition), border-color var(--transition);
 }
 
@@ -22,10 +24,39 @@ a {
 
 .home-section h1 {
 	margin-top: 0;
-	margin-bottom: 0.85rem;
-	font-size: clamp(2rem, 1.45rem + 1.6vw, 3.2rem);
-	line-height: 1.08;
-	letter-spacing: -0.035em;
+	margin-bottom: 0.9rem;
+	font-size: clamp(2.15rem, 1.55rem + 1.8vw, 3.6rem);
+	line-height: 1.04;
+	letter-spacing: -0.045em;
+}
+
+.section-kicker {
+	margin: 0 0 0.8rem;
+	font-size: 0.82rem;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: rgba(191, 219, 254, 0.88);
+}
+
+.contact-intro {
+	max-width: 52rem;
+	margin: 0 auto;
+}
+
+.availability-copy {
+	max-width: 48rem;
+	margin: 0.6rem auto 0;
+	color: rgba(214, 229, 255, 0.82);
+	font-size: 1.02rem;
+}
+
+.contact-cta-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.75rem;
+	margin-top: 1.2rem;
 }
 
 .sr-only {
@@ -80,7 +111,7 @@ a {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 1rem;
-	margin-top: 1rem;
+	margin-top: 1.35rem;
 }
 
 .contact-form {
@@ -146,14 +177,16 @@ a {
 	padding: 1rem;
 	background: var(--color-surface);
 	background:
+		radial-gradient(120% 100% at 0% 0%, rgba(96, 165, 250, 0.08) 0%, transparent 52%),
 		linear-gradient(
 			180deg,
 			color-mix(in srgb, var(--color-surface) 92%, var(--color-bg)) 0%,
 			var(--color-surface) 55%,
 			color-mix(in srgb, var(--color-bg) 55%, var(--color-surface)) 100%
 		);
-	border: 1px solid var(--color-border);
+	border: 1px solid color-mix(in srgb, var(--color-border) 84%, rgba(96, 165, 250, 0.12));
 	border-radius: var(--radius-xl);
+	box-shadow: 0 18px 36px rgba(2, 6, 23, 0.14);
 	transition: transform var(--transition), border-color var(--transition);
 	text-align: center;
 }
@@ -257,6 +290,10 @@ a {
 @media (min-width: 720px) {
 	.contact-grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.contact-cta-row {
+		justify-content: center;
 	}
 
 	.contact-form {

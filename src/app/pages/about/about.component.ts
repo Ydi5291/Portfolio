@@ -7,27 +7,29 @@ import { LanguageService } from '../../core/language.service';
 const ABOUT_COPY = {
   de: {
     title: 'Über mich',
-    lead: 'Ich bin Youssouf Diallo, Webentwickler und Founder von AfroMarket, der digitalen Plattform für afroeuropäische Geschäfte.',
-    intro: 'Mein Schwerpunkt liegt im Frontend-Development mit Angular und React, ergänzt durch praktische Erfahrung in der Entwicklung kompletter Webplattformen.',
+    lead: 'Ich bin Youssouf Diallo, Frontend Developer und Gründer von AfroMarket, der digitalen Plattform für afroeuropäische Geschäfte.',
+    intro: 'Mein Schwerpunkt liegt in der Frontend-Entwicklung mit Angular und React, ergänzt durch praktische Erfahrung in der Entwicklung kompletter Webplattformen.',
     projectsCta: 'Projekte ansehen',
     contactCta: 'Mich kontaktieren',
     profileTitle: 'Kurzprofil',
     profileItems: [
-      'Fokus: Frontend Development & UI-Architektur',
+      'Fokus: Frontend Development und UI-Architektur',
       'Stack: Angular, React, TypeScript, SCSS, Firebase, REST APIs',
       'Arbeitsweise: strukturiert, produktorientiert, sauberer Code',
-      'Tools: Git, GitHub, Netlify, Stripe, Email-Services'
+      'Tools: Git, GitHub, Netlify, Stripe, E-Mail-Services'
     ],
     journeyTitle: 'Werdegang',
+    journeyEyebrow: 'Profilweg',
     journeyItems: [
       { label: 'Guinea', text: 'Abitur, anschließend Studium der Wirtschaftsinformatik (3 Semester)' },
       { label: 'Deutschland', text: 'Ausbildung im Bereich Lagerlogistik + mehrjährige Berufserfahrung' },
-      { label: '2024', text: 'bewusste Neuausrichtung Richtung Softwareentwicklung' },
-      { label: 'Heute', text: 'intensive Vertiefung im Frontend Development durch praxisnahe Projekte' }
+      { label: '2024', text: 'bewusste Neuausrichtung in Richtung Softwareentwicklung' },
+      { label: 'Heute', text: 'intensive Vertiefung in der Frontend-Entwicklung durch praxisnahe Projekte' }
     ],
     stackTitle: 'Stack',
     stackItems: ['Angular', 'React', 'TypeScript', 'HTML', 'SCSS', 'Firebase', 'REST APIs', 'Git / GitHub', 'Netlify', 'Stripe Connect', 'Brevo'],
     focusTitle: 'Schwerpunkte',
+    focusEyebrow: 'Fokus',
     focusItems: [
       'Entwicklung modularer und skalierbarer Frontend-Architekturen',
       'Umsetzung responsiver und nutzerzentrierter Interfaces',
@@ -51,12 +53,13 @@ const ABOUT_COPY = {
     contactCta: 'Contact me',
     profileTitle: 'Profile',
     profileItems: [
-      'Focus: Frontend development & UI architecture',
+      'Focus: Frontend development and UI architecture',
       'Stack: Angular, React, TypeScript, SCSS, Firebase, REST APIs',
       'Work style: structured, product-oriented, clean code',
       'Tools: Git, GitHub, Netlify, Stripe, email services'
     ],
     journeyTitle: 'Background',
+    journeyEyebrow: 'Path',
     journeyItems: [
       { label: 'Guinea', text: 'High school diploma, followed by studies in business informatics (3 semesters)' },
       { label: 'Germany', text: 'Professional training in warehouse logistics plus several years of work experience' },
@@ -66,6 +69,7 @@ const ABOUT_COPY = {
     stackTitle: 'Stack',
     stackItems: ['Angular', 'React', 'TypeScript', 'HTML', 'SCSS', 'Firebase', 'REST APIs', 'Git / GitHub', 'Netlify', 'Stripe Connect', 'Brevo'],
     focusTitle: 'Main strengths',
+    focusEyebrow: 'Focus',
     focusItems: [
       'Developing modular and scalable frontend architectures',
       'Building responsive and user-centered interfaces',

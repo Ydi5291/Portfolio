@@ -6,6 +6,9 @@ const CONTACT_COPY = {
 	de: {
 		title: 'Kontakt',
 		intro: 'Kurz und direkt: Schreiben Sie mir oder rufen Sie an, wenn Sie über Ihr Vorhaben sprechen möchten.',
+		availabilityTitle: 'Verfügbar für Frontend-Projekte und neue berufliche Chancen',
+		availabilityText: 'Ideal für eine strukturierte Frontend-Umsetzung, Produktpflege oder den Ausbau einer bestehenden Webanwendung.',
+		primaryCta: 'Direkt per E-Mail anfragen',
 		email: 'E-Mail',
 		emailHint: 'Antwort in der Regel innerhalb von 24 bis 48 Stunden.',
 		phone: 'Telefon',
@@ -25,6 +28,9 @@ const CONTACT_COPY = {
 	en: {
 		title: 'Contact',
 		intro: 'Short and direct: send me a message or give me a call if you would like to discuss your project.',
+		availabilityTitle: 'Available for frontend projects and new career opportunities',
+		availabilityText: 'A strong fit for structured frontend delivery, product iteration, or extending an existing web application.',
+		primaryCta: 'Reach out by email',
 		email: 'Email',
 		emailHint: 'Usually answered within 24 to 48 hours.',
 		phone: 'Phone',
