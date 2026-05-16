@@ -6,12 +6,9 @@
 			<p class="cv-intro muted">
 				{{ copy().intro }}
 			</p>
-
-			<ul class="cv-highlights" aria-label="CV highlights">
-				@for (item of copy().highlights; track item) {
-					<li>{{ item }}</li>
-				}
-			</ul>
+			<p class="cv-hint muted">
+				{{ copy().recruiterHint }}
+			</p>
 
 			<div class="cv-actions cv-actions-hero">
 				<a class="btn btn-primary" [href]="cvUrl" download>
@@ -23,7 +20,7 @@
 			</div>
 		</div>
 
-		<div class="cv-preview" aria-hidden="true">
+		<a class="cv-preview" [href]="cvUrl" download aria-label="Download CV PDF">
 			<div class="document-frame">
 				<div class="document-topbar">
 					<span></span>
@@ -52,6 +49,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</a>
 	</div>
 </section>

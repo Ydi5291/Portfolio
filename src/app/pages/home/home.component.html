@@ -4,14 +4,12 @@
 			<div class="hero-layout">
 				<div class="hero-text">
 					<h1 class="hero-name">Youssouf Diallo</h1>
-					<p class="tagline muted">
-						{{ copy().heroRole }}<br>
-						<span>{{ copy().heroIntro }}</span><br>
-						<span class="hero-meta" aria-live="polite">
-							<img [src]="currentHeroMeta.icon" alt="" width="20" height="20" decoding="async">
-							<span>{{ currentHeroMeta.text }}</span>
-						</span>
-					</p>
+					<h2 class="hero-role">{{ copy().heroRole }}</h2>
+					<p class="hero-intro muted">{{ copy().heroIntro }}</p>
+					<span class="hero-meta" aria-live="polite">
+						<img [src]="currentHeroMeta.icon" alt="" width="20" height="20" decoding="async">
+						<span>{{ currentHeroMeta.text }}</span>
+					</span>
 				</div>
 
 				<div class="hero-media" aria-hidden="true">
@@ -43,7 +41,7 @@
 
 		<div class="landing-stack">
 			<section id="why" class="home-section section-shell">
-				<h1>{{ copy().whyTitle }}</h1>
+				<h2 class="section-title">{{ copy().whyTitle }}</h2>
 				@for (paragraph of copy().whyParagraphs; track paragraph) {
 					<p>{{ paragraph }}</p>
 				}

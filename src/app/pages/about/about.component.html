@@ -1,6 +1,6 @@
 <section class="about-intro">
 	<p class="section-kicker">{{ copy().title }}</p>
-	<h1>{{ copy().lead }}</h1>
+	<h2 class="about-title">{{ copy().lead }}</h2>
 	<p class="lead">
 		{{ copy().intro }}
 	</p>
@@ -13,7 +13,7 @@
 
 <section class="about-grid" aria-label="About overview">
 	<article class="info-card info-card-primary">
-		<h2>{{ copy().profileTitle }}</h2>
+		<h3>{{ copy().profileTitle }}</h3>
 		<ul class="feature-list">
 			@for (item of copy().profileItems; track item) {
 				<li>{{ item }}</li>
@@ -22,7 +22,7 @@
 	</article>
 
 	<article class="info-card info-card-secondary">
-		<h2>{{ copy().goalTitle }}</h2>
+		<h3>{{ copy().goalTitle }}</h3>
 		<p class="goal-copy">{{ copy().goalText }}</p>
 		<details class="details">
 			<summary>{{ copy().detailsTitle }}</summary>
@@ -39,7 +39,7 @@
 	<article class="story-card">
 		<div class="section-heading">
 			<p class="section-kicker">{{ copy().journeyEyebrow }}</p>
-			<h2>{{ copy().journeyTitle }}</h2>
+			<h3>{{ copy().journeyTitle }}</h3>
 		</div>
 		<ul class="timeline">
 			@for (item of copy().journeyItems; track item.label) {
@@ -54,7 +54,7 @@
 	<article class="story-card">
 		<div class="section-heading">
 			<p class="section-kicker">{{ copy().focusEyebrow }}</p>
-			<h2>{{ copy().focusTitle }}</h2>
+			<h3>{{ copy().focusTitle }}</h3>
 		</div>
 		<ul class="focus-grid">
 			@for (item of copy().focusItems; track item) {
@@ -63,7 +63,7 @@
 		</ul>
 
 		<div class="stack-panel">
-			<h2>{{ copy().stackTitle }}</h2>
+			<h3>{{ copy().stackTitle }}</h3>
 			<ul class="badges">
 				@for (item of copy().stackItems; track item) {
 					<li class="badge">{{ item }}</li>

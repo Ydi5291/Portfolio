@@ -46,6 +46,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   isScrolled = false;
   isHeaderVisible = true;
   lastScrollTop = 0;
+  private pendingMobileMenuOpen = false;
   private scrollObserver?: IntersectionObserver;
   readonly copy = computed(() => APP_COPY[this.languageService.language()]);
 
@@ -59,6 +60,11 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     this.router.events.pipe(takeUntilDestroyed()).subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.mobileMenuOpen = false;
+        if (this.pendingMobileMenuOpen) {
+          this.pendingMobileMenuOpen = false;
+          this.mobileMenuOpen = true;
+          this.queueHomeMobileMenuGeometrySync();
+        }
 				this.queueScrollAnimationRefresh();
       }
     });
@@ -79,6 +85,12 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       this.closeMobileMenu();
       return;
     }
+
+		if (this.shouldNavigateHomeBeforeOpeningMenu()) {
+			this.pendingMobileMenuOpen = true;
+			void this.router.navigate(['/home'], { fragment: 'hero' });
+			return;
+		}
 
     if (this.shouldReturnToHeroBeforeOpeningMenu()) {
       this.scrollHeroIntoView();
@@ -104,6 +116,10 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 	isHomeLayout(): boolean {
 		return this.router.url === '/' || this.router.url.startsWith('/home') || this.router.url.startsWith('/contact');
 	}
+
+  private shouldNavigateHomeBeforeOpeningMenu(): boolean {
+    return isPlatformBrowser(this.platformId) && window.innerWidth <= 768 && this.router.url.startsWith('/cv');
+  }
 
   private shouldReturnToHeroBeforeOpeningMenu(): boolean {
     return isPlatformBrowser(this.platformId) && this.isHomeLayout() && window.innerWidth <= 768;
