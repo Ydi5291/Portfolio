@@ -1,31 +1,30 @@
 <section class="projects-intro">
-	<p class="section-kicker">{{ copy().title }}</p>
-	<h2 class="projects-title">{{ copy().eyebrow }}</h2>
+	<h2 class="section-title-main">{{ copy().title }}</h2>
 	<p class="intro muted">
 		{{ copy().intro }}
 	</p>
+
+	<div class="project-tabs" [attr.aria-label]="copy().tabAriaLabel" role="tablist">
+		@for (tab of projectTabs(); track tab.key) {
+			<button
+				type="button"
+				class="project-tab"
+				[class.is-active]="isActiveProject(tab.key)"
+				[attr.aria-selected]="isActiveProject(tab.key)"
+				(click)="setActiveProject(tab.key)"
+			>
+				{{ tab.label }}
+			</button>
+		}
+	</div>
 </section>
 
 <div class="projects">
+	@if (isActiveProject('afromarket')) {
 	<article class="project">
 		<div class="project-hero">
 			<div class="project-copy">
-				<p class="project-eyebrow">AfroMarket</p>
-				<h3>{{ copy().summaryPrimary }}</h3>
-				<p class="project-summary muted">
-					{{ copy().summarySecondary }}
-				</p>
-
-				<div class="project-proof" [attr.aria-label]="copy().proofTitle">
-					@for (item of copy().proofs; track item) {
-						<span class="proof-pill">{{ item }}</span>
-					}
-				</div>
-
-				<div class="project-links project-links-primary">
-					<a class="btn btn-primary" href="https://www.afroconnect.shop" target="_blank" rel="noopener">{{ copy().platformCta }}</a>
-					<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">{{ copy().contactCta }}</a>
-				</div>
+				<h3 class="project-display-title">AfroMarket</h3>
 			</div>
 
 			<a
@@ -52,59 +51,168 @@
 			</a>
 		</div>
 
-		<div class="project-narrative">
-			<p class="value-lead">{{ copy().valueLead }}</p>
-			<p class="value-support">{{ copy().valueSupport }}</p>
-		</div>
+		<div class="project-accordion-group">
+			<details class="project-accordion" open>
+				<summary>{{ copy().processTitle }}</summary>
+				<div class="project-accordion-body project-narrative">
+					<p class="project-lead">{{ copy().summaryPrimary }}</p>
+					<p class="project-summary muted">
+						{{ copy().summarySecondary }}
+					</p>
+					<p class="value-lead">{{ copy().valueLead }}</p>
+					<p class="value-support">{{ copy().valueSupport }}</p>
+					<div class="project-proof" [attr.aria-label]="copy().proofTitle">
+						@for (item of copy().proofs; track item) {
+							<span class="proof-pill">{{ item }}</span>
+						}
+					</div>
+				</div>
+			</details>
 
-		<div class="project-sections">
-			<section class="project-section" aria-label="Mehrwert">
-				<h3>{{ copy().valueTitle }}</h3>
-				<ul class="highlights">
-					@for (item of copy().valueItems; track item) {
-						<li>{{ item }}</li>
-					}
-				</ul>
-			</section>
+			<details class="project-accordion">
+				<summary>{{ copy().valueTitle }}</summary>
+				<div class="project-accordion-body project-section">
+					<ul class="highlights">
+						@for (item of copy().valueItems; track item) {
+							<li>{{ item }}</li>
+						}
+					</ul>
+				</div>
+			</details>
 
-			<section class="project-section" aria-label="Was das Projekt zeigt">
-				<h3>{{ copy().showcaseTitle }}</h3>
-				<ul class="highlights">
-					@for (item of copy().showcaseItems; track item) {
-						<li>{{ item }}</li>
-					}
-				</ul>
-			</section>
+			<details class="project-accordion">
+				<summary>{{ copy().showcaseTitle }}</summary>
+				<div class="project-accordion-body project-section">
+					<ul class="highlights">
+						@for (item of copy().showcaseItems; track item) {
+							<li>{{ item }}</li>
+						}
+					</ul>
+				</div>
+			</details>
 
-			<section class="project-section" aria-label="Integrationen">
-				<h3>{{ copy().integrationsTitle }}</h3>
-				<ul class="highlights">
-					@for (item of copy().integrationsItems; track item) {
-						<li>{{ item }}</li>
-					}
-				</ul>
-			</section>
-		</div>
+			<details class="project-accordion">
+				<summary>{{ copy().stackTitle }}</summary>
+				<div class="project-accordion-body project-panel">
+					<ul class="badges">
+						@for (item of copy().stackItems; track item) {
+							<li class="badge">{{ item }}</li>
+						}
+					</ul>
+				</div>
+			</details>
 
-		<div class="project-footer-panels">
-			<section class="project-panel" aria-label="Stack">
-				<h3>{{ copy().stackTitle }}</h3>
-				<ul class="badges">
-					@for (item of copy().stackItems; track item) {
-						<li class="badge">{{ item }}</li>
-					}
-				</ul>
-			</section>
-
-			<section class="project-panel" aria-label="Workflow und Deployment">
-				<h3>{{ copy().workflowTitle }}</h3>
-				<ul class="badges">
-					@for (item of copy().workflowItems; track item) {
-						<li class="badge">{{ item }}</li>
-					}
-				</ul>
-			</section>
+			<details class="project-accordion">
+				<summary>{{ copy().workflowTitle }}</summary>
+				<div class="project-accordion-body project-panel">
+					<div class="project-links project-links-footer">
+						<a class="btn btn-primary" href="https://www.afroconnect.shop" target="_blank" rel="noopener">{{ copy().platformCta }}</a>
+						<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">{{ copy().contactCta }}</a>
+					</div>
+				</div>
+			</details>
 		</div>
 	</article>
+	}
+
+	@if (isActiveProject('portfolio')) {
+	<article class="project project-secondary">
+		<div class="project-hero">
+			<div class="project-copy">
+				<h3 class="project-display-title">Portfolio</h3>
+			</div>
+
+			<a
+				class="project-preview project-preview-internal"
+				[routerLink]="['/home']"
+				fragment="hero"
+				[attr.aria-label]="copy().portfolioLogoLabel"
+			>
+				<span class="browser-bar" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+				<div class="preview-stage preview-stage-portfolio">
+					<div class="portfolio-preview-card">
+						<img
+							class="project-logo project-logo-portfolio project-logo-portfolio-photo"
+							src="assets/images/Youssouf.jpg"
+							alt="Youssouf Diallo"
+							decoding="async"
+						>
+						<div class="portfolio-preview-copy">
+							<strong>Youssouf Diallo</strong>
+							<span>Frontend Developer</span>
+						</div>
+					</div>
+					<span class="preview-badge">Portfolio</span>
+				</div>
+			</a>
+		</div>
+
+		<div class="project-accordion-group">
+			<details class="project-accordion" open>
+				<summary>{{ copy().portfolioOverviewTitle }}</summary>
+				<div class="project-accordion-body project-narrative">
+					<p class="project-lead">{{ copy().portfolioSummaryPrimary }}</p>
+					<p class="project-summary muted">
+						{{ copy().portfolioSummarySecondary }}
+					</p>
+					<p class="value-lead">{{ copy().portfolioValueLead }}</p>
+					<p class="value-support">{{ copy().portfolioValueSupport }}</p>
+					<div class="project-proof" [attr.aria-label]="copy().portfolioProofTitle">
+						@for (item of copy().portfolioProofs; track item) {
+							<span class="proof-pill">{{ item }}</span>
+						}
+					</div>
+				</div>
+			</details>
+
+			<details class="project-accordion">
+				<summary>{{ copy().valueTitle }}</summary>
+				<div class="project-accordion-body project-section">
+					<ul class="highlights">
+						@for (item of copy().portfolioValueItems; track item) {
+							<li>{{ item }}</li>
+						}
+					</ul>
+				</div>
+			</details>
+
+			<details class="project-accordion">
+				<summary>{{ copy().showcaseTitle }}</summary>
+				<div class="project-accordion-body project-section">
+					<ul class="highlights">
+						@for (item of copy().portfolioShowcaseItems; track item) {
+							<li>{{ item }}</li>
+						}
+					</ul>
+				</div>
+			</details>
+
+			<details class="project-accordion">
+				<summary>{{ copy().stackTitle }}</summary>
+				<div class="project-accordion-body project-panel">
+					<ul class="badges">
+						@for (item of copy().portfolioStackItems; track item) {
+							<li class="badge">{{ item }}</li>
+						}
+					</ul>
+				</div>
+			</details>
+
+			<details class="project-accordion">
+				<summary>{{ copy().workflowTitle }}</summary>
+				<div class="project-accordion-body project-panel">
+					<div class="project-links project-links-footer">
+						<a class="btn btn-primary" [routerLink]="['/home']" fragment="hero">{{ copy().portfolioCta }}</a>
+						<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">{{ copy().contactCta }}</a>
+					</div>
+				</div>
+			</details>
+		</div>
+	</article>
+	}
 </div>
  

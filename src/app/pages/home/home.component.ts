@@ -22,9 +22,8 @@ const HOME_COPY = {
     scrollLabel: 'Zur Warum-ich-Sektion scrollen',
     whyTitle: 'Warum ich?',
     whyParagraphs: [
-      'Ich habe mich bewusst für den Weg in die Softwareentwicklung entschieden und entwickle heute moderne Webanwendungen mit Angular und React.',
-      'Mit meiner eigenen E-Commerce-Plattform „AfroMarket“ habe ich ein reales Produkt von Grund auf konzipiert und umgesetzt – inklusive Authentifizierung, Zahlungsintegration (Stripe) und rollenbasierten Dashboards.',
-      'Ich arbeite strukturiert, lösungsorientiert und mit Fokus auf saubere Architektur, Performance und Benutzerfreundlichkeit.'
+        'Ich arbeite strukturiert, lösungsorientiert, zuverlässig, hochmotiviert und lernfähig.',
+        'Mein Fokus liegt auf sauberer Architektur, Performance und Benutzerfreundlichkeit.'
     ]
   },
   en: {
@@ -42,9 +41,8 @@ const HOME_COPY = {
     scrollLabel: 'Scroll to the Why me section',
     whyTitle: 'Why me?',
     whyParagraphs: [
-      'I deliberately chose the path into software development and now build modern web applications with Angular and React.',
-      'With my own e-commerce platform “AfroMarket”, I designed and delivered a real product from scratch, including authentication, payment integration with Stripe, and role-based dashboards.',
-      'I work in a structured and solution-oriented way, with a strong focus on clean architecture, performance, and usability.'
+        'I work in a structured, solution-oriented, reliable, highly motivated, and fast-learning way.',
+        'My focus is on clean architecture, performance, and usability.'
     ]
   }
 } as const;

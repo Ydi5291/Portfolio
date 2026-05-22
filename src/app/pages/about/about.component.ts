@@ -1,5 +1,4 @@
 import { Component, OnInit, computed, inject, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { LanguageService } from '../../core/language.service';
@@ -7,89 +6,83 @@ import { LanguageService } from '../../core/language.service';
 const ABOUT_COPY = {
   de: {
     title: 'Über mich',
-    lead: 'Ich bin Youssouf Diallo, Frontend Developer und Gründer von AfroMarket, der digitalen Plattform für afroeuropäische Geschäfte.',
-    intro: 'Mein Schwerpunkt liegt in der Frontend-Entwicklung mit Angular und React, ergänzt durch praktische Erfahrung in der Entwicklung kompletter Webplattformen.',
+    lead: 'Ich bin Youssouf Diallo, Frontend Developer mit Fokus auf moderne Webanwendungen.',
+    intro: '',
     projectsCta: 'Projekte ansehen',
     contactCta: 'Mich kontaktieren',
     profileTitle: 'Kurzprofil',
     profileItems: [
-      'Fokus: Frontend Development und UI-Architektur',
-      'Stack: Angular, React, TypeScript, SCSS, Firebase, REST APIs',
-      'Arbeitsweise: strukturiert, produktorientiert, sauberer Code',
-      'Tools: Git, GitHub, Netlify, Stripe, E-Mail-Services'
+      'Fokus: Frontend und UI-Architektur',
+      'Stack: Angular, React, TypeScript, SCSS',
+      'Arbeitsweise: strukturiert, zuverlässig, lernfähig'
     ],
     journeyTitle: 'Werdegang',
     journeyEyebrow: 'Profilweg',
     journeyItems: [
-      { label: 'Guinea', text: 'Abitur, anschließend Studium der Wirtschaftsinformatik (3 Semester)' },
-      { label: 'Deutschland', text: 'Ausbildung im Bereich Lagerlogistik + mehrjährige Berufserfahrung' },
-      { label: '2024', text: 'bewusste Neuausrichtung in Richtung Softwareentwicklung' },
-      { label: 'Heute', text: 'intensive Vertiefung in der Frontend-Entwicklung durch praxisnahe Projekte' }
+      { label: 'Guinea', text: 'Abitur und erste Orientierung in Wirtschaftsinformatik' },
+      { label: 'Deutschland', text: 'Berufserfahrung, neue Perspektive und klare Neuausrichtung' },
+      { label: 'Heute', text: 'starker Fokus auf Frontend-Entwicklung durch praxisnahe Projekte' }
     ],
     stackTitle: 'Stack',
-    stackItems: ['Angular', 'React', 'TypeScript', 'HTML', 'SCSS', 'Firebase', 'REST APIs', 'Git / GitHub', 'Netlify', 'Stripe Connect', 'Brevo'],
+    stackItems: ['Angular', 'React', 'TypeScript', 'SCSS', 'Firebase', 'REST APIs', 'Git / GitHub'],
     focusTitle: 'Schwerpunkte',
     focusEyebrow: 'Fokus',
     focusItems: [
-      'Entwicklung modularer und skalierbarer Frontend-Architekturen',
-      'Umsetzung responsiver und nutzerzentrierter Interfaces',
-      'Aufbau und Deployment vollständiger Webanwendungen',
-      'Arbeit mit realen Use-Cases aus eigenen Projekten'
+      'Modulare und skalierbare Frontend-Architekturen',
+      'Responsive und nutzerzentrierte Interfaces',
+      'Umsetzung produktionsnaher Webanwendungen'
     ],
     goalTitle: 'Ziel',
-    goalText: 'Ich entwickle Webanwendungen, die funktional, klar strukturiert und langfristig wartbar sind – mit echtem Fokus auf Nutzer und Produktqualität.',
+    goalText: 'Ich entwickle klare, performante und wartbare Webanwendungen mit Fokus auf Nutzer und Produktqualität.',
     detailsTitle: 'Mehr über mich',
     detailsParagraphs: [
-      'Ich habe früh ein Interesse an Technologie entwickelt und mich nach mehreren beruflichen Stationen bewusst für die Softwareentwicklung entschieden.',
-      'Heute arbeite ich intensiv an eigenen Projekten wie AfroMarket, einer E-Commerce-Plattform mit Authentifizierung, Zahlungsintegration und rollenbasierten Dashboards.',
-      'Mein Ziel ist es, mich in einem professionellen Entwicklerteam weiterzuentwickeln und an echten, produktionsnahen Anwendungen zu arbeiten.'
+      'Ich habe mich bewusst für die Softwareentwicklung entschieden und arbeite heute an produktionsnahen Frontend-Projekten.',
+      'Mein Ziel ist ein professionelles Team, in dem ich weiter wachsen und echten Mehrwert liefern kann.'
     ]
   },
   en: {
     title: 'About me',
-    lead: 'I am Youssouf Diallo, web developer and founder of AfroMarket, the digital platform for Afro-European businesses.',
-    intro: 'My main focus is frontend development with Angular and React, complemented by hands-on experience building complete web platforms.',
+    lead: 'I am Youssouf Diallo, a frontend developer focused on modern web applications.',
+    intro: '',
     projectsCta: 'View projects',
     contactCta: 'Contact me',
     profileTitle: 'Profile',
     profileItems: [
-      'Focus: Frontend development and UI architecture',
-      'Stack: Angular, React, TypeScript, SCSS, Firebase, REST APIs',
-      'Work style: structured, product-oriented, clean code',
-      'Tools: Git, GitHub, Netlify, Stripe, email services'
+      'Focus: frontend and UI architecture',
+      'Stack: Angular, React, TypeScript, SCSS',
+      'Work style: structured, reliable, fast-learning'
     ],
     journeyTitle: 'Background',
     journeyEyebrow: 'Path',
     journeyItems: [
-      { label: 'Guinea', text: 'High school diploma, followed by studies in business informatics (3 semesters)' },
-      { label: 'Germany', text: 'Professional training in warehouse logistics plus several years of work experience' },
-      { label: '2024', text: 'deliberate career shift toward software development' },
-      { label: 'Today', text: 'stronger frontend specialization through hands-on projects' }
+      { label: 'Guinea', text: 'High school graduation and an early direction toward business informatics' },
+      { label: 'Germany', text: 'Work experience, a new perspective, and a clear career shift' },
+      { label: 'Today', text: 'strong focus on frontend development through hands-on projects' }
     ],
     stackTitle: 'Stack',
-    stackItems: ['Angular', 'React', 'TypeScript', 'HTML', 'SCSS', 'Firebase', 'REST APIs', 'Git / GitHub', 'Netlify', 'Stripe Connect', 'Brevo'],
+    stackItems: ['Angular', 'React', 'TypeScript', 'SCSS', 'Firebase', 'REST APIs', 'Git / GitHub'],
     focusTitle: 'Main strengths',
     focusEyebrow: 'Focus',
     focusItems: [
-      'Developing modular and scalable frontend architectures',
-      'Building responsive and user-centered interfaces',
-      'Delivering and deploying complete web applications',
-      'Working with real use cases from personal projects'
+      'Modular and scalable frontend architectures',
+      'Responsive and user-centered interfaces',
+      'Production-oriented web applications'
     ],
     goalTitle: 'Goal',
-    goalText: 'I build web applications that are functional, clearly structured, and maintainable in the long term, with a real focus on users and product quality.',
+    goalText: 'I build clear, performant, and maintainable web applications with a strong focus on users and product quality.',
     detailsTitle: 'More about me',
     detailsParagraphs: [
-      'I developed an early interest in technology and consciously chose software development after several professional stages.',
-      'Today I work intensively on personal projects such as AfroMarket, an e-commerce platform with authentication, payment integration, and role-based dashboards.',
-      'My goal is to grow within a professional development team and contribute to real, production-oriented applications.'
+      'I consciously chose software development and now work on production-oriented frontend projects.',
+      'My goal is to grow within a professional team and deliver real value through my work.'
     ]
   }
 } as const;
 
 @Component({
   selector: 'app-about',
-  imports: [RouterLink],
+  host: {
+    '[class.is-embedded]': 'embedded()'
+  },
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

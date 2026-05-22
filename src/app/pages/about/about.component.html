@@ -1,42 +1,9 @@
 <section class="about-intro">
-	<p class="section-kicker">{{ copy().title }}</p>
-	<h2 class="about-title">{{ copy().lead }}</h2>
-	<p class="lead">
-		{{ copy().intro }}
-	</p>
-
-	<div class="cta-row">
-		<a class="btn btn-primary" [routerLink]="['/home']" fragment="projects">{{ copy().projectsCta }}</a>
-		<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">{{ copy().contactCta }}</a>
-	</div>
-</section>
-
-<section class="about-grid" aria-label="About overview">
-	<article class="info-card info-card-primary">
-		<h3>{{ copy().profileTitle }}</h3>
-		<ul class="feature-list">
-			@for (item of copy().profileItems; track item) {
-				<li>{{ item }}</li>
-			}
-		</ul>
-	</article>
-
-	<article class="info-card info-card-secondary">
-		<h3>{{ copy().goalTitle }}</h3>
-		<p class="goal-copy">{{ copy().goalText }}</p>
-		<details class="details">
-			<summary>{{ copy().detailsTitle }}</summary>
-			<div class="details-body">
-				@for (paragraph of copy().detailsParagraphs; track paragraph) {
-					<p>{{ paragraph }}</p>
-				}
-			</div>
-		</details>
-	</article>
+	<h2 class="section-title-main">{{ copy().title }}</h2>
 </section>
 
 <section class="story-grid" aria-label="Background and focus">
-	<article class="story-card">
+	<article class="story-card story-bubble">
 		<div class="section-heading">
 			<p class="section-kicker">{{ copy().journeyEyebrow }}</p>
 			<h3>{{ copy().journeyTitle }}</h3>
@@ -51,24 +18,13 @@
 		</ul>
 	</article>
 
-	<article class="story-card">
-		<div class="section-heading">
-			<p class="section-kicker">{{ copy().focusEyebrow }}</p>
-			<h3>{{ copy().focusTitle }}</h3>
-		</div>
-		<ul class="focus-grid">
-			@for (item of copy().focusItems; track item) {
-				<li>{{ item }}</li>
+	<aside class="stack-panel daily-stack" aria-label="Daily stack">
+		<p class="section-kicker">{{ copy().stackTitle }}</p>
+		<h3>Daily tools</h3>
+		<ul class="badges">
+			@for (item of copy().stackItems; track item) {
+				<li class="badge">{{ item }}</li>
 			}
 		</ul>
-
-		<div class="stack-panel">
-			<h3>{{ copy().stackTitle }}</h3>
-			<ul class="badges">
-				@for (item of copy().stackItems; track item) {
-					<li class="badge">{{ item }}</li>
-				}
-			</ul>
-		</div>
-	</article>
+	</aside>
 </section>

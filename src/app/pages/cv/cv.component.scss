@@ -11,7 +11,6 @@
 	background:
 		radial-gradient(1200px 500px at 0% 0%, rgba(96, 165, 250, 0.08) 0%, transparent 45%),
 		linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 96%, transparent) 0%, color-mix(in srgb, var(--color-bg) 38%, var(--color-surface)) 100%);
-	box-shadow: 0 28px 60px rgba(2, 6, 23, 0.12);
 }
 
 .cv-hero {
@@ -96,7 +95,6 @@ h2 {
 	border-radius: 1.35rem;
 	background: linear-gradient(180deg, rgba(8, 14, 26, 0.96) 0%, rgba(11, 20, 37, 0.98) 100%);
 	border: 1px solid rgba(147, 197, 253, 0.34);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 30px 64px rgba(2, 6, 23, 0.34);
 	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
@@ -111,7 +109,6 @@ h2 {
 .cv-preview:focus-visible .document-frame {
 	transform: translateY(-2px);
 	border-color: rgba(191, 219, 254, 0.58);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 34px 72px rgba(2, 6, 23, 0.38);
 }
 
 .document-topbar {
