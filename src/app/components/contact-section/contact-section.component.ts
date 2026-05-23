@@ -1,14 +1,14 @@
 import { Component, computed, inject } from '@angular/core';
 
+import { RevealOnScrollDirective } from '../../core/reveal-on-scroll.directive';
 import { LanguageService } from '../../core/language.service';
 
 const CONTACT_COPY = {
 	de: {
 		title: 'Kontakt',
-		intro: 'Kurz und direkt: Schreiben Sie mir oder rufen Sie an, wenn Sie über Ihr Vorhaben sprechen möchten.',
-		availabilityTitle: 'Verfügbar für Frontend-Projekte und neue berufliche Chancen',
-		availabilityText: 'Ideal für eine strukturierte Frontend-Umsetzung, Produktpflege oder den Ausbau einer bestehenden Webanwendung.',
-		primaryCta: 'Direkt per E-Mail anfragen',
+		eyebrow: 'Beruflicher Austausch',
+		intro: 'Kurz und direkt: Schreiben Sie mir oder rufen Sie an, wenn Sie über eine Position, ein Team oder eine berufliche Möglichkeit sprechen möchten.',
+		availabilityTitle: 'Offen für Frontend-Positionen und neue berufliche Chancen',
 		email: 'E-Mail',
 		emailHint: 'Antwort in der Regel innerhalb von 24 bis 48 Stunden.',
 		phone: 'Telefon',
@@ -16,21 +16,24 @@ const CONTACT_COPY = {
 		address: 'Adresse',
 		country: 'Deutschland',
 		github: 'GitHub',
-		githubHint: 'Code, Demos und kleine Frontend-Experimente.',
+		githubHint: 'Code, Demos und Frontend-Experimente aus meinem Lern- und Arbeitsalltag.',
 		formTitle: 'Kontaktformular',
-		formHint: 'Ihre Nachricht wird in Ihrem Mailprogramm als E-Mail geöffnet.',
+		formHint: 'Ihre Nachricht wird in Gmail geoffnet. Falls Gmail nicht verfugbar ist, wird Ihr Mailprogramm verwendet.',
 		name: 'Name',
 		emailField: 'E-Mail',
 		message: 'Nachricht',
 		submit: 'Senden',
-		subject: 'Kontakt über das Portfolio'
+		subject: 'Kontakt über das Portfolio / berufliche Gelegenheit',
+		bodyNameLabel: 'Name',
+		bodyEmailLabel: 'E-Mail',
+		bodyMessageLabel: 'Nachricht',
+		bodyFooter: 'Vielen Dank fur Ihre Nachricht.'
 	},
 	en: {
 		title: 'Contact',
-		intro: 'Short and direct: send me a message or give me a call if you would like to discuss your project.',
-		availabilityTitle: 'Available for frontend projects and new career opportunities',
-		availabilityText: 'A strong fit for structured frontend delivery, product iteration, or extending an existing web application.',
-		primaryCta: 'Reach out by email',
+		eyebrow: 'Career conversations',
+		intro: 'Short and direct: send me a message or call if you would like to discuss a role, a team, or a career opportunity.',
+		availabilityTitle: 'Open to frontend roles and new career opportunities',
 		email: 'Email',
 		emailHint: 'Usually answered within 24 to 48 hours.',
 		phone: 'Phone',
@@ -38,20 +41,24 @@ const CONTACT_COPY = {
 		address: 'Address',
 		country: 'Germany',
 		github: 'GitHub',
-		githubHint: 'Code, demos, and small frontend experiments.',
+		githubHint: 'Code, demos, and frontend experiments from my day-to-day learning and work.',
 		formTitle: 'Contact form',
-		formHint: 'Your message will open as an email in your mail app.',
+		formHint: 'Your message will open in Gmail. If Gmail is not available, your mail app will be used instead.',
 		name: 'Name',
 		emailField: 'Email',
 		message: 'Message',
 		submit: 'Send',
-		subject: 'Contact via portfolio'
+		subject: 'Portfolio contact / career opportunity',
+		bodyNameLabel: 'Name',
+		bodyEmailLabel: 'Email',
+		bodyMessageLabel: 'Message',
+		bodyFooter: 'Thank you for your message.'
 	}
 } as const;
 
 @Component({
 	selector: 'app-contact-section',
-	imports: [],
+	imports: [RevealOnScrollDirective],
 	templateUrl: './contact-section.component.html',
 	styleUrl: './contact-section.component.scss'
 })
@@ -61,9 +68,25 @@ export class ContactSectionComponent {
 
 	submitContact(name: string, email: string, message: string): void {
 		const to = 'lamaid0502@gmail.com';
-		const subject = this.copy().subject;
-		const body = `Name: ${name}\nE-Mail: ${email}\n\nNachricht:\n${message}`;
-		const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-		window.location.href = mailto;
+		const copy = this.copy();
+		const subject = copy.subject;
+		const body = [
+			`${copy.bodyNameLabel}: ${name}`,
+			`${copy.bodyEmailLabel}: ${email}`,
+			'',
+			`${copy.bodyMessageLabel}:`,
+			message,
+			'',
+			copy.bodyFooter
+		].join('\n');
+		const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+		const mailtoUrl = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+		const gmailWindow = window.open(gmailComposeUrl, '_blank', 'noopener,noreferrer');
+
+		if (gmailWindow) {
+			return;
+		}
+
+		window.location.href = mailtoUrl;
 	}
 }

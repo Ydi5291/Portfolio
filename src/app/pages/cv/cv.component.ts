@@ -9,7 +9,7 @@ const CV_COPY = {
     title: 'Mein Lebenslauf als PDF',
     intro: 'Kurz, direkt und sofort downloadbar.',
     highlights: ['Angular / React', 'Frontend Development', 'Praxisnahe Projekte'],
-    recruiterHint: 'Hier koennen Sie meinen CV als PDF herunterladen, entweder über den Button „CV herunterladen“ oder direkt per Klick auf die Vorschau.',
+    recruiterHint: 'Hier können Sie meinen Lebenslauf als PDF herunterladen, entweder über den Button „CV herunterladen“ oder direkt per Klick auf die Vorschau.',
     downloadCta: 'CV herunterladen',
     contactCta: 'Mich kontaktieren',
     metaLabel: 'PDF · Softwareentwickler'

@@ -1,81 +1,86 @@
 <section id="contact" class="home-section contact-section">
-	<div class="contact-intro">
-		<p class="section-kicker">{{ copy().title }}</p>
-		<h2 class="contact-title">{{ copy().availabilityTitle }}</h2>
+	<div appRevealOnScroll class="contact-intro slide-bottom">
+		<p class="section-kicker">{{ copy().eyebrow }}</p>
+		<h2 class="contact-title">{{ copy().title }}</h2>
+		<p class="contact-lead">{{ copy().availabilityTitle }}</p>
 		<p class="muted">{{ copy().intro }}</p>
-		<p class="availability-copy">{{ copy().availabilityText }}</p>
-		<div class="contact-cta-row">
-			<a class="btn btn-primary" href="mailto:lamaid0502&#64;gmail.com">{{ copy().primaryCta }}</a>
-			<a class="btn btn-secondary" href="tel:+491626291461">{{ copy().phone }}</a>
-		</div>
 	</div>
 
 	<div class="contact-grid">
-		<section class="contact-card">
-			<h3 class="card-title" [attr.aria-label]="copy().email">
-				<svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-					<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.5-.5a.5.5 0 0 0-.5.5v.29l6 4.15 6-4.15V6.5a.5.5 0 0 0-.5-.5h-11Zm11.5 3.16-5.43 3.76a1 1 0 0 1-1.14 0L6 9.16v8.34a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V9.16Z"/>
-				</svg>
-				<span class="sr-only">{{ copy().email }}</span>
-			</h3>
-			<p><a class="contact-link" href="mailto:lamaid0502&#64;gmail.com">lamaid0502&#64;gmail.com</a></p>
-			<p class="muted">{{ copy().emailHint }}</p>
-		</section>
+		<div appRevealOnScroll class="contact-cards-grid slide-bottom reveal-delay-1">
+			<section class="contact-card">
+				<h3 class="card-title">
+					<svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+						<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.5-.5a.5.5 0 0 0-.5.5v.29l6 4.15 6-4.15V6.5a.5.5 0 0 0-.5-.5h-11Zm11.5 3.16-5.43 3.76a1 1 0 0 1-1.14 0L6 9.16v8.34a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V9.16Z"/>
+					</svg>
+					<span>{{ copy().email }}</span>
+				</h3>
+				<p><a class="contact-link" href="mailto:lamaid0502&#64;gmail.com">lamaid0502&#64;gmail.com</a></p>
+				<p class="muted">{{ copy().emailHint }}</p>
+			</section>
 
-		<section class="contact-card">
-			<h3 class="card-title" [attr.aria-label]="copy().phone">
+			<section class="contact-card">
+				<h3 class="card-title">
+					<svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+						<path d="M6.62 10.79a15.23 15.23 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.4 21 3 13.6 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.27.2 2.47.57 3.58a1 1 0 0 1-.24 1.01l-2.21 2.2Z"/>
+					</svg>
+					<span>{{ copy().phone }}</span>
+				</h3>
+				<p><a class="contact-link" href="tel:+491626291461">+49 162 6291461</a></p>
+				<p class="muted">{{ copy().phoneHint }}</p>
+			</section>
 
-				<svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-					<path d="M6.62 10.79a15.23 15.23 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.4 21 3 13.6 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.27.2 2.47.57 3.58a1 1 0 0 1-.24 1.01l-2.21 2.2Z"/>
-				</svg>
-				<span class="sr-only">{{ copy().phone }}</span>
-			</h3>
-			<p><a class="contact-link" href="tel:+491626291461">+49 162 6291461</a></p>
-			<p class="muted">{{ copy().phoneHint }}</p>
-		</section>
+			<section class="contact-card">
+				<h3 class="card-title">
+					<svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+						<path d="M12 2a7 7 0 0 1 7 7c0 5.05-7 13-7 13S5 14.05 5 9a7 7 0 0 1 7-7Zm0 9.25A2.25 2.25 0 1 0 12 6.75a2.25 2.25 0 0 0 0 4.5Z"/>
+					</svg>
+					<span>{{ copy().address }}</span>
+				</h3>
+				<p>Kapuzinerring 26<br>59457 Werl</p>
+				<p class="muted">{{ copy().country }}</p>
+			</section>
 
-		<section class="contact-card">
-			<h3 class="card-title" [attr.aria-label]="copy().address">
-				<svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-					<path d="M12 2a7 7 0 0 1 7 7c0 5.05-7 13-7 13S5 14.05 5 9a7 7 0 0 1 7-7Zm0 9.25A2.25 2.25 0 1 0 12 6.75a2.25 2.25 0 0 0 0 4.5Z"/>
-				</svg>
-				<span class="sr-only">{{ copy().address }}</span>
-			</h3>
-			<p>Kapuzinerring 26<br>59457 Werl</p>
-			<p class="muted">{{ copy().country }}</p>
-		</section>
+			<section class="contact-card">
+				<h3 class="card-title">
+					<svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+						<path d="M12 .5C5.73.5.5 5.85.5 12.47c0 5.29 3.44 9.78 8.2 11.36.6.12.82-.27.82-.59v-2.2c-3.34.75-4.04-1.66-4.04-1.66-.55-1.45-1.34-1.84-1.34-1.84-1.1-.78.08-.77.08-.77 1.22.09 1.86 1.29 1.86 1.29 1.08 1.92 2.83 1.36 3.52 1.04.11-.81.42-1.36.76-1.67-2.67-.31-5.47-1.38-5.47-6.16 0-1.36.46-2.47 1.24-3.34-.13-.31-.54-1.58.12-3.29 0 0 1.01-.33 3.3 1.27.96-.27 1.98-.4 3-.41 1.02 0 2.04.14 3 .41 2.29-1.6 3.3-1.27 3.3-1.27.66 1.71.25 2.98.12 3.29.77.87 1.24 1.98 1.24 3.34 0 4.79-2.81 5.85-5.49 6.16.43.39.82 1.14.82 2.31v3.42c0 .33.22.71.83.59 4.76-1.58 8.2-6.07 8.2-11.36C23.5 5.85 18.27.5 12 .5z"/>
+					</svg>
+					<span>{{ copy().github }}</span>
+				</h3>
+				<p><a class="contact-link" href="https://github.com/Ydi5291" target="_blank" rel="noopener">&#64;Ydi5291</a></p>
+				<p class="muted">{{ copy().githubHint }}</p>
+			</section>
+		</div>
 
-		<section class="contact-card">
-			<h3 class="card-title" [attr.aria-label]="copy().github">
-				<svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-					<path d="M12 .5C5.73.5.5 5.85.5 12.47c0 5.29 3.44 9.78 8.2 11.36.6.12.82-.27.82-.59v-2.2c-3.34.75-4.04-1.66-4.04-1.66-.55-1.45-1.34-1.84-1.34-1.84-1.1-.78.08-.77.08-.77 1.22.09 1.86 1.29 1.86 1.29 1.08 1.92 2.83 1.36 3.52 1.04.11-.81.42-1.36.76-1.67-2.67-.31-5.47-1.38-5.47-6.16 0-1.36.46-2.47 1.24-3.34-.13-.31-.54-1.58.12-3.29 0 0 1.01-.33 3.3 1.27.96-.27 1.98-.4 3-.41 1.02 0 2.04.14 3 .41 2.29-1.6 3.3-1.27 3.3-1.27.66 1.71.25 2.98.12 3.29.77.87 1.24 1.98 1.24 3.34 0 4.79-2.81 5.85-5.49 6.16.43.39.82 1.14.82 2.31v3.42c0 .33.22.71.83.59 4.76-1.58 8.2-6.07 8.2-11.36C23.5 5.85 18.27.5 12 .5z"/>
-				</svg>
-				<span class="sr-only">{{ copy().github }}</span>
-			</h3>
-			<p><a class="contact-link" href="https://github.com/Ydi5291" target="_blank" rel="noopener">&#64;Ydi5291</a></p>
-			<p class="muted">{{ copy().githubHint }}</p>
-		</section>
-
-		<section class="contact-card contact-form">
-			<h3>{{ copy().formTitle }}</h3>
+		<section appRevealOnScroll class="contact-card contact-form slide-bottom reveal-delay-2">
+			<div class="form-header">
+				<h3>{{ copy().formTitle }}</h3>
+			</div>
 			<p class="muted">{{ copy().formHint }}</p>
 
 			<form class="form" (submit)="submitContact(name.value, email.value, message.value); $event.preventDefault()">
 				<div class="form-row">
 					<label class="field">
 						<span class="label">{{ copy().name }}</span>
-						<input #name class="input" name="name" type="text" autocomplete="name" required>
+						<div class="field-control">
+							<input #name class="input" name="name" type="text" autocomplete="name" required>
+						</div>
 					</label>
 
 					<label class="field">
 						<span class="label">{{ copy().emailField }}</span>
-						<input #email class="input" name="email" type="email" autocomplete="email" inputmode="email" required>
+						<div class="field-control">
+							<input #email class="input" name="email" type="email" autocomplete="email" inputmode="email" required>
+						</div>
 					</label>
 				</div>
 
 				<label class="field">
 					<span class="label">{{ copy().message }}</span>
-					<textarea #message class="textarea" name="message" rows="5" required></textarea>
+					<div class="field-control field-control-textarea">
+						<textarea #message class="textarea" name="message" rows="5" required></textarea>
+					</div>
 				</label>
 
 				<div class="form-actions">

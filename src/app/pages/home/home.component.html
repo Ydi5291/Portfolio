@@ -28,10 +28,6 @@
 					<div class="cta-row">
 						<a class="btn btn-primary" routerLink="/cv">{{ copy().cvCta }}</a>
 					</div>
-
-					<a class="hero-scroll-link" [routerLink]="['/home']" fragment="why" [attr.aria-label]="copy().scrollLabel">
-						<img src="assets/images/arrow-down.png" alt="" width="28" height="28" decoding="async">
-					</a>
 				</div>
 			</div>
 		</header>
@@ -39,8 +35,8 @@
 		<div class="landing-stack">
 			<section id="why" class="home-section section-shell">
 				<div class="why-layout">
-					<h2 class="section-title section-title-main why-title">{{ copy().whyTitle }}</h2>
-					<div class="why-bubble">
+					<h2 appRevealOnScroll class="section-title section-title-main why-title slide-bottom">{{ copy().whyTitle }}</h2>
+					<div appRevealOnScroll class="why-bubble slide-bottom reveal-delay-1">
 						@for (paragraph of copy().whyParagraphs; track paragraph) {
 							<p>{{ paragraph }}</p>
 						}

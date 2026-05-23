@@ -1,9 +1,10 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, HostListener, Inject, NgZone, OnDestroy, PLATFORM_ID, computed } from '@angular/core';
+import { AfterViewInit, Component, HostListener, Inject, PLATFORM_ID, computed } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 import { LanguageSwitcherComponent } from './components/language-switcher/language-switcher.component';
+import { RevealOnScrollDirective } from './core/reveal-on-scroll.directive';
 import { LanguageService } from './core/language.service';
 
 const APP_COPY = {
@@ -14,10 +15,10 @@ const APP_COPY = {
     about: 'Über mich',
     projects: 'Projekte',
     contact: 'Kontakt',
+    impressum: 'Impressum',
     footerCta: 'Verfügbar für Frontend-Projekte mit Angular / React sowie für produktnahe Webanwendungen.',
     footerRole: 'Frontend Developer',
-    footerDescription: 'Entwicklung moderner Webanwendungen mit Fokus auf Angular, React und skalierbare Architekturen.',
-    scrollTop: 'Nach oben scrollen'
+    footerDescription: 'Entwicklung moderner Webanwendungen mit Fokus auf Angular, React und skalierbare Architekturen.'
   },
   en: {
     menu: 'Menu',
@@ -26,20 +27,20 @@ const APP_COPY = {
     about: 'About me',
     projects: 'Projects',
     contact: 'Contact',
+    impressum: 'Legal notice',
     footerCta: 'Available for Angular / React frontend projects and product-oriented web applications.',
     footerRole: 'Frontend Developer',
-    footerDescription: 'Building modern web applications focused on Angular, React, and scalable architectures.',
-    scrollTop: 'Scroll to top'
+    footerDescription: 'Building modern web applications focused on Angular, React, and scalable architectures.'
   }
 } as const;
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, LanguageSwitcherComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, LanguageSwitcherComponent, RevealOnScrollDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements AfterViewInit, OnDestroy {
+export class AppComponent implements AfterViewInit {
   title = 'portfolio';
 	currentYear = new Date().getFullYear();
   mobileMenuOpen = false;
@@ -47,18 +48,17 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   isHeaderVisible = true;
   lastScrollTop = 0;
   private pendingMobileMenuOpen = false;
-  private scrollObserver?: IntersectionObserver;
   readonly copy = computed(() => APP_COPY[this.languageService.language()]);
 
   constructor(
 		private readonly router: Router,
-		private readonly ngZone: NgZone,
 		@Inject(DOCUMENT) private readonly document: Document,
 		@Inject(PLATFORM_ID) private readonly platformId: object,
 		private readonly languageService: LanguageService
 	) {
     this.router.events.pipe(takeUntilDestroyed()).subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        this.queueFragmentScroll(event.urlAfterRedirects);
         this.mobileMenuOpen = false;
         if (this.pendingMobileMenuOpen) {
           this.pendingMobileMenuOpen = false;
@@ -73,11 +73,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 	ngAfterViewInit(): void {
 		this.syncHeaderState();
     this.syncHomeMobileMenuGeometry();
-		this.bindScrollAnimations();
-	}
-
-  ngOnDestroy(): void {
-    this.scrollObserver?.disconnect();
   }
 
   toggleMobileMenu(): void {
@@ -105,20 +100,14 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 		this.clearHomeMobileMenuGeometry();
   }
 
-  scrollToTop(): void {
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
 	isHomeLayout(): boolean {
 		return this.router.url === '/' || this.router.url.startsWith('/home') || this.router.url.startsWith('/contact');
 	}
 
   private shouldNavigateHomeBeforeOpeningMenu(): boolean {
-    return isPlatformBrowser(this.platformId) && window.innerWidth <= 768 && this.router.url.startsWith('/cv');
+    return isPlatformBrowser(this.platformId)
+		&& window.innerWidth <= 768
+		&& (this.router.url.startsWith('/cv') || this.router.url.startsWith('/impressum'));
   }
 
   private shouldReturnToHeroBeforeOpeningMenu(): boolean {
@@ -160,46 +149,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
 
-  private bindScrollAnimations(): void {
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
-
-    this.scrollObserver?.disconnect();
-
-    const elements = this.document.querySelectorAll<HTMLElement>('.scroll-animate');
-    if (!elements.length) {
-      return;
-    }
-
-    this.scrollObserver = new IntersectionObserver(
-      (entries) => {
-        this.ngZone.run(() => {
-          for (const entry of entries) {
-            if (!entry.isIntersecting) {
-              continue;
-            }
-
-            entry.target.classList.add('is-visible');
-            this.scrollObserver?.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-        rootMargin: '0px 0px -10% 0px'
-      }
-    );
-
-    for (const element of elements) {
-      if (element.classList.contains('is-visible')) {
-        continue;
-      }
-
-      this.scrollObserver.observe(element);
-    }
-  }
-
   private queueScrollAnimationRefresh(): void {
     if (!isPlatformBrowser(this.platformId)) {
       return;
@@ -208,8 +157,34 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     requestAnimationFrame(() => {
       this.syncHeaderState();
       this.syncHomeMobileMenuGeometry();
-      this.bindScrollAnimations();
     });
+  }
+
+  private queueFragmentScroll(url: string): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    const fragment = this.extractFragment(url);
+    if (!fragment) {
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const target = this.document.getElementById(fragment);
+        target?.scrollIntoView({ block: 'start', behavior: 'auto' });
+      });
+    });
+  }
+
+  private extractFragment(url: string): string | null {
+    const hashIndex = url.indexOf('#');
+    if (hashIndex < 0 || hashIndex === url.length - 1) {
+      return null;
+    }
+
+    return decodeURIComponent(url.slice(hashIndex + 1));
   }
 
   private queueHomeMobileMenuGeometrySync(): void {

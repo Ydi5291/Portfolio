@@ -18,12 +18,40 @@ a {
 
 .contact-section {
 	scroll-margin-top: 6rem;
+	position: relative;
+	overflow: visible;
+}
+
+.contact-section::before,
+.contact-section::after {
+	content: none;
+	position: absolute;
+	pointer-events: none;
+	border-radius: 999px;
+	filter: blur(30px);
+	opacity: 0.7;
+}
+
+.contact-section::before {
+	width: 13rem;
+	height: 13rem;
+	top: 3rem;
+	left: -2rem;
+	background: radial-gradient(circle, rgba(96, 165, 250, 0.2) 0%, rgba(96, 165, 250, 0) 72%);
+}
+
+.contact-section::after {
+	width: 16rem;
+	height: 16rem;
+	right: -4rem;
+	bottom: 2rem;
+	background: radial-gradient(circle, rgba(137, 188, 217, 0.18) 0%, rgba(137, 188, 217, 0) 74%);
 }
 
 .home-section h2 {
 	margin-top: 0;
 	margin-bottom: 0.9rem;
-	font-size: clamp(1.7rem, 1.3rem + 1.1vw, 2.6rem);
+	font-size: clamp(2.1rem, 1.55rem + 1.6vw, 3.5rem);
 	line-height: 1.04;
 	letter-spacing: -0.04em;
 }
@@ -40,21 +68,40 @@ a {
 .contact-intro {
 	max-width: 52rem;
 	margin: 0 auto;
+	display: grid;
+	gap: 0.9rem;
+	position: relative;
+	z-index: 1;
+}
+
+.contact-title {
+	color: #89bcd9;
+	text-wrap: balance;
+	text-shadow: 0 10px 32px rgba(96, 165, 250, 0.18);
+}
+
+.contact-lead {
+	max-width: 44rem;
+	margin: 0 auto;
+	font-size: clamp(1.05rem, 0.95rem + 0.45vw, 1.35rem);
+	line-height: 1.55;
+	color: #eff6ff;
+	text-wrap: balance;
+}
+
+.contact-intro .muted {
+	max-width: 42rem;
+	margin-inline: auto;
+	font-size: 1.02rem;
+	line-height: 1.72;
+	color: rgba(226, 236, 255, 0.82);
 }
 
 .availability-copy {
 	max-width: 48rem;
-	margin: 0.6rem auto 0;
+	margin: 0 auto;
 	color: rgba(214, 229, 255, 0.82);
 	font-size: 1.02rem;
-}
-
-.contact-cta-row {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 0.75rem;
-	margin-top: 1.2rem;
 }
 
 .sr-only {
@@ -70,11 +117,14 @@ a {
 }
 
 .card-title {
-	margin-top: 0;
+	margin: 0 0 0.85rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 0.5rem;
+	font-size: 1.08rem;
+	letter-spacing: -0.02em;
+	color: #eff6ff;
 }
 
 .card-icon {
@@ -82,6 +132,12 @@ a {
 	height: 22px;
 	display: block;
 	fill: currentColor;
+	padding: 0.45rem;
+	box-sizing: content-box;
+	border-radius: 999px;
+	border: 1px solid rgba(147, 197, 253, 0.24);
+	background: rgba(8, 17, 31, 0.58);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .contact-link {
@@ -89,33 +145,42 @@ a {
 	align-items: center;
 	justify-content: center;
 	gap: 0.4rem;
-	padding: 0.4rem 0.6rem;
+	padding: 0.58rem 0.9rem;
 	border-radius: 999px;
-	border: 1px solid var(--color-border);
-	background: var(--color-bg);
-	color: var(--color-text);
+	border: 1px solid rgba(120, 168, 255, 0.26);
+	background: rgba(11, 22, 40, 0.82);
+	color: #eff6ff;
 	text-decoration: none;
 	transition: background-color var(--transition), border-color var(--transition),
-		opacity var(--transition);
+		opacity var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 .contact-link:hover {
 	text-decoration: none;
-	background: var(--color-surface);
-	border-color: color-mix(in srgb, var(--color-border) 65%, var(--color-text));
+	background: rgba(16, 33, 60, 0.9);
+	border-color: rgba(147, 197, 253, 0.58);
+	transform: translateY(-1px);
+	box-shadow: 0 10px 24px rgba(15, 23, 42, 0.24);
 }
 
 .contact-grid {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 1rem;
-	margin-top: 1.35rem;
+	gap: 1.1rem;
+	margin-top: 1.8rem;
+	align-items: start;
+	position: relative;
+	z-index: 1;
+}
+
+.contact-cards-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.1rem;
 }
 
 .contact-form {
-	order: 10;
-	width: min(100%, 920px);
-	margin-inline: auto;
+	width: 100%;
 }
 
 .form {
@@ -136,6 +201,44 @@ a {
 	text-align: left;
 }
 
+.field-control {
+	position: relative;
+	display: block;
+	padding: 1px;
+	border-radius: 0.85rem;
+	overflow: hidden;
+	isolation: isolate;
+}
+
+.field-control::before {
+	content: '';
+	position: absolute;
+	inset: -125%;
+	background: conic-gradient(
+		from 0deg,
+		rgba(59, 130, 246, 0) 0deg,
+		rgba(59, 130, 246, 0.72) 68deg,
+		rgba(6, 182, 212, 0.42) 132deg,
+		rgba(139, 92, 246, 0.34) 214deg,
+		rgba(59, 130, 246, 0.58) 292deg,
+		rgba(59, 130, 246, 0) 360deg
+	);
+	animation: contact-form-orbit 7s linear infinite;
+	opacity: 1;
+	filter: blur(10px);
+	z-index: -2;
+}
+
+.field-control::after {
+	content: '';
+	position: absolute;
+	inset: 1px;
+	border-radius: calc(0.85rem - 1px);
+	background: rgba(7, 17, 29, 0.88);
+	box-shadow: inset 0 1px 0 rgba(248, 250, 252, 0.03);
+	z-index: -1;
+}
+
 .label {
 	font-weight: 650;
 	color: color-mix(in srgb, var(--color-text) 88%, var(--color-muted));
@@ -150,6 +253,9 @@ a {
 	color: var(--color-text);
 	padding: 0.6rem 0.7rem;
 	font: inherit;
+	position: relative;
+	z-index: 1;
+	display: block;
 	transition: background-color var(--transition), border-color var(--transition),
 		box-shadow var(--transition);
 }
@@ -172,39 +278,143 @@ a {
 }
 
 .contact-card {
-	padding: 0.35rem 0;
+	padding: 1.2rem 1rem;
 	background: transparent;
 	border: 0;
 	border-radius: 0;
-	transition: transform var(--transition), border-color var(--transition);
+	box-shadow: none;
+	transition: transform var(--transition), border-color var(--transition), background-color var(--transition);
 	text-align: center;
+}
+
+.contact-cards-grid .contact-card {
+	position: relative;
+	border-radius: 1.25rem;
+	overflow: hidden;
+	isolation: isolate;
+	padding: calc(1.2rem + 1px) calc(1rem + 1px);
+}
+
+.contact-cards-grid .contact-card::before {
+	content: '';
+	position: absolute;
+	inset: -135%;
+	background: conic-gradient(
+		from 0deg,
+		rgba(59, 130, 246, 0) 0deg,
+		rgba(59, 130, 246, 0.78) 72deg,
+		rgba(6, 182, 212, 0.42) 148deg,
+		rgba(139, 92, 246, 0.34) 228deg,
+		rgba(59, 130, 246, 0.56) 304deg,
+		rgba(59, 130, 246, 0) 360deg
+	);
+	animation: contact-form-orbit 8.5s linear infinite;
+	filter: blur(12px);
+	opacity: 1;
+	z-index: -2;
+}
+
+.contact-cards-grid .contact-card::after {
+	content: '';
+	position: absolute;
+	inset: 1px;
+	border-radius: calc(1.25rem - 1px);
+	background:
+		radial-gradient(135% 120% at 0% 0%, rgba(96, 165, 250, 0.16) 0%, transparent 46%),
+		linear-gradient(180deg, rgba(12, 24, 44, 0.94) 0%, rgba(9, 17, 31, 0.97) 60%, rgba(6, 12, 24, 0.99) 100%);
+	box-shadow: inset 0 1px 0 rgba(248, 250, 252, 0.03);
+	z-index: -1;
+}
+
+.contact-cards-grid .contact-card > * {
+	position: relative;
+	z-index: 1;
+}
+
+.contact-card p {
+	margin: 0;
+}
+
+.contact-card .muted {
+	margin-top: 0.65rem;
+	color: rgba(214, 229, 255, 0.72);
+	line-height: 1.6;
 }
 
 .contact-card.contact-form {
 	--focus-ring: 0 0 0 3px color-mix(in srgb, var(--color-surface) 35%, transparent);
 	color: var(--color-surface);
-	background: transparent;
+	padding: 1.35rem;
+	position: static;
+	isolation: auto;
+	overflow: visible;
+}
+
+.contact-card.contact-form > * {
+	position: static;
+	z-index: auto;
+}
+
+.form-header {
+	display: grid;
+	gap: 0.35rem;
+	margin-bottom: 0.5rem;
+	text-align: center;
+}
+
+.form-header .section-kicker {
+	margin-bottom: 0;
+}
+
+.form-header h3 {
+	margin: 0;
+	font-size: clamp(1.3rem, 1.15rem + 0.45vw, 1.6rem);
+	letter-spacing: -0.03em;
+}
+
+.form-header::after {
+	content: '';
+	width: min(6rem, 32vw);
+	height: 1px;
+	margin: 0.35rem auto 0;
+	background: linear-gradient(90deg, transparent 0%, rgba(147, 197, 253, 0.75) 50%, transparent 100%);
 }
 
 :host-context(.home-page-shell) .contact-card.contact-form {
 	--focus-ring: 0 0 0 3px rgba(96, 165, 250, 0.22);
 	color: #eff6ff;
-	border-color: rgba(120, 168, 255, 0.26);
+	border-color: transparent;
+	background: transparent;
+	box-shadow: none;
+}
+
+:host-context(.home-page-shell) .contact-card.contact-form::before {
+	content: none;
+	position: absolute;
+	inset: -32%;
+	background: conic-gradient(
+		from 0deg,
+		rgba(96, 165, 250, 0) 0deg,
+		rgba(96, 165, 250, 0.42) 70deg,
+		rgba(191, 219, 254, 0.24) 128deg,
+		rgba(96, 165, 250, 0) 210deg,
+		rgba(137, 188, 217, 0.28) 290deg,
+		rgba(96, 165, 250, 0) 360deg
+	);
+	animation: contact-form-orbit 12s linear infinite;
+	opacity: 0.95;
+	z-index: -2;
+}
+
+:host-context(.home-page-shell) .contact-card.contact-form::after {
+	content: none;
+	position: absolute;
+	inset: 1px;
+	border-radius: calc(1.5rem - 1px);
 	background:
-		radial-gradient(
-			120% 100% at 12% 0%,
-			rgba(96, 165, 250, 0.2) 0%,
-			transparent 54%
-		),
-		linear-gradient(
-			180deg,
-			rgba(12, 24, 44, 0.96) 0%,
-			rgba(9, 17, 31, 0.98) 58%,
-			rgba(6, 12, 24, 0.99) 100%
-		);
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.05),
-		0 24px 48px rgba(2, 6, 23, 0.32);
+		radial-gradient(130% 120% at 0% 0%, rgba(96, 165, 250, 0.14) 0%, transparent 48%),
+		linear-gradient(180deg, rgba(12, 24, 44, 0.96) 0%, rgba(9, 17, 31, 0.98) 58%, rgba(6, 12, 24, 0.99) 100%);
+	z-index: -1;
 }
 
 .contact-card.contact-form .muted {
@@ -232,10 +442,32 @@ a {
 
 :host-context(.home-page-shell) .contact-card.contact-form .input,
 :host-context(.home-page-shell) .contact-card.contact-form .textarea {
-	background: rgba(6, 12, 24, 0.88);
+	background: rgba(6, 12, 24, 0.78);
 	border-color: rgba(120, 168, 255, 0.2);
 	color: #eff6ff;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+	box-shadow:
+		inset 0 1px 0 rgba(255, 255, 255, 0.03),
+		0 8px 18px rgba(2, 6, 23, 0.12);
+}
+
+:host-context(.home-page-shell) .field-control::before {
+	opacity: 1;
+	background: conic-gradient(
+		from 0deg,
+		rgba(96, 165, 250, 0) 0deg,
+		rgba(96, 165, 250, 0.88) 70deg,
+		rgba(191, 219, 254, 0.52) 124deg,
+		rgba(6, 182, 212, 0.46) 198deg,
+		rgba(139, 92, 246, 0.36) 272deg,
+		rgba(96, 165, 250, 0) 360deg
+	);
+	filter: blur(12px);
+}
+
+:host-context(.home-page-shell) .field-control::after {
+	background:
+		radial-gradient(140% 120% at 0% 0%, rgba(96, 165, 250, 0.14) 0%, transparent 48%),
+		linear-gradient(180deg, rgba(12, 24, 44, 0.96) 0%, rgba(9, 17, 31, 0.98) 58%, rgba(6, 12, 24, 0.99) 100%);
 }
 
 .contact-card.contact-form .input:focus-visible,
@@ -246,6 +478,11 @@ a {
 :host-context(.home-page-shell) .contact-card.contact-form .input:focus-visible,
 :host-context(.home-page-shell) .contact-card.contact-form .textarea:focus-visible {
 	border-color: rgba(147, 197, 253, 0.55);
+	background: rgba(8, 16, 30, 0.92);
+	transform: translateY(-1px);
+	box-shadow:
+		0 0 0 3px rgba(96, 165, 250, 0.18),
+		0 16px 30px rgba(2, 6, 23, 0.22);
 }
 
 .contact-card.contact-form .btn-primary {
@@ -258,23 +495,43 @@ a {
 	background: linear-gradient(180deg, #dbeafe 0%, #bfdbfe 100%);
 	border-color: rgba(191, 219, 254, 0.85);
 	color: #081224;
+	box-shadow: 0 16px 28px rgba(96, 165, 250, 0.18);
 }
 
 .contact-card.contact-form .btn-primary:hover {
 	opacity: 0.92;
 }
 
+:host-context(.home-page-shell) .contact-card.contact-form .btn-primary:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 20px 34px rgba(96, 165, 250, 0.28);
+}
+
+@keyframes contact-form-orbit {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 @media (min-width: 720px) {
 	.contact-grid {
+		grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+		gap: 1.25rem;
+	}
+
+	.contact-cards-grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
-	.contact-cta-row {
-		justify-content: center;
+	.contact-card {
+		padding: 1.35rem 1.15rem;
 	}
 
-	.contact-form {
-		grid-column: 1 / -1;
+	.contact-card.contact-form {
+		padding: 1.5rem;
 	}
 
 	.form-row {
@@ -285,24 +542,43 @@ a {
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
 	.home-section:hover,
 	.contact-card:hover {
-		transform: scale(1.01);
-		border-color: rgba(17, 24, 39, 0.18);
+		transform: translateY(-3px);
+		border-color: rgba(147, 197, 253, 0.42);
 	}
 }
 
 @media (min-width: 1024px) {
 	.contact-grid {
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
+		gap: 1.5rem;
 	}
 
-	.contact-form {
-		grid-column: 1 / -1;
+	.contact-card.contact-form {
+		padding: 1.7rem;
 	}
 }
 
 @media (max-width: 480px) {
-	.home-section,
 	.contact-card {
-		padding: 0.875rem;
+		padding: 1rem 0.9rem;
+	}
+
+	.contact-link {
+		width: 100%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.contact-section::before,
+	.contact-section::after,
+	:host-context(.home-page-shell) .contact-card.contact-form::before {
+		animation: none;
+	}
+
+	.contact-link:hover,
+	:host-context(.home-page-shell) .contact-card.contact-form .input:focus-visible,
+	:host-context(.home-page-shell) .contact-card.contact-form .textarea:focus-visible,
+	:host-context(.home-page-shell) .contact-card.contact-form .btn-primary:hover {
+		transform: none;
 	}
 }

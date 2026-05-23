@@ -4,6 +4,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { ContactSectionComponent } from '../../components/contact-section/contact-section.component';
+import { RevealOnScrollDirective } from '../../core/reveal-on-scroll.directive';
 import { LanguageService } from '../../core/language.service';
 
 const HOME_COPY = {
@@ -19,7 +20,6 @@ const HOME_COPY = {
     aboutCta: 'Mein Profil entdecken',
     contactCta: 'Mich kontaktieren',
     cvCta: 'CV herunterladen',
-    scrollLabel: 'Zur Warum-ich-Sektion scrollen',
     whyTitle: 'Warum ich?',
     whyParagraphs: [
         'Ich arbeite strukturiert, lösungsorientiert, zuverlässig, hochmotiviert und lernfähig.',
@@ -38,7 +38,6 @@ const HOME_COPY = {
     aboutCta: 'Explore my profile',
     contactCta: 'Contact me',
     cvCta: 'Download CV',
-    scrollLabel: 'Scroll to the Why me section',
     whyTitle: 'Why me?',
     whyParagraphs: [
         'I work in a structured, solution-oriented, reliable, highly motivated, and fast-learning way.',
@@ -49,7 +48,7 @@ const HOME_COPY = {
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, AboutComponent, ProjectsComponent, ContactSectionComponent],
+  imports: [RouterLink, AboutComponent, ProjectsComponent, ContactSectionComponent, RevealOnScrollDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

@@ -1,11 +1,10 @@
-<section class="about-intro">
+<section appRevealOnScroll class="about-intro slide-bottom">
 	<h2 class="section-title-main">{{ copy().title }}</h2>
 </section>
 
 <section class="story-grid" aria-label="Background and focus">
-	<article class="story-card story-bubble">
+	<article appRevealOnScroll class="story-card story-bubble slide-bottom reveal-delay-1">
 		<div class="section-heading">
-			<p class="section-kicker">{{ copy().journeyEyebrow }}</p>
 			<h3>{{ copy().journeyTitle }}</h3>
 		</div>
 		<ul class="timeline">
@@ -18,9 +17,8 @@
 		</ul>
 	</article>
 
-	<aside class="stack-panel daily-stack" aria-label="Daily stack">
-		<p class="section-kicker">{{ copy().stackTitle }}</p>
-		<h3>Daily tools</h3>
+	<aside appRevealOnScroll class="stack-panel daily-stack slide-bottom reveal-delay-2" aria-label="Daily stack">
+		<h3>{{ copy().stackTitle }}</h3>
 		<ul class="badges">
 			@for (item of copy().stackItems; track item) {
 				<li class="badge">{{ item }}</li>

@@ -1,6 +1,7 @@
 import { Component, OnInit, computed, inject, input, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
+import { RevealOnScrollDirective } from '../../core/reveal-on-scroll.directive';
 import { LanguageService } from '../../core/language.service';
 
 type ProjectKey = 'afromarket' | 'portfolio';
@@ -120,7 +121,7 @@ const PROJECTS_COPY = {
 
 @Component({
   selector: 'app-projects',
-  imports: [RouterLink],
+  imports: [RouterLink, RevealOnScrollDirective],
   host: {
     '[class.is-embedded]': 'embedded()'
   },

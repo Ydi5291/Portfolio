@@ -1,6 +1,7 @@
 import { Component, OnInit, computed, inject, input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { RevealOnScrollDirective } from '../../core/reveal-on-scroll.directive';
 import { LanguageService } from '../../core/language.service';
 
 const ABOUT_COPY = {
@@ -80,6 +81,7 @@ const ABOUT_COPY = {
 
 @Component({
   selector: 'app-about',
+  imports: [RevealOnScrollDirective],
   host: {
     '[class.is-embedded]': 'embedded()'
   },

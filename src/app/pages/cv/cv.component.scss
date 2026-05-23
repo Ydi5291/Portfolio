@@ -6,11 +6,9 @@
 	display: grid;
 	gap: 1rem;
 	padding: 1.25rem;
-	border: 1px solid color-mix(in srgb, var(--color-border) 82%, rgba(96, 165, 250, 0.18));
+	border: 1px solid color-mix(in srgb, var(--color-border) 44%, transparent);
 	border-radius: 1.5rem;
-	background:
-		radial-gradient(1200px 500px at 0% 0%, rgba(96, 165, 250, 0.08) 0%, transparent 45%),
-		linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 96%, transparent) 0%, color-mix(in srgb, var(--color-bg) 38%, var(--color-surface)) 100%);
+	background: color-mix(in srgb, var(--color-surface) 22%, transparent);
 }
 
 .cv-hero {
@@ -74,8 +72,8 @@ h2 {
 	position: relative;
 	padding: 0.85rem 0.9rem;
 	border-radius: 1rem;
-	border: 1px solid color-mix(in srgb, var(--color-border) 72%, rgba(96, 165, 250, 0.12));
-	background: color-mix(in srgb, var(--color-surface) 92%, var(--color-bg));
+	border: 1px solid color-mix(in srgb, var(--color-border) 40%, transparent);
+	background: color-mix(in srgb, var(--color-surface) 16%, transparent);
 	color: color-mix(in srgb, var(--color-text) 88%, var(--color-muted));
 	text-align: center;
 	font-weight: 600;

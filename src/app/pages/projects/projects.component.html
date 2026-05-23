@@ -1,10 +1,10 @@
-<section class="projects-intro">
+<section appRevealOnScroll class="projects-intro slide-bottom">
 	<h2 class="section-title-main">{{ copy().title }}</h2>
 	<p class="intro muted">
 		{{ copy().intro }}
 	</p>
 
-	<div class="project-tabs" [attr.aria-label]="copy().tabAriaLabel" role="tablist">
+	<div appRevealOnScroll class="project-tabs slide-bottom reveal-delay-1" [attr.aria-label]="copy().tabAriaLabel" role="tablist">
 		@for (tab of projectTabs(); track tab.key) {
 			<button
 				type="button"
@@ -21,7 +21,7 @@
 
 <div class="projects">
 	@if (isActiveProject('afromarket')) {
-	<article class="project">
+	<article appRevealOnScroll class="project slide-bottom reveal-delay-2">
 		<div class="project-hero">
 			<div class="project-copy">
 				<h3 class="project-display-title">AfroMarket</h3>
@@ -51,7 +51,7 @@
 			</a>
 		</div>
 
-		<div class="project-accordion-group">
+		<div appRevealOnScroll class="project-accordion-group slide-bottom reveal-delay-3">
 			<details class="project-accordion" open>
 				<summary>{{ copy().processTitle }}</summary>
 				<div class="project-accordion-body project-narrative">
@@ -116,7 +116,7 @@
 	}
 
 	@if (isActiveProject('portfolio')) {
-	<article class="project project-secondary">
+	<article appRevealOnScroll class="project project-secondary slide-bottom reveal-delay-2">
 		<div class="project-hero">
 			<div class="project-copy">
 				<h3 class="project-display-title">Portfolio</h3>
@@ -151,7 +151,7 @@
 			</a>
 		</div>
 
-		<div class="project-accordion-group">
+		<div appRevealOnScroll class="project-accordion-group slide-bottom reveal-delay-3">
 			<details class="project-accordion" open>
 				<summary>{{ copy().portfolioOverviewTitle }}</summary>
 				<div class="project-accordion-body project-narrative">

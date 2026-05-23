@@ -1,0 +1,43 @@
+<section class="impressum-page">
+	<header class="impressum-header">
+		<p class="impressum-eyebrow">{{ copy().eyebrow }}</p>
+		<h1>{{ copy().title }}</h1>
+		<p class="impressum-lead">{{ copy().intro }}</p>
+	</header>
+
+	<div class="impressum-grid">
+		<section class="impressum-card impressum-card-primary">
+			<div class="impressum-card-head">
+				<span class="impressum-card-icon" aria-hidden="true">§</span>
+				<div>
+					<h2>{{ copy().legalTitle }}</h2>
+				</div>
+			</div>
+			<p class="impressum-name">{{ copy().legalName }}</p>
+			<ul class="impressum-address-list">
+				@for (item of copy().legalItems; track item) {
+					<li>{{ item }}</li>
+				}
+			</ul>
+		</section>
+
+		<section class="impressum-card">
+			<div class="impressum-card-head">
+				<span class="impressum-card-icon" aria-hidden="true">&#64;</span>
+				<div>
+					<h2>{{ copy().contactTitle }}</h2>
+				</div>
+			</div>
+			<div class="impressum-contact-lines">
+				<p>
+					<span>{{ copy().phoneLabel }}</span>
+					<a href="tel:+491626291461">{{ copy().phoneValue }}</a>
+				</p>
+				<p>
+					<span>{{ copy().emailLabel }}</span>
+					<a href="mailto:lamaid0502@gmail.com">{{ copy().emailValue }}</a>
+				</p>
+			</div>
+		</section>
+	</div>
+</section>

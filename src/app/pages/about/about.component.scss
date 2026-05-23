@@ -11,7 +11,7 @@ p {
 
 .about-title {
 	margin-bottom: 1rem;
-	font-size: clamp(1.7rem, 1.3rem + 1.1vw, 2.6rem);
+	font-size: clamp(2.1rem, 1.55rem + 1.6vw, 3.5rem);
 	line-height: 1.05;
 	letter-spacing: -0.04em;
 	text-wrap: balance;
@@ -29,7 +29,7 @@ p {
 
 .section-title-main {
 	margin: 0 0 0.9rem;
-	font-size: clamp(1.7rem, 1.3rem + 1.1vw, 2.6rem);
+	font-size: clamp(2.1rem, 1.55rem + 1.6vw, 3.5rem);
 	line-height: 1.05;
 	letter-spacing: -0.04em;
 	text-wrap: balance;
@@ -82,23 +82,18 @@ p {
 .story-card,
 .stack-panel {
 	padding: 1.2rem;
-	border: 1px solid color-mix(in srgb, var(--color-border) 78%, transparent);
+	border: 1px solid color-mix(in srgb, var(--color-border) 44%, transparent);
 	border-radius: 1.2rem;
-	background:
-		linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 92%, transparent) 0%, color-mix(in srgb, var(--color-bg) 34%, var(--color-surface)) 100%);
+	background: color-mix(in srgb, var(--color-surface) 28%, transparent);
 	text-align: left;
 }
 
 .info-card-primary {
-	background:
-		radial-gradient(120% 120% at 0% 0%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
-		linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 94%, transparent) 0%, color-mix(in srgb, var(--color-bg) 30%, var(--color-surface)) 100%);
+	background: color-mix(in srgb, var(--color-surface) 32%, transparent);
 	}
 
 .info-card-secondary {
-	background:
-		radial-gradient(120% 120% at 100% 0%, rgba(137, 188, 217, 0.12) 0%, transparent 52%),
-		linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 95%, transparent) 0%, color-mix(in srgb, var(--color-bg) 24%, var(--color-surface)) 100%);
+	background: color-mix(in srgb, var(--color-surface) 32%, transparent);
 }
 
 .feature-list,
@@ -119,8 +114,8 @@ p {
 .focus-grid li {
 	padding: 0.9rem 1rem;
 	border-radius: 1rem;
-	border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
-	background: color-mix(in srgb, var(--color-surface) 86%, var(--color-bg));
+	border: 1px solid color-mix(in srgb, var(--color-border) 42%, transparent);
+	background: color-mix(in srgb, var(--color-surface) 18%, transparent);
 	color: color-mix(in srgb, var(--color-text) 90%, var(--color-muted));
 }
 
@@ -173,9 +168,8 @@ p {
 
 .story-bubble {
 	border-radius: 5rem;
-	background:
-		linear-gradient(180deg, rgba(191, 219, 254, 0.92) 0%, rgba(137, 188, 217, 0.88) 100%);
-	border: 1px solid rgba(125, 178, 255, 0.24);
+	background: rgba(191, 219, 254, 0.22);
+	border: 1px solid rgba(125, 178, 255, 0.14);
 	color: #082032;
 	padding: 1.4rem 1.6rem;
 }
@@ -198,10 +192,11 @@ p {
 
 .daily-stack {
 	padding: 1.1rem 1.2rem;
-	border-radius: 1.6rem;
-	border: 1px solid color-mix(in srgb, var(--color-border) 52%, transparent);
-	background: color-mix(in srgb, var(--color-surface) 42%, transparent);
-	backdrop-filter: blur(10px);
+	border-radius: 0;
+	border: 0;
+	background: transparent;
+	backdrop-filter: none;
+	text-align: center;
 }
 
 .daily-stack h3 {
@@ -210,6 +205,11 @@ p {
 
 .daily-stack .section-kicker {
 	margin-bottom: 0.35rem;
+	text-align: center;
+}
+
+.daily-stack h3 {
+	text-align: center;
 }
 
 .goal-copy {
@@ -251,9 +251,9 @@ p {
 :host(.is-embedded) .daily-stack {
 	margin-top: 0;
 	padding: 1.1rem 1.2rem;
-	border: 1px solid color-mix(in srgb, var(--color-border) 52%, transparent);
-	border-radius: 1.6rem;
-	background: color-mix(in srgb, var(--color-surface) 42%, transparent);
+	border: 0;
+	border-radius: 0;
+	background: transparent;
 }
 
 .stack-panel {
@@ -262,15 +262,24 @@ p {
 }
 
 .badges {
-	justify-content: flex-start;
+	justify-content: center;
 	margin-top: 0.75rem;
+}
+
+.timeline {
+	justify-items: center;
+}
+
+.timeline li {
+	width: min(100%, 22rem);
+	text-align: left;
 }
 
 .details {
 	margin-top: 1rem;
 	padding: 0.95rem 1rem;
-	background: color-mix(in srgb, var(--color-surface) 88%, var(--color-bg));
-	border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+	background: color-mix(in srgb, var(--color-surface) 18%, transparent);
+	border: 1px solid color-mix(in srgb, var(--color-border) 42%, transparent);
 	border-radius: 1rem;
 	text-align: left;
 }
@@ -308,6 +317,27 @@ summary::-webkit-details-marker {
 		position: sticky;
 		top: 6rem;
 	}
+
+	.daily-stack .section-kicker,
+	.daily-stack h3 {
+		text-align: center;
+	}
+
+	.daily-stack {
+		text-align: left;
+	}
+
+	.badges {
+		justify-content: flex-start;
+	}
+
+	.timeline {
+		justify-items: stretch;
+	}
+
+	.timeline li {
+		width: auto;
+	}
 }
 
 @media (min-width: 800px) {
@@ -321,5 +351,13 @@ summary::-webkit-details-marker {
 
 	.focus-grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 719px) {
+	.story-bubble {
+		width: min(100%, 23rem);
+		min-height: 20rem;
+		margin-inline: auto;
 	}
 }

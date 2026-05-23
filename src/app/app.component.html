@@ -134,42 +134,16 @@
 </main>
 
 <!-- ===== FOOTER ===== -->
-<p class="footer-cta scroll-animate slide-bottom">
-	{{ copy().footerCta }}
-</p>
 <footer class="site-footer">
+	<p appRevealOnScroll class="footer-cta slide-bottom">
+		{{ copy().footerCta }}
+	</p>
 	<div class="container footer-inner">
-		<div class="footer-top scroll-animate slide-bottom">
+		<div appRevealOnScroll class="footer-top slide-bottom reveal-delay-1">
 			<div class="footer-intro">
 				<span class="footer-copy">© {{ currentYear }} Y. Diallo – {{ copy().footerRole }}</span>
 				<p class="footer-description">{{ copy().footerDescription }}</p>
 			</div>
-			<nav class="footer-nav" aria-label="Footer Navigation">
-				<a
-					[routerLink]="['/home']"
-					fragment="hero"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-				>{{ copy().home }}</a>
-				<a
-					[routerLink]="['/home']"
-					fragment="about"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-				>{{ copy().about }}</a>
-				<a
-					[routerLink]="['/home']"
-					fragment="projects"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-				>{{ copy().projects }}</a>
-				<a
-					[routerLink]="['/home']"
-					fragment="contact"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'exact' }"
-				>{{ copy().contact }}</a>
-			</nav>
 
 			<div class="footer-links" aria-label="Kontakt Links">
 				<a class="ext-link icon-link" href="mailto:lamaid0502&#64;gmail.com" aria-label="E-Mail">
@@ -192,11 +166,10 @@
 				</a>
 			</div>
 		</div>
+
+		<div class="footer-bottom">
+			<a class="footer-legal-link" [routerLink]="['/impressum']">{{ copy().impressum }}</a>
+		</div>
 	</div>
 </footer>
 
-@if (isScrolled) {
-	<button class="scroll-top-btn" type="button" (click)="scrollToTop()" [attr.aria-label]="copy().scrollTop">
-		<img src="assets/images/arrow-up.png" alt="" width="20" height="20" decoding="async">
-	</button>
-}
