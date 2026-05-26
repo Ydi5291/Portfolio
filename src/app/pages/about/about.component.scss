@@ -261,9 +261,30 @@ p {
 	padding: 1rem;
 }
 
-.badges {
-	justify-content: center;
-	margin-top: 0.75rem;
+.stack-logos {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.85rem;
+	margin: 0.75rem auto 0;
+	padding: 0;
+	list-style: none;
+	max-width: 20rem;
+}
+
+.stack-logo-item {
+	display: grid;
+	place-items: center;
+	padding: 0.85rem;
+	border-radius: 1rem;
+	border: 1px solid color-mix(in srgb, var(--color-border) 36%, transparent);
+	background: color-mix(in srgb, var(--color-surface) 16%, transparent);
+}
+
+.stack-logo {
+	display: block;
+	width: min(100%, 4rem);
+	height: 4rem;
+	object-fit: contain;
 }
 
 .timeline {
@@ -327,8 +348,9 @@ summary::-webkit-details-marker {
 		text-align: left;
 	}
 
-	.badges {
-		justify-content: flex-start;
+	.stack-logos {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		max-width: none;
 	}
 
 	.timeline {

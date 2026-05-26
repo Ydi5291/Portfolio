@@ -48,6 +48,21 @@
 				<app-about [embedded]="true"></app-about>
 			</section>
 
+			<section class="home-section section-shell learning-section">
+				<div class="learning-layout">
+					<h2 appRevealOnScroll class="section-title section-title-main learning-title slide-bottom">{{ copy().learningTitle }}</h2>
+					<div appRevealOnScroll class="learning-bubble slide-bottom reveal-delay-1">
+						<img
+							class="learning-logo"
+							src="assets/images/Liquid.png"
+							alt="Liquid"
+							decoding="async"
+						>
+						<p>{{ copy().learningText }}</p>
+					</div>
+				</div>
+			</section>
+
 			<section id="projects" class="home-section section-shell">
 				<app-projects [embedded]="true"></app-projects>
 			</section>

@@ -24,7 +24,9 @@ const HOME_COPY = {
     whyParagraphs: [
         'Ich arbeite strukturiert, lösungsorientiert, zuverlässig, hochmotiviert und lernfähig.',
         'Mein Fokus liegt auf sauberer Architektur, Performance und Benutzerfreundlichkeit.'
-    ]
+    ],
+    learningTitle: 'Ich lerne noch',
+    learningText: 'Ich lerne diese Sprache noch für die Erweiterung von Shopify-Projekten.'
   },
   en: {
     heroRole: 'Frontend Developer with Full-Stack experience',
@@ -42,7 +44,9 @@ const HOME_COPY = {
     whyParagraphs: [
         'I work in a structured, solution-oriented, reliable, highly motivated, and fast-learning way.',
         'My focus is on clean architecture, performance, and usability.'
-    ]
+    ],
+    learningTitle: 'I am still learning',
+    learningText: 'I am still learning this language for extending Shopify projects.'
   }
 } as const;
 

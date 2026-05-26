@@ -12,12 +12,12 @@ const PROJECTS_COPY = {
     intro: 'Wählen Sie ein Projekt aus, um Details zu Vorgehen, Umsetzung und Technologien zu sehen.',
     selectorLabel: 'Projekt auswählen',
     tabAriaLabel: 'Projektliste',
-    afromarketTab: '1. AfroMarket',
+    afromarketTab: '1. AfroConnect',
     portfolioTab: '2. Portfolio',
     processTitle: 'Über das Projekt',
-    summaryPrimary: 'AfroMarket ist eine E-Commerce- und Marketplace-Plattform für Afro-Commerce-Händler und ihre Kunden.',
+    summaryPrimary: 'AfroConnect ist eine E-Commerce- und Marketplace-Plattform für Afro-Commerce-Händler und ihre Kunden.',
     summarySecondary: 'Das Projekt wurde vollständig eigenständig konzipiert, entwickelt und produktiv veröffentlicht – von UI/UX über Backend-Logik bis hin zu Zahlungs- und Kommunikationssystemen. Dazu gehören die Integration des KI-Chatbots Diamal über die OpenAI APIs sowie Google Routes API und Maps API, damit Kundinnen und Kunden Afro-Shops im Umkreis von 30 km schneller und einfacher finden können.',
-    logoLabel: 'AfroMarket live ansehen',
+    logoLabel: 'AfroConnect live ansehen',
     liveLabel: 'Live',
     proofTitle: 'Projekt-Nachweise',
     proofs: [
@@ -26,7 +26,7 @@ const PROJECTS_COPY = {
       'Integration von Payments und Transaktions-E-Mails',
       'Multi-Rollen-System (Shop-Owner & Delivery-User)'
     ],
-    valueLead: 'AfroMarket zeigt meine Fähigkeit, nutzerzentrierte und funktionale Webanwendungen zu entwickeln, die über reine UI-Demos hinausgehen.',
+    valueLead: 'AfroConnect zeigt meine Fähigkeit, nutzerzentrierte und funktionale Webanwendungen zu entwickeln, die über reine UI-Demos hinausgehen.',
     valueSupport: 'Der Fokus liegt auf klarer Benutzerführung, Performance und einem durchgängigen Produktfluss.',
     valueTitle: 'Wie ich meinen Arbeitsprozess organisiert habe',
     valueItems: [
@@ -67,12 +67,12 @@ const PROJECTS_COPY = {
     intro: 'Select a project to view details about the process, implementation, and technologies.',
     selectorLabel: 'Choose a project',
     tabAriaLabel: 'Project list',
-    afromarketTab: '1. AfroMarket',
+    afromarketTab: '1. AfroConnect',
     portfolioTab: '2. Portfolio',
     processTitle: 'About the project',
-    summaryPrimary: 'AfroMarket is an e-commerce and marketplace platform for Afro-commerce merchants and their customers.',
+    summaryPrimary: 'AfroConnect is an e-commerce and marketplace platform for Afro-commerce merchants and their customers.',
     summarySecondary: 'The project was fully designed, developed, and launched independently, from UI/UX and backend logic to payments and communication systems. This includes the integration of the AI chatbot Diamal through the OpenAI APIs, as well as Google Routes API and Maps API, helping customers find nearby Afro shops within a 30 km radius more quickly and easily.',
-    logoLabel: 'View AfroMarket live',
+    logoLabel: 'View AfroConnect live',
     liveLabel: 'Live',
     proofTitle: 'Project proof points',
     proofs: [
@@ -81,7 +81,7 @@ const PROJECTS_COPY = {
       'Payments and transactional email integration',
       'Multi-role system (shop owner & delivery user)'
     ],
-    valueLead: 'AfroMarket shows my ability to build user-centered and functional web applications that go beyond simple UI demos.',
+    valueLead: 'AfroConnect shows my ability to build user-centered and functional web applications that go beyond simple UI demos.',
     valueSupport: 'The focus is on clear user flows, performance, and an end-to-end product experience.',
     valueTitle: 'How I organized my workflow',
     valueItems: [

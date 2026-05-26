@@ -19,9 +19,11 @@
 
 	<aside appRevealOnScroll class="stack-panel daily-stack slide-bottom reveal-delay-2" aria-label="Daily stack">
 		<h3>{{ copy().stackTitle }}</h3>
-		<ul class="badges">
-			@for (item of copy().stackItems; track item) {
-				<li class="badge">{{ item }}</li>
+		<ul class="stack-logos">
+			@for (logo of stackLogos; track logo.src) {
+				<li class="stack-logo-item">
+					<img class="stack-logo" [src]="logo.src" [alt]="logo.label" [title]="logo.label" decoding="async">
+				</li>
 			}
 		</ul>
 	</aside>

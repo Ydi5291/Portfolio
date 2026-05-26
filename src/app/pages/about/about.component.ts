@@ -4,6 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RevealOnScrollDirective } from '../../core/reveal-on-scroll.directive';
 import { LanguageService } from '../../core/language.service';
 
+type StackLogo = {
+  src: string;
+  label: string;
+};
+
 const ABOUT_COPY = {
   de: {
     title: 'Über mich',
@@ -94,6 +99,16 @@ export class AboutComponent implements OnInit {
   private readonly router = inject(Router);
   private readonly languageService = inject(LanguageService);
   readonly copy = computed(() => ABOUT_COPY[this.languageService.language()]);
+  readonly stackLogos: StackLogo[] = [
+    { src: 'assets/images/Angular.png', label: 'Angular' },
+    { src: 'assets/images/CSS.png', label: 'CSS' },
+    { src: 'assets/images/Firebase.png', label: 'Firebase' },
+    { src: 'assets/images/Git.png', label: 'Git' },
+    { src: 'assets/images/HTML.png', label: 'HTML' },
+    { src: 'assets/images/JavaScript.png', label: 'JavaScript' },
+    { src: 'assets/images/REST-API.png', label: 'REST APIs' },
+    { src: 'assets/images/TypeScript.png', label: 'TypeScript' }
+  ];
 
   ngOnInit(): void {
     if (this.route.snapshot.routeConfig?.path === 'about') {
