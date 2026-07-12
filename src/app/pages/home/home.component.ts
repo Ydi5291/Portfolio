@@ -26,7 +26,7 @@ const HOME_COPY = {
         'Mein Fokus liegt auf sauberer Architektur, Performance und Benutzerfreundlichkeit.'
     ],
     learningTitle: 'Ich lerne noch',
-    learningText: 'Ich lerne diese Sprache noch für die Erweiterung von Shopify-Projekten.'
+    learningText: 'Ich arbeite mich noch in WordPress ein, um Website-Projekte umzusetzen und zu erweitern.'
   },
   en: {
     heroRole: 'Frontend Developer with Full-Stack experience',
@@ -46,7 +46,7 @@ const HOME_COPY = {
         'My focus is on clean architecture, performance, and usability.'
     ],
     learningTitle: 'I am still learning',
-    learningText: 'I am still learning this language for extending Shopify projects.'
+    learningText: 'I am still learning WordPress to build and extend website projects.'
   }
 } as const;
 
