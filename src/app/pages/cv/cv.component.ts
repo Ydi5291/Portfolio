@@ -3,6 +3,8 @@ import { RouterLink } from '@angular/router';
 
 import { LanguageService } from '../../core/language.service';
 
+const CV_ASSET_URL = '/assets/CV-Softwareentwickler.pdf';
+
 const CV_COPY = {
   de: {
     eyebrow: 'Lebenslauf',
@@ -35,5 +37,5 @@ const CV_COPY = {
 export class CvComponent {
   private readonly languageService = inject(LanguageService);
   readonly copy = computed(() => CV_COPY[this.languageService.language()]);
-  readonly cvUrl = 'assets/CV-Softwareentwickler.pdf';
+  readonly cvUrl = CV_ASSET_URL;
 }
