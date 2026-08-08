@@ -27,7 +27,7 @@ const ABOUT_COPY = {
     journeyItems: [
       { label: 'Guinea', text: 'Abitur und erste Orientierung in Wirtschaftsinformatik' },
       { label: 'Deutschland', text: 'Berufserfahrung, neue Perspektive und klare Neuausrichtung' },
-      { label: 'Heute', text: 'starker Fokus auf Frontend-Entwicklung durch praxisnahe Projekte' }
+      { label: 'Heute', text: 'Fortbildung als Frontend Developper bei der Developer Akademie in München(Remote), außerdem starker Fokus auf Frontend-Entwicklung durch praxisnahe Projekte' }
     ],
     stackTitle: 'Stack',
     stackItems: ['Angular', 'React', 'TypeScript', 'SCSS', 'Firebase', 'REST APIs', 'Git / GitHub'],
@@ -63,7 +63,7 @@ const ABOUT_COPY = {
     journeyItems: [
       { label: 'Guinea', text: 'High school graduation and an early direction toward business informatics' },
       { label: 'Germany', text: 'Work experience, a new perspective, and a clear career shift' },
-      { label: 'Today', text: 'strong focus on frontend development through hands-on projects' }
+      { label: 'Today', text: 'Further training as a frontend developer at Developer Akademie in Munich (remote), combined with a strong focus on frontend development through hands-on projects' }
     ],
     stackTitle: 'Stack',
     stackItems: ['Angular', 'React', 'TypeScript', 'SCSS', 'Firebase', 'REST APIs', 'Git / GitHub'],

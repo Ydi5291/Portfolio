@@ -89,7 +89,17 @@
 	align-items: start;
 }
 
+.colleague-layout {
+	display: grid;
+	gap: 1rem;
+	align-items: start;
+}
+
 .why-title {
+	margin-bottom: 0;
+}
+
+.colleague-title {
 	margin-bottom: 0;
 }
 
@@ -107,10 +117,54 @@
 	margin-inline: auto;
 }
 
+.colleague-bubble {
+	display: grid;
+	align-content: center;
+	justify-items: center;
+	gap: 1rem;
+	min-height: 14rem;
+	width: min(100%, 23rem);
+	padding: 1.4rem 1.25rem;
+	border-radius: 5.5rem;
+	border: 1px solid rgba(125, 178, 255, 0.24);
+	background: linear-gradient(180deg, rgba(191, 219, 254, 0.92) 0%, rgba(137, 188, 217, 0.88) 100%);
+	color: #061b2d;
+	text-align: center;
+	margin-inline: auto;
+}
+
+
 .why-bubble p {
 	max-width: 64ch;
 	margin: 0;
 	color: inherit;
+}
+
+.colleague-intro {
+	margin: 0;
+	color: inherit;
+	font-weight: 600;
+	line-height: 1.55;
+}
+
+.colleague-traits {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.6rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.colleague-traits li {
+	padding: 0.5rem 0.85rem;
+	border-radius: 999px;
+	background: rgba(6, 27, 45, 0.1);
+	border: 1px solid rgba(6, 27, 45, 0.12);
+	color: #061b2d;
+	font-weight: 700;
+	letter-spacing: -0.01em;
 }
 
 .why-bubble p + p {
@@ -299,6 +353,13 @@
 		border-radius: 6.5rem;
 	}
 
+	.colleague-bubble {
+		min-height: 19rem;
+		width: min(100%, 24rem);
+		padding: 1.8rem 1.9rem;
+		border-radius: 7.5rem;
+	}
+
 	.learning-bubble {
 		min-height: 19rem;
 		width: min(100%, 24rem);
@@ -352,6 +413,12 @@
 		align-items: center;
 	}
 
+	.colleague-layout {
+		grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+		gap: 2rem;
+		align-items: center;
+	}
+
 	.learning-layout {
 		grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
 		gap: 2rem;
@@ -359,6 +426,10 @@
 	}
 
 	.why-title {
+		text-align: left;
+	}
+
+	.colleague-title {
 		text-align: left;
 	}
 
@@ -372,6 +443,14 @@
 		width: min(100%, 25rem);
 		padding: 2rem 2.1rem;
 		border-radius: 7rem;
+	}
+
+	.colleague-bubble {
+		justify-self: end;
+		min-height: 22rem;
+		width: min(100%, 25rem);
+		padding: 2rem 2.1rem;
+		border-radius: 8rem;
 	}
 
 	.learning-bubble {
@@ -436,6 +515,11 @@
 	}
 
 	.why-bubble {
+		width: min(100%, 23rem);
+		min-height: 20rem;
+	}
+
+	.colleague-bubble {
 		width: min(100%, 23rem);
 		min-height: 20rem;
 	}

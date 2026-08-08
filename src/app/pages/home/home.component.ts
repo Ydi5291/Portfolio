@@ -25,6 +25,9 @@ const HOME_COPY = {
         'Ich arbeite strukturiert, lösungsorientiert, zuverlässig, hochmotiviert und lernfähig.',
         'Mein Fokus liegt auf sauberer Architektur, Performance und Benutzerfreundlichkeit.'
     ],
+    colleagueTitle: 'Was Kolleginnen und Kollegen über mich sagen',
+    colleagueIntro: 'Im Arbeitsalltag werde ich oft so beschrieben:',
+    colleagueTraits: ['Freundlich', 'Zuverlässig', 'Lernfähig', 'Hilfsbereit', 'Offenherzig', 'Hilfreich'],
     learningTitle: 'Ich lerne noch',
     learningText: 'Ich arbeite mich noch in WordPress ein, um Website-Projekte umzusetzen und zu erweitern.'
   },
@@ -45,6 +48,9 @@ const HOME_COPY = {
         'I work in a structured, solution-oriented, reliable, highly motivated, and fast-learning way.',
         'My focus is on clean architecture, performance, and usability.'
     ],
+    colleagueTitle: 'What colleagues say about me',
+    colleagueIntro: 'In day-to-day work, I am often described as:',
+    colleagueTraits: ['Friendly', 'Reliable', 'Fast-learning', 'Helpful', 'Open-hearted', 'Supportive'],
     learningTitle: 'I am still learning',
     learningText: 'I am still learning WordPress to build and extend website projects.'
   }

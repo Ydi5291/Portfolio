@@ -63,6 +63,52 @@
 	.container {
 		max-width: 900px;
 	}
+
+	.header-inner {
+		grid-template-columns: auto minmax(0, 1fr) auto;
+		gap: 0.7rem;
+	}
+
+	.brand {
+		gap: 0.45rem;
+	}
+
+	.brand-text {
+		font-size: 0.92rem;
+	}
+
+	.desktop-nav {
+		min-width: 0;
+	}
+
+	.nav {
+		gap: 0.35rem;
+		padding: 0.28rem;
+	}
+
+	.nav a {
+		padding-inline: 0.72rem;
+	}
+
+	.header-actions {
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 0.2rem;
+	}
+
+	.header-links {
+		justify-content: flex-end;
+		gap: 0.1rem;
+	}
+
+	.header-actions .ext-link {
+		padding: 0.28rem 0.38rem;
+	}
+
+	.header-actions .icon-link svg {
+		width: 17px;
+		height: 17px;
+	}
 }
 
 @media (min-width: 1025px) {

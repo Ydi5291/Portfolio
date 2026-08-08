@@ -48,6 +48,20 @@
 				<app-about [embedded]="true"></app-about>
 			</section>
 
+			<section class="home-section section-shell colleague-section">
+				<div class="colleague-layout">
+					<h2 appRevealOnScroll class="section-title section-title-main colleague-title slide-bottom">{{ copy().colleagueTitle }}</h2>
+					<div appRevealOnScroll class="colleague-bubble slide-bottom reveal-delay-1">
+						<p class="colleague-intro">{{ copy().colleagueIntro }}</p>
+						<ul class="colleague-traits">
+							@for (trait of copy().colleagueTraits; track trait) {
+								<li>{{ trait }}</li>
+							}
+						</ul>
+					</div>
+				</div>
+			</section>
+
 			<section class="home-section section-shell learning-section">
 				<div class="learning-layout">
 					<h2 appRevealOnScroll class="section-title section-title-main learning-title slide-bottom">{{ copy().learningTitle }}</h2>

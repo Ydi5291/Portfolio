@@ -23,7 +23,7 @@ const PROJECTS_COPY = {
     proofs: [
       'Eigenständige Entwicklung eines vollständigen Webprodukts',
       'Live im produktiven Einsatz',
-      'Integration von Payments und Transaktions-E-Mails',
+      'Integration von Payments- und Kommunikationssysteme',
       'Multi-Rollen-System (Shop-Owner & Delivery-User)'
     ],
     valueLead: 'AfroConnect zeigt meine Fähigkeit, nutzerzentrierte und funktionale Webanwendungen zu entwickeln, die über reine UI-Demos hinausgehen.',
@@ -38,7 +38,8 @@ const PROJECTS_COPY = {
     showcaseItems: [
       'Entwicklung kompletter Webanwendungen mit echter Geschäftslogik',
       'Strukturierung komplexer Rollen- und Frontend-Flows',
-      'Umsetzung produktionsnaher Features von Konzeption bis Deployment'
+      'Umsetzung produktionsnaher Features von Konzeption bis Deployment',
+      'Verständnis für die unterschiedlichen Anforderungen von B2B- und B2C-Produkten'
     ],
     stackTitle: 'Technologien',
     stackItems: ['Angular', 'TypeScript', 'SCSS', 'Firebase', 'REST APIs'],
@@ -78,7 +79,7 @@ const PROJECTS_COPY = {
     proofs: [
       'Independent development of a complete web product',
       'Live in production',
-      'Payments and transactional email integration',
+        'Integration of payment and communication systems',
       'Multi-role system (shop owner & delivery user)'
     ],
     valueLead: 'AfroConnect shows my ability to build user-centered and functional web applications that go beyond simple UI demos.',
@@ -93,7 +94,8 @@ const PROJECTS_COPY = {
     showcaseItems: [
       'Building complete web applications with real business logic',
       'Structuring complex user-role and frontend flows',
-      'Taking a product from concept to deployment'
+      'Taking a product from concept to deployment',
+      'Understanding the different requirements of B2B and B2C products'
     ],
     stackTitle: 'Technologies',
     stackItems: ['Angular', 'TypeScript', 'SCSS', 'Firebase', 'REST APIs'],
