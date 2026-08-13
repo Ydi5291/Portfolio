@@ -251,19 +251,6 @@ p {
 	text-align: center;
 }
 
-.project-preview-card {
-	display: grid;
-	justify-items: center;
-	gap: 1rem;
-	width: min(100%, 28rem);
-	padding: 1.35rem 1rem;
-	border-radius: 1.5rem;
-	border: 1px solid rgba(167, 243, 208, 0.16);
-	background: linear-gradient(180deg, rgba(10, 26, 38, 0.8) 0%, rgba(9, 20, 33, 0.92) 100%);
-	text-align: center;
-	box-shadow: 0 18px 34px rgba(2, 6, 23, 0.2);
-}
-
 .project-logo-portfolio-photo {
 	width: 10rem;
 	height: 13rem;
@@ -280,19 +267,6 @@ p {
 	color: #eff6ff;
 }
 
-.project-preview-copy {
-	display: grid;
-	gap: 0.35rem;
-	color: #eff6ff;
-}
-
-.project-preview-copy strong {
-	font-size: clamp(1.2rem, 1rem + 0.7vw, 1.7rem);
-.project-role-badges {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 0.55rem;
 .project-narrative {
 	display: grid;
 	gap: 0.4rem;
