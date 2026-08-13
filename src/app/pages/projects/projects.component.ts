@@ -4,7 +4,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { RevealOnScrollDirective } from '../../core/reveal-on-scroll.directive';
 import { LanguageService } from '../../core/language.service';
 
-type ProjectKey = 'afromarket' | 'portfolio';
+type ProjectKey = 'afromarket' | 'mitarbeiter-management' | 'portfolio';
 
 const PROJECTS_COPY = {
   de: {
@@ -13,7 +13,8 @@ const PROJECTS_COPY = {
     selectorLabel: 'Projekt auswählen',
     tabAriaLabel: 'Projektliste',
     afromarketTab: '1. AfroConnect',
-    portfolioTab: '2. Portfolio',
+    mitarbeiterManagementTab: '2. Mitarbeiter Management',
+    portfolioTab: '3. Portfolio',
     processTitle: 'Über das Projekt',
     summaryPrimary: 'AfroConnect ist eine E-Commerce- und Marketplace-Plattform für Afro-Commerce-Händler und ihre Kunden.',
     summarySecondary: 'Das Projekt wurde vollständig eigenständig konzipiert, entwickelt und produktiv veröffentlicht – von UI/UX über Backend-Logik bis hin zu Zahlungs- und Kommunikationssystemen. Dazu gehören die Integration des KI-Chatbots Diamal über die OpenAI APIs sowie Google Routes API und Maps API, damit Kundinnen und Kunden Afro-Shops im Umkreis von 30 km schneller und einfacher finden können.',
@@ -47,6 +48,19 @@ const PROJECTS_COPY = {
     workflowItems: ['GitHub', 'Netlify', 'CI/CD Deployment'],
     platformCta: 'Plattform ansehen',
     contactCta: 'Über ein ähnliches Projekt sprechen',
+    mitarbeiterLogoLabel: 'Mitarbeiter Management live ansehen',
+    mitarbeiterOverviewTitle: 'Über das Projekt',
+    mitarbeiterSummaryPrimary: 'Mitarbeiter Management ist eine RH- und PWA-Anwendung zur Verwaltung von Mitarbeitenden, Abwesenheiten, Freigaben und Arbeitszeiten.',
+    mitarbeiterSummarySecondary: 'Die Anwendung folgt einem mandantenfähigen SaaS-Modell: Jede Firma erhält ihren eigenen Bereich mit Mitarbeitenden, Einladungen, Urlaubsanträgen und Zeiterfassung. Rollen wie Superadmin, Admin, Arbeitgeber und Arbeitnehmer steuern Navigation, Rechte und Ansichten.',
+    mitarbeiterProofTitle: 'Projekt-Nachweise',
+    mitarbeiterProofs: ['SaaS-Architektur mit Multi-Tenant-Kontext', 'Rollenbasierte Benutzerführung für vier Nutzergruppen', 'PWA für Zeiterfassung, Abwesenheiten und HR-Freigaben', 'Sensible Operationen über Firebase Functions zentralisiert'],
+    mitarbeiterValueLead: 'Das Projekt zeigt, dass ich komplexe Business-Flows mit klaren Rollen, Freigabewegen und isolierten Mandantenstrukturen in ein skalierbares Frontend übersetzen kann.',
+    mitarbeiterValueSupport: 'Im Fokus stehen sichere Prozessführung, saubere Rechtevergabe und eine Produktstruktur, die sowohl HR-Teams als auch Mitarbeitende effizient unterstützt.',
+    mitarbeiterValueItems: ['Modulare Struktur für Onboarding, Einladungen, Rollenverwaltung, Urlaubsanträge und Freigaben', 'Klare Trennung zwischen Client-Logik, Tenant-Kontext und serverseitigen Sicherheitsregeln', 'Produktfluss auf wiederkehrende HR-Prozesse wie Abwesenheiten, Freigaben und Zeiterfassung ausgerichtet'],
+    mitarbeiterShowcaseItems: ['Umsetzung eines echten B2B-SaaS-Produkts mit rollenabhängigen Oberflächen', 'Verknüpfung von Angular-Frontend, Firestore, Authentifizierung und Cloud Functions', 'Abbildung wiederkehrender HR-Prozesse in wartbare UI- und Routing-Strukturen'],
+    mitarbeiterStackItems: ['Angular', 'TypeScript', 'SCSS', 'Firebase Auth', 'Firestore', 'Cloud Functions', 'PWA'],
+    mitarbeiterWorkflowItems: ['Netlify', 'Firebase', 'Serverseitige Geschäftsregeln'],
+    mitarbeiterCta: 'Produkt ansehen',
     portfolioEyebrow: 'Portfolio',
     portfolioProcessTitle: 'Über das Projekt',
     portfolioSummaryPrimary: 'Dieses Portfolio ist selbst eines meiner Projekte und zeigt meinen Aufbau als persönliche Produktpräsentation.',
@@ -69,7 +83,8 @@ const PROJECTS_COPY = {
     selectorLabel: 'Choose a project',
     tabAriaLabel: 'Project list',
     afromarketTab: '1. AfroConnect',
-    portfolioTab: '2. Portfolio',
+    mitarbeiterManagementTab: '2. Mitarbeiter Management',
+    portfolioTab: '3. Portfolio',
     processTitle: 'About the project',
     summaryPrimary: 'AfroConnect is an e-commerce and marketplace platform for Afro-commerce merchants and their customers.',
     summarySecondary: 'The project was fully designed, developed, and launched independently, from UI/UX and backend logic to payments and communication systems. This includes the integration of the AI chatbot Diamal through the OpenAI APIs, as well as Google Routes API and Maps API, helping customers find nearby Afro shops within a 30 km radius more quickly and easily.',
@@ -103,6 +118,19 @@ const PROJECTS_COPY = {
     workflowItems: ['GitHub', 'Netlify', 'CI/CD Deployment'],
     platformCta: 'View platform',
     contactCta: 'Discuss a similar project',
+    mitarbeiterLogoLabel: 'View Mitarbeiter Management live',
+    mitarbeiterOverviewTitle: 'About the project',
+    mitarbeiterSummaryPrimary: 'Mitarbeiter Management is an HR and PWA application built to manage employees, leave, approvals, and work time tracking.',
+    mitarbeiterSummarySecondary: 'The product follows a multi-tenant SaaS model: each company gets its own workspace with employees, invitations, leave requests, and time entries. Roles such as superadmin, admin, employer, and employee drive navigation, permissions, and view modes.',
+    mitarbeiterProofTitle: 'Project proof points',
+    mitarbeiterProofs: ['SaaS architecture with tenant-aware context', 'Role-based UX for four user types', 'PWA flows for time tracking, leave, and HR approvals', 'Sensitive operations centralized through Firebase Functions'],
+    mitarbeiterValueLead: 'This project shows that I can turn complex business workflows with role management, approval chains, and tenant isolation into a scalable frontend product.',
+    mitarbeiterValueSupport: 'The focus is on secure process design, clean permission boundaries, and a product structure that supports both HR teams and employees efficiently.',
+    mitarbeiterValueItems: ['Modular feature structure for onboarding, invitations, role management, leave requests, and approvals', 'Clear separation between client logic, tenant context, and server-side security rules', 'Product flow centered on recurring HR tasks such as absences, approvals, and time tracking'],
+    mitarbeiterShowcaseItems: ['Delivery of a real B2B SaaS product with role-specific interfaces', 'Integration of Angular frontend, Firestore, authentication, and Cloud Functions', 'Mapping recurring HR workflows into maintainable UI and routing structures'],
+    mitarbeiterStackItems: ['Angular', 'TypeScript', 'SCSS', 'Firebase Auth', 'Firestore', 'Cloud Functions', 'PWA'],
+    mitarbeiterWorkflowItems: ['Netlify', 'Firebase', 'Server-side business rules'],
+    mitarbeiterCta: 'View product',
     portfolioEyebrow: 'Portfolio',
     portfolioProcessTitle: 'About the project',
     portfolioSummaryPrimary: 'This portfolio is itself one of my projects and presents how I structure my personal product showcase.',
@@ -139,6 +167,7 @@ export class ProjectsComponent implements OnInit {
   readonly copy = computed(() => PROJECTS_COPY[this.languageService.language()]);
   readonly projectTabs = computed(() => ([
     { key: 'afromarket' as const, label: this.copy().afromarketTab },
+    { key: 'mitarbeiter-management' as const, label: this.copy().mitarbeiterManagementTab },
     { key: 'portfolio' as const, label: this.copy().portfolioTab }
   ]));
 

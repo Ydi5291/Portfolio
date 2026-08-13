@@ -115,6 +115,101 @@
 	</article>
 	}
 
+	@if (isActiveProject('mitarbeiter-management')) {
+	<article appRevealOnScroll class="project slide-bottom reveal-delay-2">
+		<div class="project-hero">
+			<div class="project-copy">
+				<h3 class="project-display-title">Mitarbeiter Management</h3>
+			</div>
+
+			<a
+				class="project-preview"
+				href="https://mitarbeiter-management.netlify.app/"
+				target="_blank"
+				rel="noopener"
+				[attr.aria-label]="copy().mitarbeiterLogoLabel"
+			>
+				<span class="browser-bar" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+				<div class="preview-stage">
+					<img
+						class="project-logo"
+						src="assets/images/logo-MM.png"
+						alt="Mitarbeiter Management Logo"
+						decoding="async"
+					>
+					<span class="preview-badge">{{ copy().liveLabel }}</span>
+				</div>
+			</a>
+		</div>
+
+		<div appRevealOnScroll class="project-accordion-group slide-bottom reveal-delay-3">
+			<details class="project-accordion" open>
+				<summary>{{ copy().mitarbeiterOverviewTitle }}</summary>
+				<div class="project-accordion-body project-narrative">
+					<p class="project-lead">{{ copy().mitarbeiterSummaryPrimary }}</p>
+					<p class="project-summary muted">
+						{{ copy().mitarbeiterSummarySecondary }}
+					</p>
+					<p class="value-lead">{{ copy().mitarbeiterValueLead }}</p>
+					<p class="value-support">{{ copy().mitarbeiterValueSupport }}</p>
+					<div class="project-proof" [attr.aria-label]="copy().mitarbeiterProofTitle">
+						@for (item of copy().mitarbeiterProofs; track item) {
+							<span class="proof-pill">{{ item }}</span>
+						}
+					</div>
+				</div>
+			</details>
+
+			<details class="project-accordion">
+				<summary>{{ copy().valueTitle }}</summary>
+				<div class="project-accordion-body project-section">
+					<ul class="highlights">
+						@for (item of copy().mitarbeiterValueItems; track item) {
+							<li>{{ item }}</li>
+						}
+					</ul>
+				</div>
+			</details>
+
+			<details class="project-accordion">
+				<summary>{{ copy().showcaseTitle }}</summary>
+				<div class="project-accordion-body project-section">
+					<ul class="highlights">
+						@for (item of copy().mitarbeiterShowcaseItems; track item) {
+							<li>{{ item }}</li>
+						}
+					</ul>
+				</div>
+			</details>
+
+			<details class="project-accordion">
+				<summary>{{ copy().stackTitle }}</summary>
+				<div class="project-accordion-body project-panel">
+					<ul class="badges">
+						@for (item of copy().mitarbeiterStackItems; track item) {
+							<li class="badge">{{ item }}</li>
+						}
+					</ul>
+				</div>
+			</details>
+
+			<details class="project-accordion">
+				<summary>{{ copy().workflowTitle }}</summary>
+				<div class="project-accordion-body project-panel">
+					<div class="project-links project-links-footer">
+						<a class="btn btn-primary" href="https://mitarbeiter-management.netlify.app/" target="_blank" rel="noopener">{{ copy().mitarbeiterCta }}</a>
+						<a class="btn btn-secondary" [routerLink]="['/home']" fragment="contact">{{ copy().contactCta }}</a>
+					</div>
+				</div>
+			</details>
+		</div>
+	</article>
+	}
+
 	@if (isActiveProject('portfolio')) {
 	<article appRevealOnScroll class="project project-secondary slide-bottom reveal-delay-2">
 		<div class="project-hero">
