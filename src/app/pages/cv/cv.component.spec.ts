@@ -24,6 +24,6 @@ describe('CvComponent', () => {
   });
 
   it('should expose an absolute asset URL for the CV PDF', () => {
-    expect(component.cvUrl).toBe('/assets/CV-Softwareentwickler.pdf');
+    expect(component.cvUrl).toBe('/assets/CV-Web-Entwickler.pdf');
   });
 });

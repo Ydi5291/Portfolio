@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 
 import { LanguageService } from '../../core/language.service';
 
-const CV_ASSET_URL = '/assets/CV-Softwareentwickler.pdf';
+const CV_ASSET_URL = '/assets/CV-Web-Entwickler.pdf';
 
 const CV_COPY = {
   de: {
