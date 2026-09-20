@@ -33,7 +33,9 @@ p {
 	line-height: 1.05;
 	letter-spacing: -0.04em;
 	text-wrap: balance;
-	color: #89bcd9;
+	background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #7dd3fc 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 	text-align: center;
 }
 
@@ -168,26 +170,46 @@ p {
 
 .story-bubble {
 	border-radius: 5rem;
-	background: rgba(191, 219, 254, 0.22);
-	border: 1px solid rgba(125, 178, 255, 0.14);
-	color: #082032;
-	padding: 1.4rem 1.6rem;
+	background: linear-gradient(145deg, rgba(15, 23, 42, 0.82) 0%, rgba(10, 16, 28, 0.9) 100%);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid rgba(56, 189, 248, 0.22);
+	color: #f1f5f9;
+	padding: 1.5rem 1.6rem;
+	box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+	transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+
+	&:hover {
+		border-color: rgba(56, 189, 248, 0.4);
+		transform: translateY(-2px);
+		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 0 24px rgba(56, 189, 248, 0.12);
+	}
 }
 
-.story-bubble .section-kicker,
-.story-bubble .timeline-label,
-.story-bubble .timeline p,
+.story-bubble .section-kicker {
+	color: #38bdf8;
+}
+
 .story-bubble h3 {
-	color: #082032;
+	color: #ffffff;
+}
+
+.story-bubble .timeline-label {
+	color: #38bdf8;
+	font-weight: 700;
+}
+
+.story-bubble .timeline p {
+	color: #cbd5e1;
 }
 
 .story-bubble .timeline li {
-	border-left-color: rgba(8, 32, 50, 0.18);
+	border-left-color: rgba(56, 189, 248, 0.25);
 }
 
 .story-bubble .timeline li::before {
-	background: linear-gradient(180deg, #2563eb 0%, #0891b2 100%);
-	box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+	background: linear-gradient(180deg, #38bdf8 0%, #2563eb 100%);
+	box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15), 0 0 8px rgba(56, 189, 248, 0.35);
 }
 
 .daily-stack {
@@ -242,10 +264,14 @@ p {
 }
 
 :host(.is-embedded) .story-bubble {
-	padding: 1.4rem 1.6rem;
-	border: 1px solid rgba(125, 178, 255, 0.24);
+	padding: 1.5rem 1.6rem;
+	border: 1px solid rgba(56, 189, 248, 0.22);
 	border-radius: 5rem;
-	background: linear-gradient(180deg, rgba(191, 219, 254, 0.92) 0%, rgba(137, 188, 217, 0.88) 100%);
+	background: linear-gradient(145deg, rgba(15, 23, 42, 0.82) 0%, rgba(10, 16, 28, 0.9) 100%);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	color: #f1f5f9;
+	box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 :host(.is-embedded) .daily-stack {

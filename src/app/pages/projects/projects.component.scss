@@ -16,7 +16,9 @@ p {
 	line-height: 1.05;
 	letter-spacing: -0.04em;
 	text-wrap: balance;
-	color: #89bcd9;
+	background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #7dd3fc 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .section-kicker {
@@ -62,9 +64,10 @@ p {
 }
 
 .project-tab.is-active {
-	background: linear-gradient(180deg, rgba(191, 219, 254, 0.92) 0%, rgba(137, 188, 217, 0.88) 100%);
-	border-color: rgba(137, 188, 217, 0.7);
-	color: #082032;
+	background: linear-gradient(135deg, rgba(14, 165, 233, 0.85) 0%, rgba(59, 130, 246, 0.9) 100%);
+	border-color: rgba(56, 189, 248, 0.6);
+	color: #ffffff;
+	box-shadow: 0 4px 16px rgba(14, 165, 233, 0.35);
 }
 
 .projects {
