@@ -53,6 +53,29 @@ const HOME_COPY = {
     colleagueTraits: ['Friendly', 'Reliable', 'Fast-learning', 'Helpful', 'Open-hearted', 'Supportive'],
     learningTitle: 'I am still learning',
     learningText: 'I am still learning WordPress to build and extend website projects.'
+  },
+  fr: {
+    heroRole: 'Développeur Frontend avec une expérience Full-Stack',
+    heroIntro: 'Je développe des applications web évolutives avec Angular, Firebase et des technologies modernes.',
+    heroMetaItems: [
+      { icon: 'assets/images/location.png', text: 'Basé à Werl, Allemagne' },
+      { icon: 'assets/images/remote.png', text: 'Disponible en télétravail' },
+      { icon: 'assets/images/location.png', text: 'Ouvert au travail sur site' }
+    ],
+    projectsCta: 'Voir les projets',
+    aboutCta: 'Découvrir mon profil',
+    contactCta: 'Me contacter',
+    cvCta: 'Télécharger le CV',
+    whyTitle: 'Pourquoi moi ?',
+    whyParagraphs: [
+        'Je travaille de manière structurée, orientée solutions, fiable, très motivée et j\'apprends vite.',
+        'Je mets l\'accent sur une architecture propre, la performance et l\'ergonomie.'
+    ],
+    colleagueTitle: 'Ce que mes collègues disent de moi',
+    colleagueIntro: 'Au quotidien, on me décrit souvent comme :',
+    colleagueTraits: ['Aimable', 'Fiable', 'Apprend vite', 'Serviable', 'Ouvert', 'Solidaire'],
+    learningTitle: 'J\'apprends encore',
+    learningText: 'Je me forme actuellement à WordPress pour réaliser et faire évoluer des projets de sites web.'
   }
 } as const;
 

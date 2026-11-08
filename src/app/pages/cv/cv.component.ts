@@ -25,6 +25,16 @@ const CV_COPY = {
     downloadCta: 'Download CV',
     contactCta: 'Contact me',
     metaLabel: 'PDF · Software Developer'
+  },
+  fr: {
+    eyebrow: 'CV',
+    title: 'Mon CV en PDF',
+    intro: 'Court, direct et téléchargeable immédiatement.',
+    highlights: ['Angular / React', 'Développement frontend', 'Projets concrets'],
+    recruiterHint: 'Vous pouvez télécharger mon CV en PDF avec le bouton « Télécharger le CV » ou en cliquant directement sur l\'aperçu.',
+    downloadCta: 'Télécharger le CV',
+    contactCta: 'Me contacter',
+    metaLabel: 'PDF · Développeur logiciel'
   }
 } as const;
 

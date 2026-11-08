@@ -6,7 +6,7 @@ const IMPRESSUM_COPY = {
   de: {
     eyebrow: 'Rechtliches',
     title: 'Impressum',
-    intro: 'Pflichtangaben und direkte Kontaktmoeglichkeiten in einer klaren, kompakten Uebersicht.',
+    intro: 'Pflichtangaben und direkte Kontaktmöglichkeiten in einer klaren, kompakten Übersicht.',
     legalTitle: 'Anbieter',
     legalName: 'Youssouf Diallo',
     legalItems: [
@@ -20,7 +20,7 @@ const IMPRESSUM_COPY = {
     phoneLabel: 'Telefon',
     phoneValue: '+49 162 6291461',
     emailLabel: 'E-Mail',
-    emailValue: 'lamaid0502@gmail.com'
+    emailValue: 'youssoufdiamaldiallo@gmail.com'
   },
   en: {
     eyebrow: 'Legal',
@@ -39,7 +39,26 @@ const IMPRESSUM_COPY = {
     phoneLabel: 'Phone',
     phoneValue: '+49 162 6291461',
     emailLabel: 'Email',
-    emailValue: 'lamaid0502@gmail.com'
+    emailValue: 'youssoufdiamaldiallo@gmail.com'
+  },
+  fr: {
+    eyebrow: 'Informations légales',
+    title: 'Mentions légales',
+    intro: 'Informations obligatoires et coordonnées directes, présentées de façon claire et compacte.',
+    legalTitle: 'Éditeur',
+    legalName: 'Youssouf Diallo',
+    legalItems: [
+      'Kapuzinerring 26',
+      '59457 Werl',
+      'Allemagne'
+    ],
+    legalBadge: 'Adresse',
+    contactTitle: 'Contact',
+    contactBadge: 'Direct',
+    phoneLabel: 'Téléphone',
+    phoneValue: '+49 162 6291461',
+    emailLabel: 'E-mail',
+    emailValue: 'youssoufdiamaldiallo@gmail.com'
   }
 } as const;
 

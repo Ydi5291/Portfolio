@@ -1,7 +1,7 @@
 import { Injectable, PLATFORM_ID, inject, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
-export type Language = 'de' | 'en';
+export type Language = 'de' | 'en' | 'fr';
 
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
@@ -17,7 +17,7 @@ export class LanguageService {
 		}
 
 		const savedLanguage = window.localStorage.getItem(this.storageKey);
-		if (savedLanguage === 'de' || savedLanguage === 'en') {
+		if (savedLanguage === 'de' || savedLanguage === 'en' || savedLanguage === 'fr') {
 			this.currentLanguage.set(savedLanguage);
 		}
 	}
