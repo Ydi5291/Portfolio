@@ -17,4 +17,13 @@
 	>
 		EN
 	</button>
+	<button
+		type="button"
+		class="language-button"
+		[class.is-active]="language() === 'fr'"
+		[attr.aria-pressed]="language() === 'fr'"
+		(click)="setLanguage('fr')"
+	>
+		FR
+	</button>
 </div>

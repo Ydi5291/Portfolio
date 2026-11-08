@@ -27,7 +27,7 @@ const ABOUT_COPY = {
     journeyItems: [
       { label: 'Guinea', text: 'Abitur und erste Orientierung in Wirtschaftsinformatik' },
       { label: 'Deutschland', text: 'Berufserfahrung, neue Perspektive und klare Neuausrichtung' },
-      { label: 'Heute', text: 'Fortbildung als Frontend Developper bei der Developer Akademie in München(Remote), außerdem starker Fokus auf Frontend-Entwicklung durch praxisnahe Projekte' }
+      { label: 'Heute', text: 'Fortbildung als Frontend Developer bei der Developer Akademie in München (Remote), außerdem starker Fokus auf Frontend-Entwicklung durch praxisnahe Projekte' }
     ],
     stackTitle: 'Stack',
     stackItems: ['Angular', 'React', 'TypeScript', 'SCSS', 'Firebase', 'REST APIs', 'Git / GitHub'],
@@ -80,6 +80,42 @@ const ABOUT_COPY = {
     detailsParagraphs: [
       'I consciously chose software development and now work on production-oriented frontend projects.',
       'My goal is to grow within a professional team and deliver real value through my work.'
+    ]
+  },
+  fr: {
+    title: 'À propos',
+    lead: 'Je suis Youssouf Diallo, développeur frontend spécialisé dans les applications web modernes.',
+    intro: '',
+    projectsCta: 'Voir les projets',
+    contactCta: 'Me contacter',
+    profileTitle: 'Profil',
+    profileItems: [
+      'Spécialité : frontend et architecture UI',
+      'Stack : Angular, React, TypeScript, SCSS',
+      'Façon de travailler : structuré, fiable, apprend vite'
+    ],
+    journeyTitle: 'Parcours',
+    journeyEyebrow: 'Chemin',
+    journeyItems: [
+      { label: 'Guinée', text: 'Baccalauréat et premiers pas en informatique de gestion' },
+      { label: 'Allemagne', text: 'Expérience professionnelle, nouvelle perspective et reconversion assumée' },
+      { label: 'Aujourd\'hui', text: 'Formation de développeur frontend à la Developer Akademie de Munich (à distance) et forte spécialisation frontend à travers des projets concrets' }
+    ],
+    stackTitle: 'Stack',
+    stackItems: ['Angular', 'React', 'TypeScript', 'SCSS', 'Firebase', 'REST APIs', 'Git / GitHub'],
+    focusTitle: 'Points forts',
+    focusEyebrow: 'Focus',
+    focusItems: [
+      'Architectures frontend modulaires et évolutives',
+      'Interfaces responsives centrées sur l\'utilisateur',
+      'Applications web prêtes pour la production'
+    ],
+    goalTitle: 'Objectif',
+    goalText: 'Je développe des applications web claires, performantes et maintenables, centrées sur l\'utilisateur et la qualité du produit.',
+    detailsTitle: 'Plus sur moi',
+    detailsParagraphs: [
+      'J\'ai choisi consciemment le développement logiciel et je travaille aujourd\'hui sur des projets frontend en production.',
+      'Mon objectif : rejoindre une équipe professionnelle où je peux continuer à progresser et apporter une vraie valeur.'
     ]
   }
 } as const;

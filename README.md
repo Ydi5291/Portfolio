@@ -1,59 +1,33 @@
-# Portfolio
+# Youssouf Diallo – Frontend Developer Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.22.
+Personal portfolio of **Youssouf Diallo**, frontend developer (Angular, React, TypeScript, Firebase) based in Germany, open to remote work.
 
-## Development server
+🔗 **Live:** [youssouf-diallo.netlify.app](https://youssouf-diallo.netlify.app/)
 
-To start a local development server, run:
+## Featured projects
 
-```bash
-ng serve
-```
+| Project | Description | Stack |
+|---|---|---|
+| [AfroConnect](https://www.afroconnect.shop) | Live e-commerce & marketplace platform for Afro-commerce merchants: AI chatbot (OpenAI API), Google Maps & Routes API (shops within 30 km), payments, multi-role system | Angular, TypeScript, SCSS, Firebase, REST APIs |
+| [Mitarbeiter Management](https://mitarbeiter-management.netlify.app/) | Multi-tenant HR SaaS (PWA): employees, leave requests, approvals, time tracking; 4 user roles; sensitive operations in Cloud Functions | Angular, Firebase Auth, Firestore, Cloud Functions, PWA |
+| Portfolio (this repo) | Trilingual (DE / EN / FR) single-page Angular app with section routing and scroll animations | Angular 19, TypeScript, SCSS, Angular Router |
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Features
 
-## Code scaffolding
+- Three languages (German, English, French) with a persistent language switcher
+- Responsive single-page layout: hero, why me, about, projects, contact
+- Downloadable CV, contact form (Gmail / mailto)
+- Deployed on Netlify with continuous deployment from GitHub
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Run locally
 
 ```bash
-ng build
+npm install
+npm start        # http://localhost:4200
+npm run build    # production build in dist/portfolio/browser
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Contact
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Email: youssoufdiamaldiallo@gmail.com
+- GitHub: [Ydi5291](https://github.com/Ydi5291)

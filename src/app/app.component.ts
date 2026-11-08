@@ -31,6 +31,18 @@ const APP_COPY = {
     footerCta: 'Available for Angular / React frontend projects and product-oriented web applications.',
     footerRole: 'Frontend Developer',
     footerDescription: 'Building modern web applications focused on Angular, React, and scalable architectures.'
+  },
+  fr: {
+    menu: 'Menu',
+    home: 'Accueil',
+    why: 'Pourquoi moi',
+    about: 'À propos',
+    projects: 'Projets',
+    contact: 'Contact',
+    impressum: 'Mentions légales',
+    footerCta: 'Disponible pour des projets frontend Angular / React et des applications web orientées produit.',
+    footerRole: 'Développeur Frontend',
+    footerDescription: 'Développement d\'applications web modernes avec Angular, React et des architectures évolutives.'
   }
 } as const;
 
